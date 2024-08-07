@@ -1,36 +1,52 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
 <head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <link rel="stylesheet" href="{{ "/assets/css/main.css" | prepend: site.baseurl }}">
-    <link rel="stylesheet" href="{{ "/assets/css/font-awesome.min.css" | prepend: site.baseurl }}">
-    <title>{{ page.title}}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.title }}</title>
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.css' rel='stylesheet' />
+    <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
 </head>
+
 <body>
-{% include header.html %}
-<div class="content">
-    <div class="paper paper-before" id="paperBefore"></div>
-    <div class="paper paper-article">
-        <!-- Date No. sign -->
-        <a href="#" title="点击查看日历">
-        <span id="openBtn" class="date-index">
-            No.<span id="postIndex"></span><br>
-                <!--Date YYYY-MM-DD-->
-            {{ page.date | to_string | slice: 0, 10 }}
-        </span>
-        </a>
-        
-        <!--Calendar body-->
-        {% include calendar.html %}
-    
-        <!--Article body-->
-        <article class="typo">
-            {{ content }}
-        </article>
-    </div>        
-</div>
-{% include footer.html %}
+    <header>
+        <h1>{{ site.title }}</h1>
+    </header>
+    <main>
+        {{ content }}
+    </main>
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}</p>
+    </footer>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            if (typeof mermaid !== 'undefined') {
+                console.log("Mermaid is loaded");
+                mermaid.initialize({
+                    startOnLoad: true,
+                    theme: 'default',
+                    securityLevel: 'loose'
+                });
+                console.log("Mermaid initialized");
+            } else {
+                console.error("Mermaid is not loaded");
+            }
+        });
+
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+            svg: {
+                fontCache: 'global'
+            }
+        };
+    </script>
 </body>
+
 </html>

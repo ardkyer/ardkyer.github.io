@@ -1,0 +1,188 @@
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+header {
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+#calendar {
+    margin-top: 30px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 0.8em;
+    color: #777;
+}
+
+.post {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+.post-header {
+    margin-bottom: 30px;
+}
+
+.post-title {
+    font-size: 2.5em;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.post-meta {
+    font-size: 0.9em;
+    color: #666666;
+}
+
+.post-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #333333;
+}
+
+.post-content p {
+    margin-bottom: 20px;
+}
+
+.post-content h2 {
+    font-size: 1.8em;
+    color: #333333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+.post-content h3 {
+    font-size: 1.5em;
+    color: #333333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.post-content a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+.post-content a:hover {
+    text-decoration: underline;
+}
+
+.post-content ul,
+.post-content ol {
+    margin-bottom: 20px;
+    padding-left: 30px;
+}
+
+.post-content li {
+    margin-bottom: 10px;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 20px;
+    margin-left: 0;
+    font-style: italic;
+    color: #666666;
+}
+
+/* FullCalendar 스타일 오버라이드 */
+.fc-theme-standard td,
+.fc-theme-standard th {
+    border-color: #e0e0e0;
+}
+
+.fc-event-title {
+    white-space: normal !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    display: -webkit-box !important;
+    -webkit-line-clamp: 2 !important;
+    -webkit-box-orient: vertical !important;
+    line-height: 1.2em !important;
+    max-height: 2.4em !important;
+}
+
+.fc-daygrid-event {
+    white-space: normal !important;
+}
+
+.fc .fc-daygrid-day-events {
+    min-height: 2em;
+}
+
+.fc .fc-daygrid-body-unbalanced .fc-daygrid-day-events {
+    position: relative !important;
+}
+
+.fc .fc-daygrid-day-number {
+    color: #333333;
+}
+
+.fc .fc-button-primary {
+    background-color: #0066cc;
+    border-color: #0066cc;
+}
+
+.fc .fc-button-primary:hover {
+    background-color: #0052a3;
+    border-color: #0052a3;
+}
+
+.mermaid {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.post-container {
+    position: relative;
+    padding-top: 60px;
+}
+
+.back-to-calendar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #333333;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.back-to-calendar:hover {
+    background-color: #1a1a1a;
+}

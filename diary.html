@@ -1,0 +1,55 @@
+---
+layout: default
+title: Diary
+---
+
+<h1>My Diary</h1>
+
+<div id="calendar"></div>
+
+<div id="posts">
+    <h2>Posts</h2>
+    <ul>
+        {% for post in site.posts %}
+        <li>
+            <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+            <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css">
+
+<script>
+    $(document).ready(function () {
+        $('#calendar').fullCalendar({
+            header: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'month,agendaWeek,agendaDay'
+            },
+            events: [
+                {% for post in site.posts %}
+            {
+                title: '{{ post.title }}',
+                start: '{{ post.date | date: "%Y-%m-%d" }}',
+                url: '{{ post.url | prepend: site.baseurl }}'
+            },
+            {% endfor %}
+        ],
+        eventClick: function (event) {
+            if (event.url) {
+                window.location.href = event.url;
+                return false;
+            }
+        },
+        eventRender: function (event, element) {
+            element.attr('title', event.title);
+        }
+      });
+    });
+</script>
