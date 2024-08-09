@@ -1,0 +1,112 @@
+---
+layout: post
+title: "선형회귀, 경사하강법"
+date: 2024-08-08
+---
+
+## 1. 선형 회귀 
+
+선형 회귀는 주어진 트레이닝 데이터를 사용하여 특징 변수와 목표 변수 사이의 선형 관계를 분석하고, 이를 바탕으로 모델을 학습시켜 새로운 데이터의 결과를 예측하는 과정
+
+# 상관 관계 분석
+```
+correlation = np.corrcoef(x, t)
+print("Correlation coefficient:", correlation[0, 1])
+```
+
+# 산점도 시각화
+```
+plt.scatter(x, t)
+plt.xlabel('Years of Experience')
+plt.ylabel('Salary')
+plt.title('Years of Experience vs Salary')
+plt.show()
+```
+<img src="/assets/img/0809_1.png" alt="대체 텍스트" style="width: 50%;">
+
+# 선형 회귀 모델 구축
+```
+import torch.nn as nn
+
+class LinearRegressionModel(nn.Module):
+    def __init__(self):
+        super(LinearRegressionModel, self).__init__()
+        self.linear = nn.Linear(1, 1)  # 입력과 출력이 모두 1개인 선형 회귀 모델
+
+    def forward(self, x_tensor):
+        y = self.linear(x_tensor) # 입력 데이터를 선형 계층을 통해 예측값 계산
+        return y
+
+model = LinearRegressionModel() # 인스턴스 생성
+```
+
+# 손실 함수
+평균 제곱 오차(Mean Squared Error)를 손실 함수로 사용
+```
+pythonCopyloss_function = nn.MSELoss()
+```
+
+
+> 선형 회귀는 특징 변수와 목표 변수 간의 선형 관계를 모델링합니다.
+
+> PyTorch의 nn.Module을 상속받아 커스텀 모델을 쉽게 만들 수 있습니다.  
+
+---
+
+## 2. 경사하강법
+
+경사하강법(Gradient Descent)은 손실 함수의 최소값을 찾기 위한 최적화 알고리즘
+
+# **기본원리**
+1. 임의의 가중치 w 선택
+2. 선택된 w에서 손실 함수의 기울기(미분 값) 계산
+3. 기울기의 반대 방향으로 w를 조정
+4. 기울기가 0이 될 때까지 반복
+
+```
+optimizer = optim.SGD(model.parameters(), lr=0.01)
+
+for epoch in range(num_epochs):
+    y_pred = model(x_tensor)
+    loss = loss_function(y_pred, t_tensor)
+    
+    optimizer.zero_grad()
+    loss.backward()
+    optimizer.step()
+```
+
+# 확률적 경사하강법 (SGD)
+
+SGD는 전체 데이터셋 대신 각 데이터 포인트마다 가중치를 업데이트
+
+- 계산 효율성 항상
+- 로컬 미니마 탈출 가능성 증가
+
+# 에폭 (Epoch)
+
+에폭은 전체 데이터셋을 한 번 완전히 학습하는 과정을 의미
+
+```
+num_epochs = 1000
+for epoch in range(num_epochs):
+    # 학습 과정
+```
+
+# 데이터 표준화
+
+특징 변수와 목표 변수의 스케일을 조정하여 학습 효율을 증대
+
+```
+from sklearn.preprocessing import StandardScaler
+
+scaler_x = StandardScaler()
+x_scaled = scaler_x.fit_transform(x.reshape(-1, 1))
+```
+
+> 경사하강법은 모델 파라미터를 최적화하는 핵심 알고리즘
+
+> SGD는 대규모 데이터셋에서 효율적인 학습을 가능하게 함
+
+> 에폭 수 설정은 모델 성능과 과적합 방지에 중요
+
+> 데이터 표준화는 학습 속도와 정확도를 향상
