@@ -1,10 +1,12 @@
 body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
     font-family: 'Roboto', 'Noto Sans KR', sans-serif;
     line-height: 1.6;
     color: #333;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
     background-color: #f9f9f9;
 }
 
@@ -30,18 +32,32 @@ nav a {
 }
 
 #calendar {
-    margin-top: 30px;
-    background-color: #fff;
+    width: 100%;
+    height: 800px;
+    /* 캘린더 높이를 늘립니다 */
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    /* 최대 너비를 늘립니다 */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1 0 auto;
+    width: 100%;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 footer {
-    margin-top: 30px;
+    width: 100%;
     text-align: center;
-    font-size: 0.8em;
-    color: #777;
+    padding: 20px 0;
+    background-color: #f8f9fa;
 }
 
 .post {
@@ -49,6 +65,7 @@ footer {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
     margin-top: 40px;
 }
 
@@ -116,6 +133,10 @@ footer {
     margin-left: 0;
     font-style: italic;
     color: #666666;
+}
+
+.fc {
+    max-width: 100%;
 }
 
 /* FullCalendar 스타일 오버라이드 */
@@ -236,19 +257,17 @@ footer {
 }
 
 #search-container {
-    max-width: 100%;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    margin-bottom: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
 }
 
 #search-input {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    width: 80%;
+}
+
+#search-button {
+    padding: 10px 20px;
 }
 
 #results-container {
@@ -336,4 +355,103 @@ footer {
 .highlight {
     background-color: yellow;
     font-weight: bold;
+}
+
+nav {
+    margin-bottom: 20px;
+}
+
+nav a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #0056b3;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #0056b3;
+}
+
+.nav-button {
+    position: fixed;
+    top: 50%;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #007bff;
+    cursor: pointer;
+}
+
+#oldPostBtn {
+    left: 10px;
+}
+
+#nextPostBtn {
+    right: 10px;
+}
+
+.container {
+    display: flex;
+}
+
+.main-container {
+    width: 200px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.content-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    height: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.sidebar ul li a:hover {
+    color: #0056b3;
 }

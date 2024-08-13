@@ -1,6 +1,6 @@
 ---
-layout: home
-title: 
+layout: default
+title: 캘린더
 ---
 
 <div id="calendar"></div>

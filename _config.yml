@@ -43,6 +43,21 @@ kramdown:
 
 date_format: "%Y-%m-%d"
 
+nav:
+  캘린더: /
+  추가 공부: /further-reading/
+  논문 리뷰: /paper-reviews/
+
+collections:
+  further_readings:
+    output: true
+    permalink: /further-readings/:title/
+  paper_reviews:
+    output: true
+    permalink: /paper-reviews/:title/
+
+future: true
+
 
 # Exclude from processing.
 # The following items will not be processed, by default.

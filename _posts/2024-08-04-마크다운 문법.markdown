@@ -63,9 +63,9 @@ $$
 >>> 인용문 3단계
 
 
-```
+<pre><code>
     print("Hello, World!")
-    ```
+</code></pre>
 
 
 - [ ] 할 일 1
