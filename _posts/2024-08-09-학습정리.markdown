@@ -102,7 +102,7 @@ for epoch in range(num_epochs):
 # 이진 분류 모델의 테스트 및 시각화
 
 <pre><code>
-**model.eval()
+model.eval()
 with torch.no_grad():
     predictions = model(x_test)
     predicted_labels = (predictions > 0.5).float()
@@ -111,7 +111,7 @@ actual_labels = t_test.numpy()
 predicted_labels = predicted_labels.numpy()
 
 print("Predictions:", predicted_labels.flatten())
-print("Actual Labels:", actual_labels.flatten())**
+print("Actual Labels:", actual_labels.flatten())
 </code></pre>
 
 <img src="/assets/img/0809_3.png" alt="대체 텍스트" style="width: 50%;">

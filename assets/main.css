@@ -152,8 +152,9 @@ footer {
     display: -webkit-box !important;
     -webkit-line-clamp: 2 !important;
     -webkit-box-orient: vertical !important;
-    line-height: 1.2em !important;
-    max-height: 2.4em !important;
+    line-height: 1.4em !important;
+    max-height: 2.8em !important;
+    padding: 1px 3px !important;
 }
 
 .fc-daygrid-event {
@@ -165,7 +166,7 @@ footer {
 }
 
 .fc-daygrid-day:hover {
-    background-color: #f0f0f0;
+    background-color: #f8f9fa;
 }
 
 .fc-daygrid-day-number {
@@ -181,11 +182,45 @@ footer {
 }
 
 .fc-event {
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px !important;
+    min-height: 40px;
 }
 
 .fc-event:hover {
-    background-color: #0056b3;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    filter: brightness(105%);
+}
+
+.fc-event.post-event {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(135deg, #6e9fff, #4a77db);
+    border-left: 4px solid #2196F3;
+}
+
+.fc-event.paper-review-event {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(135deg, #66c2a5, #4a9c8c);
+    border-left: 4px solid #4CAF50;
+}
+
+.fc-event.further-reading-event {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(135deg, #fc8d62, #e07048);
+    border-left: 4px solid #FF5722;
+}
+
+.fc-event.post-event:hover,
+.fc-event.paper-review-event:hover,
+.fc-event.further-reading-event:hover {
+    filter: brightness(85%);
 }
 
 .fc-button {
@@ -217,13 +252,20 @@ footer {
 }
 
 .fc .fc-button-primary {
-    background-color: #0066cc;
-    border-color: #0066cc;
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .fc .fc-button-primary:hover {
-    background-color: #0052a3;
-    border-color: #0052a3;
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.fc .fc-button-primary:not(:disabled):active,
+.fc .fc-button-primary:not(:disabled).fc-button-active {
+    background-color: #004085;
+    border-color: #004085;
 }
 
 .mermaid {
@@ -454,4 +496,59 @@ main {
 
 .sidebar ul li a:hover {
     color: #0056b3;
+}
+
+.paper-reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.page-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.review-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.review-title {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.review-title a {
+    color: #2c3e50;
+    text-decoration: none;
+}
+
+.review-date {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.review-excerpt {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 1rem;
 }

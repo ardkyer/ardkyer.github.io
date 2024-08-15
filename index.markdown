@@ -21,8 +21,34 @@ document.addEventListener('DOMContentLoaded', function() {
         title: '{{ post.title | escape }}',
         start: '{{ post.date | date: "%Y-%m-%d" }}',
         url: '{{ post.url | relative_url }}',
+        className: 'post-event',
         extendedProps: {
-          post_id: '{{ post.id }}'
+          post_id: '{{ post.id }}',
+          category: 'post'
+        }
+      },
+      {% endfor %}
+      {% for review in site.paper_reviews %}
+      {
+        title: '{{ review.title | escape }}',
+        start: '{{ review.date | date: "%Y-%m-%d" }}',
+        url: '{{ review.url | relative_url }}',
+        className: 'paper-review-event',
+        extendedProps: {
+          post_id: '{{ review.id }}',
+          category: 'paper_review'
+        }
+      },
+      {% endfor %}
+      {% for reading in site.further_readings %}
+      {
+        title: '{{ reading.title | escape }}',
+        start: '{{ reading.date | date: "%Y-%m-%d" }}',
+        url: '{{ reading.url | relative_url }}',
+        className: 'further-reading-event',
+        extendedProps: {
+          post_id: '{{ reading.id }}',
+          category: 'further_reading'
         }
       },
       {% endfor %}
