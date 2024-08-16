@@ -34,6 +34,8 @@ github_username:  jekyll
 plugins:
   - jekyll-feed
 
+github: [metadata]
+
 markdown: kramdown
 kramdown:
   syntax_highlighter: rouge
