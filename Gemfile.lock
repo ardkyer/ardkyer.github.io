@@ -41,6 +41,7 @@ GEM
     faraday-net_http (3.1.1)
       net-http
     ffi (1.17.0-x64-mingw-ucrt)
+    ffi (1.17.0-x86_64-linux-gnu)
     forwardable-extended (2.6.0)
     gemoji (4.1.0)
     github-pages (232)
@@ -230,6 +231,8 @@ GEM
       uri
     nokogiri (1.16.7-x64-mingw-ucrt)
       racc (~> 1.4)
+    nokogiri (1.16.7-x86_64-linux)
+      racc (~> 1.4)
     octokit (4.25.1)
       faraday (>= 1, < 3)
       sawyer (~> 0.9)
@@ -262,17 +265,22 @@ GEM
       ethon (>= 0.9.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2024.1)
+      tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
     uri (0.13.0)
     webrick (1.8.1)
 
 PLATFORMS
   x64-mingw-ucrt
+  x86_64-linux
 
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.12)
   jekyll-sass-converter (~> 1.5)
+  tzinfo (>= 1, < 3)
+  tzinfo-data
   webrick (~> 1.7)
 
 BUNDLED WITH

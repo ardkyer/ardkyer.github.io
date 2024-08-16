@@ -14,8 +14,8 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2' # 최신 안정 버전 사용
-          bundler-cache: true # 의존성 캐싱을 위해 true로 설정
+          ruby-version: '3.2'
+          bundler-cache: true
       
       - name: Update RubyGems and Bundler
         run: |
@@ -23,7 +23,9 @@ jobs:
           gem install bundler
       
       - name: Install dependencies
-        run: bundle install
+        run: |
+          bundle config set --local path 'vendor/bundle'
+          bundle install
       
       - name: Build site
         run: bundle exec jekyll build
