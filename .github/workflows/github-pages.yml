@@ -3,7 +3,7 @@ name: Build and deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - main  # 또는 master, 주 브랜치 이름에 따라 다름
+      - main
 
 jobs:
   github-pages:
@@ -17,11 +17,6 @@ jobs:
           ruby-version: '3.2'
           bundler-cache: true
       
-      - name: Update RubyGems and Bundler
-        run: |
-          gem update --system
-          gem install bundler
-      
       - name: Install dependencies
         run: |
           bundle config set --local path 'vendor/bundle'
@@ -30,8 +25,10 @@ jobs:
       - name: Build site
         run: bundle exec jekyll build
       
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./_site
+      - name: Commit and push changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git commit -m "Deploy site built from commit ${{ github.sha }}" || echo "No changes to commit"
+          git push
