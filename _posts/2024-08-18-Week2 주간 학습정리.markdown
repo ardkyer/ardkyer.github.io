@@ -1,0 +1,16 @@
+---
+layout: post
+title: "Week2 주간 학습정리"
+date: 2024-08-18
+---
+
+## 강의 복습, 결과물 정리
+
+[Linear Regression, ML algorithm](http://localhost:4000/2024/08/12/%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html)
+
+[Neural Network]()
+
+[Transformer]()
+
+# 학습 회고
+
