@@ -15,8 +15,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
-          bundler-cache: true
-      
+          bundler-cache: false  # 캐시 사용을 비활성화
+
       - name: Configure Bundler
         run: |
           bundle config set --local path 'vendor/bundle'
@@ -24,7 +24,9 @@ jobs:
           bundle config set --local frozen 'false'
       
       - name: Install dependencies
-        run: bundle install
+        run: |
+          rm -f Gemfile.lock  # 기존 Gemfile.lock 제거
+          bundle install
       
       - name: Build site
         run: JEKYLL_ENV=production bundle exec jekyll build
