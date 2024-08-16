@@ -14,18 +14,18 @@ jobs:
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.2'
-          bundler-cache: false  # 캐시 사용을 비활성화
+          ruby-version: '2.7'  # GitHub Pages와 호환되는 Ruby 버전
+          bundler-cache: false
 
       - name: Configure Bundler
         run: |
           bundle config set --local path 'vendor/bundle'
-          bundle config set --local deployment 'false'
+          bundle config set --local deployment 'true'
           bundle config set --local frozen 'false'
       
       - name: Install dependencies
         run: |
-          rm -f Gemfile.lock  # 기존 Gemfile.lock 제거
+          rm -f Gemfile.lock
           bundle install
       
       - name: Build site
