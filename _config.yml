@@ -52,9 +52,9 @@ nav:
   논문 리뷰: /paper_reviews/
 
 collections:
-  further_readings:
+  further_reading:
     output: true
-    permalink: /further_readings/:title/
+    permalink: /further_reading/:title/
   paper_reviews:
     output: true
     permalink: /paper_reviews/:title/
