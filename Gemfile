@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
 gem "jekyll-feed", "~> 0.12"
-gem "jekyll-sass-converter", "~> 1.5"
+gem "jekyll-sitemap"
 gem "webrick", "~> 1.7"
 
 # Windows와 JRuby does not include zoneinfo files, so bundle the tzinfo-data gem

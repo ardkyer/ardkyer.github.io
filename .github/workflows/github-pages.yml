@@ -5,8 +5,6 @@ on:
     branches:
       - main
 
-# 새로운 워크플로우 실행을 트리거하기 위한 주석
-
 jobs:
   github-pages:
     runs-on: ubuntu-latest
@@ -25,12 +23,11 @@ jobs:
           bundle install
       
       - name: Build site
-        run: bundle exec jekyll build
+        run: JEKYLL_ENV=production bundle exec jekyll build
       
-      - name: Commit and push changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add -A
-          git commit -m "Deploy site built from commit ${{ github.sha }}" || echo "No changes to commit"
-          git push
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
+          publish_branch: gh-pages  # 이 줄을 추가하세요
