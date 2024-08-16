@@ -3,19 +3,33 @@ name: Build and deploy Jekyll site to GitHub Pages
 on:
   push:
     branches:
-      - main  
+      - main  # 또는 master, 주 브랜치 이름에 따라 다름
 
 jobs:
   github-pages:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
+      
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile') }}
-          restore-keys: |
-            ${{ runner.os }}-gems-
-      - uses: helaili/jekyll-action@v2
+          ruby-version: '3.2' # 최신 안정 버전 사용
+          bundler-cache: true # 의존성 캐싱을 위해 true로 설정
+      
+      - name: Update RubyGems and Bundler
+        run: |
+          gem update --system
+          gem install bundler
+      
+      - name: Install dependencies
+        run: bundle install
+      
+      - name: Build site
+        run: bundle exec jekyll build
+      
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./_site
