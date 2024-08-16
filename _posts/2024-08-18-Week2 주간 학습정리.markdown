@@ -6,11 +6,25 @@ date: 2024-08-18
 
 ## 강의 복습, 결과물 정리
 
-[Linear Regression, ML algorithm](http://localhost:4000/2024/08/12/%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html)
+[Linear Regression, ML algorithm](https://ardkyer.github.io/2024/08/12/%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html)
 
-[Neural Network]()
+[Neural Network](https://ardkyer.github.io/2024/08/13/%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html)
 
-[Transformer]()
+[Transformer](https://ardkyer.github.io/2024/08/14/%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html)
 
 # 학습 회고
 
+확실히 이번 주는 빠지지 않고 풀타임으로 수업을 들어서 저번 주 보다는 급하지 않게 학습한 것 같다.
+
+그래도 이론쪽은 어느 정도 갈피가 잡히는데 이번주 과제가 많이 까다로웠다. 과연 이걸 내가 한게 맞을까 싶을 정도로 AI를 과도하게 사용했으며 그냥 전체적으로 갈피를 잡기 어려웠다. epochs, batch size 이런것도 뭔지 모르는데 무작정 돌리고 앉아있으니 별로 머리에 남는 게 없는 것 같았다.
+
+또, 이번주에는 강의와 함께 같이 읽어보라는 논문을 많이 첨부해주셨다. 와, 근데 진짜 너무 막막했다. 글 읽는 걸 좋아하는 편인데도 한줄 읽고 한숨쉬고 한줄 읽고 한숨쉬고
+그냥 재미가 없다. 옛날에 문과쪽 논문 읽을때는 스토리가 있어서 재밌게 읽었던 것 같은데 지금은 이 논문이 당장 왜 필요한지 어디에 쓰이는지 나에게 와닿지가 않아서 그런가. 솔직히 말하면 지금 레벨에서는 논문보다는 쉽게 정리된 블로그나 유튜브 등을 보는 게 적어도 나에게는 더 도움이 될 것 같아 우선 다운받은 논문들은 나중에 보기로 했다. 괜히 더 무리했다가는 흥미를 아예 잃어버릴 것 같다.
+
+[딥 러닝을 이용한 자연어 처리 입문](https://wikidocs.net/24996)
+
+[Week 25 - NLP의 옵티머스 프라임, Transformer 등장!](https://jiho-ml.com/weekly-nlp-25/)
+
+> Chat gpt를 적당히 쓰자. 과제 뭐, 틀리면 어떠냐. 시험 보는 것도 아닌데.
+
+> 논문은 나중에 읽고 내 레벨에 맞는 글로 천천히 시작하자.
