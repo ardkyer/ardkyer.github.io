@@ -48,16 +48,16 @@ date_format: "%Y-%m-%d"
 
 nav:
   캘린더: /
-  추가 공부: /further-reading/
-  논문 리뷰: /paper-reviews/
+  추가 공부: /further_reading/
+  논문 리뷰: /paper_reviews/
 
 collections:
   further_readings:
     output: true
-    permalink: /further-readings/:title/
+    permalink: /further_readings/:title/
   paper_reviews:
     output: true
-    permalink: /paper-reviews/:title/
+    permalink: /paper_reviews/:title/
 
 future: true
 
