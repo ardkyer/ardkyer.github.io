@@ -133,6 +133,50 @@
             }
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            if (calendarEl) {
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    events: [
+                        {% for review in site.paper_reviews %}
+                    {
+                        title: '[논문] {{ review.title | escape }}',
+                        start: '{{ review.date | date: "%Y-%m-%d" }}',
+                        url: '{{ review.url | relative_url }}',
+                        className: 'paper-review-event'
+                    },
+                    {% endfor %}
+            {% for study in site.further_reading %}
+            {
+                title: '[추가공부] {{ study.title | escape }}',
+                    start: '{{ study.date | date: "%Y-%m-%d" }}',
+                        url: '{{ study.url | relative_url }}',
+                            className: 'further-reading-event'
+            },
+            {% endfor %}
+            {% for post in site.posts %}
+            {
+                title: '[학습] {{ post.title | escape }}',
+                    start: '{{ post.date | date: "%Y-%m-%d" }}',
+                        url: '{{ post.url | relative_url }}',
+                            className: 'post-event'
+            },
+            {% endfor %}
+                ],
+            eventClick: function(info) {
+                if (info.event.url) {
+                    window.location.href = info.event.url;
+                    return false;
+                }
+            }
+        });
+        calendar.render();
+        }
+    });
+    </script>
 </body>
 
 </html>
