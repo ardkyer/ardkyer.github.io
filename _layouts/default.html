@@ -195,7 +195,8 @@
             .then(data => {
                 document.getElementById('today-count').textContent = data.count_unique;
                 document.getElementById('total-count').textContent = data.count;
-            });
+            })
+            .catch(error => console.error('Error:', error));
     </script>
 </body>
 
