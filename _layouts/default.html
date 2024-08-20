@@ -12,6 +12,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
+    <style>
+        #visitor-count {
+            font-size: 12px;
+            color: #666;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 
 <body>
@@ -31,6 +38,10 @@
 
         <footer>
             <p>&copy; {{ site.title }}</p>
+            <div id="visitor-count" style="text-align: left; padding: 10px; font-size: 12px; color: #666;">
+                <span>Today: <span id="today-count">-</span></span>
+                <span style="margin-left: 15px;">Total: <span id="total-count">-</span></span>
+            </div>
         </footer>
     </div>
 
@@ -176,6 +187,15 @@
         calendar.render();
         }
     });
+    </script>
+    <script data-goatcounter="https://k0207k.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+    <script>
+        fetch('https://k0207k.goatcounter.com/counter/' + encodeURIComponent(location.pathname).replace(/%2F/g, '/') + '.json')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('today-count').textContent = data.count_unique;
+                document.getElementById('total-count').textContent = data.count;
+            });
     </script>
 </body>
 
