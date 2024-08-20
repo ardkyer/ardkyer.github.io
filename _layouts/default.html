@@ -191,8 +191,12 @@
     <script data-goatcounter="https://k0207k.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
     <script>
         fetch('https://k0207k.goatcounter.com/counter/' + encodeURIComponent(location.pathname).replace(/%2F/g, '/') + '.json')
-            .then(response => response.json())
+            .then(response => {
+                console.log('Response status:', response.status);
+                return response.json();
+            })
             .then(data => {
+                console.log('Data received:', data);
                 document.getElementById('today-count').textContent = data.count_unique;
                 document.getElementById('total-count').textContent = data.count;
             })
