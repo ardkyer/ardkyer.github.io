@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ '/assets/main.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/code-block-styles.css' | relative_url }}">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.2/main.min.js'></script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q3M0ZFB71M"></script>
@@ -21,6 +22,81 @@
 
         gtag('config', 'G-Q3M0ZFB71M');
     </script>
+
+    <style>
+        .code-block-container {
+            position: relative;
+            background-color: #f8f8f8;
+            border-radius: 6px;
+            margin: 20px 0;
+            padding: 20px;
+            /* 패딩 추가로 코드와 컨테이너의 간격 확보 */
+            border: 1px solid #e0e0e0;
+            overflow-x: auto;
+            /* 코드가 길 경우 가로 스크롤 추가 */
+        }
+
+        .code-block {
+            font-family: 'Roboto Mono', monospace;
+            /* 모양이 더 나은 고정폭 폰트 사용 */
+            font-size: 16px;
+            /* 글자 크기를 약간 줄임 */
+            font-weight: bold;
+            /* 볼드체를 제거 */
+            color: #333;
+            /* 글자 색상 */
+            white-space: pre-wrap;
+            /* 긴 줄은 자동으로 줄바꿈 */
+            word-wrap: break-word;
+            /* 단어가 너무 길 경우 줄바꿈 */
+            margin: 0;
+        }
+
+        .copy-button {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            padding: 6px 12px;
+            font-size: 12px;
+            background-color: #f0f0f0;
+            color: #4a4a4a;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .copy-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .copy-button.copied {
+            background-color: #4a4a4a;
+            color: #ffffff;
+        }
+
+        .copy-icon,
+        .check-icon {
+            width: 14px;
+            height: 14px;
+            fill: currentColor;
+        }
+
+        .check-icon {
+            display: none;
+        }
+
+        .copied .copy-icon {
+            display: none;
+        }
+
+        .copied .check-icon {
+            display: inline;
+        }
+    </style>
 
 </head>
 
@@ -186,6 +262,21 @@
         calendar.render();
         }
     });
+    </script>
+
+    <script>
+        function copyCode(button) {
+            const pre = button.previousElementSibling;
+            const code = pre.textContent;
+            navigator.clipboard.writeText(code).then(() => {
+                button.classList.add('copied');
+                button.querySelector('span').textContent = 'Copied!';
+                setTimeout(() => {
+                    button.classList.remove('copied');
+                    button.querySelector('span').textContent = 'Copy';
+                }, 2000);
+            });
+        }
     </script>
 </body>
 

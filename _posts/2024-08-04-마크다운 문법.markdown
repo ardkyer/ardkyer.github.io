@@ -62,6 +62,7 @@ $$
 >> 인용문 2단계
 >>> 인용문 3단계
 
+{% include code-block.html code="print('hello world')" %}
 
 <pre><code>
     print("Hello, World!")
