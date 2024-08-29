@@ -1,0 +1,104 @@
+---
+layout: post
+title: "Typora 시작"
+date: 2024-08-26
+typora-root-url: ../
+---
+
+> 
+>
+> **ㅋㅋㅋㅋ**
+
+
+
+# 범주형 데이터
+## 범주형 데이터의 정의와 종류
+## 명목형 데이터 처리
+# 수치형 데이터
+## 데이터 분포의 대칭성을 위한 방법
+# 결측치 (Missing Values)
+# 이상치 (Outliers)
+
+
+
+[TOC]
+
+
+
+1. 
+
+- ㅋㅋ
+
+
+
+[^zz]: 어렵당
+
+------
+
+[TOC]
+
+
+
+[zzz]: http://localhost:4000/2024/08/25/Week3-%EC%A3%BC%EA%B0%84-%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html	"zzzzz"
+
+**ㅋㅋㅋㅋ**
+
+`print("hello")` <!--dfsdf-->
+
+> [!NOTE]
+>
+> [http://localhost:4000/2024/08/25/Week3-%EC%A3%BC%EA%B0%84-%ED%95%99%EC%8A%B5%EC%A0%95%EB%A6%AC.html]: 
+>
+> ???
+
+> [!IMPORTANT]
+>
+> zz
+
+> [!WARNING]
+>
+> ##### <!---->
+
+| zzz  | efefw | wef  |
+| ---- | ----: | ---- |
+|      |       | ef   |
+| ewf  |       | ef   |
+
+
+
+```
+print("hello")
+```
+
+#### rkekㅋfk23		f  
+
+  
+
+
+ㅇㄹㄷㄹㄷㄹ
+
+ㄹㄷㄹㄷㄹㄷㄹ
+
+ ㄹㄷㄹㄷㄹ
+ㄷㄹㄷㄹㄷㄹ
+ㄷㄹㄷㄹ
+
+
+
+```pascal
+zzz
+
+```
+
+
+
+
+
+<img src="/assets/img/0822_10.png" alt="대체 텍스트" style="width: 50%;">
+
+
+
+![image-20240828154528866](/assets/img/image-20240828154528866.png)
+
+erer
+

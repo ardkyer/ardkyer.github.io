@@ -1,0 +1,36 @@
+.highlight {
+    background: #f8f8f8;
+    border-radius: 4px;
+    padding: 1em;
+    margin: 1em 0;
+    overflow: auto;
+    position: relative;
+}
+
+.highlight pre {
+    margin: 0;
+    padding-right: 40px;
+}
+
+.highlight code {
+    font-family: 'Consolas', 'Monaco', 'Andale Mono', 'Ubuntu Mono', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.copy-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 5px 10px;
+    background: #e7e7e7;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.copy-button:hover {
+    background: #d0d0d0;
+}

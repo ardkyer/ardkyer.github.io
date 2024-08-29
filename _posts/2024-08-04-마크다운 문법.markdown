@@ -3,6 +3,7 @@ layout: post
 title: "마크다운 문법 모음"
 date: 2024-08-04
 custom_css: bordered-table
+typora-root-url: ../
 ---
 
 ## 마크다운 문법 모음

@@ -2,8 +2,12 @@
 layout: post
 title: "회고록 시작"
 date: 2024-08-5
+typora-root-url: ../
 ---
 
 ## 네이버 부스트캠프 입소하여 회고록 시작
 
 AI쪽 공부내용만 적을듯?
+
+
+

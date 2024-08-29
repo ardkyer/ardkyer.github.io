@@ -37,12 +37,21 @@ plugins:
 
 github: [metadata]
 
+encoding: utf-8
+
 markdown: kramdown
 kramdown:
+  auto_ids: true
   syntax_highlighter: rouge
   syntax_highlighter_opts:
     block:
       line_numbers: false
+    css_class: 'highlight'
+    default_lang: plaintext
+    span:
+      line_numbers: false
+rouge:
+  style: github  # 또는 monokai, thankful_eyes 등 다른 테마를 시도해보세요
 
 date_format: "%Y-%m-%d"
 
@@ -61,6 +70,9 @@ collections:
 
 future: true
 
+sass:
+  sass_dir: _sass
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
