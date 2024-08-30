@@ -1,0 +1,22 @@
+---
+layout: post
+title: "Week4 주간 학습정리"
+date: 2024-09-01
+typora-root-url: ../
+---
+
+## 강의 복습, 결과물 정리
+
+
+
+[데이콘 시작](https://ardkyer.github.io/further_reading/%EB%8D%B0%EC%9D%B4%EC%BD%98-%EC%8B%9C%EC%9E%91/)
+
+[Zero-Shot Recommendation as Language Modeling](https://ardkyer.github.io/paper_reviews/2024-08-28-Zero-Shot-Recommendation-as-Language-Modeling-(copy)/)
+
+[AutoRec: Autoencoders Meet Collaborative Filtering](https://ardkyer.github.io/paper_reviews/2024-08-29-AutoRec-Autoencoders-Meet-Collaborative-Filtering/)
+
+
+
+# 학습 회고
+
+본격적으로 Recsys트랙이 시작되었는데 그래서 그런가? 강의들이 다 난이도가 확연히 높아진 것 같다. 강의에 수식도 많고 해서 중간에 멍 한번 때리고 정신차리고 나면 어디인지 모를때가 많았다. 뭐 그래도 계속해서 회독해야지 머 ㅋㅋ. 강의들으면서 첨부되는 논문이나 그런거 계속 읽으면서 식견도 넓혀가면서 천천히 하자. 
