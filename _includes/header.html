@@ -1,10 +1,49 @@
 <header>
+    <style>
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            filter: brightness(85%);
+        }
+
+        .nav-item-1 {
+            color: #2196F3;
+        }
+
+        .nav-item-2 {
+            color: #FF7043;
+        }
+
+        .nav-item-3 {
+            color: #26A69A;
+        }
+
+        .nav-item-4 {
+            color: #AB47BC;
+        }
+    </style>
+
     <h1>{{ site.title }}</h1>
     <nav>
         <ul>
             <li><i class="fa fa-paper-plane-o"></i></li>
             {% for link in site.nav %}
-            <li><a href="{{ site.baseurl }}{{ link[1]}}">{{ link[0] }}</a></li>
+            <li><a href="{{ site.baseurl }}{{ link[1]}}" class="nav-item-{{ forloop.index }}">{{ link[0] }}</a></li>
             {% endfor %}
         </ul>
     </nav>

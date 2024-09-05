@@ -51,6 +51,19 @@ document.addEventListener('DOMContentLoaded', function() {
           category: 'further_reading'
         }
       },
+{% endfor %}
+      {% for log in site.dev_logs %}
+      {
+        title: '{{ log.title | escape }}',
+        start: '{{ log.date | date: "%Y-%m-%d" }}',
+        url: '{{ log.url | relative_url }}',
+        className: 'dev-log-event',
+        extendedProps: {
+          post_id: '{{ log.id }}',
+          category: 'dev_log'
+        }
+      },
+
       {% endfor %}
     ],
     eventClick: function(info) {

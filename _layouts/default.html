@@ -251,6 +251,14 @@
                             className: 'post-event'
             },
             {% endfor %}
+            {% for log in site.dev_logs %}
+            {
+                title: '[개발일지] {{ log.title | escape }}',
+                    start: '{{ log.date | date: "%Y-%m-%d" }}',
+                        url: '{{ log.url | relative_url }}',
+                            className: 'dev-log-event'
+            },
+            {% endfor %}
                 ],
             eventClick: function(info) {
                 if (info.event.url) {

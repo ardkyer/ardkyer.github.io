@@ -217,9 +217,17 @@ footer {
     border-left: 4px solid #FF5722;
 }
 
+.fc-event.dev-log-event {
+    background:
+        linear-gradient(120deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 20%),
+        linear-gradient(135deg, #9e67ab, #7a4d87);
+    border-left: 4px solid #9C27B0;
+}
+
 .fc-event.post-event:hover,
 .fc-event.paper-review-event:hover,
-.fc-event.further-reading-event:hover {
+.fc-event.further-reading-event:hover,
+.fc-event.dev-log-event:hover {
     filter: brightness(85%);
 }
 
@@ -427,12 +435,12 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: #007bff;
     font-weight: bold;
+    transition: all 0.3s ease;
 }
 
 nav ul li a:hover {
-    color: #0056b3;
+    filter: brightness(85%);
 }
 
 .nav-button {
