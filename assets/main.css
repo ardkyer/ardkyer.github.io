@@ -422,7 +422,7 @@ nav a:hover {
     color: #0056b3;
 }
 
-nav ul {
+/* nav ul {
     list-style-type: none;
     padding: 0;
     display: flex;
@@ -441,7 +441,7 @@ nav ul li a {
 
 nav ul li a:hover {
     filter: brightness(85%);
-}
+} */
 
 .nav-button {
     position: fixed;

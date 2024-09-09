@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
           category: 'further_reading'
         }
       },
-{% endfor %}
+      {% endfor %}
       {% for log in site.dev_logs %}
       {
         title: '{{ log.title | escape }}',
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
           category: 'dev_log'
         }
       },
-
       {% endfor %}
     ],
     eventClick: function(info) {
