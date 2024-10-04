@@ -1,0 +1,41 @@
+---
+layout: post
+title: "블로그 사진 튀어나오는 거 수정"
+date: 2024-10-05
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+아니, 블로그 보는데 아래처럼 사진들이 지들 맘대로 형식 나가고 난리가 났다. ㅋㅋㅋㅋ
+
+![image-20241005012659550](/assets/img/image-20241005012659550.png)
+
+> ardkyer.github.io \ _layouts \ post.html
+
+```
+{% if page.image_style %}
+<style>
+  .post-content img { {{ page.image_style | replace: '"', '' }} }
+</style>
+{% endif %}
+```
+
+위 코드 추가 후 프론트매터에 
+
+```
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+```
+
+붙여줬다. 그림자랑 동글동글도 수정하는 김에 붙여줬다. 
+
+그림자를 
+
+- box-shadow:2px 2px 8px 
+- box-shadow:0 4px 8px
+
+이거 두개 뭐가 더 예쁜가 20분넘게 계속 비교해보다 저걸로 했다. 근데 이거 쓰면서 또 사진들 보니까 맘에 안 드네. 잘 모르겠다. 나중에 바꿀지도. 
+
+![image-20241005013502820](/assets/img/image-20241005013502820.png)
+
+블로그 만들때 시행착오 많았는데 다 써놓을걸. 이제라도 써놔야겠다.
+

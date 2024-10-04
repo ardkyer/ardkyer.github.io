@@ -3,6 +3,7 @@ layout: post
 title: "Claude API 끌어와서 Discord 봇 만들기"
 date: 2024-09-4
 typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
 ---
 
 
