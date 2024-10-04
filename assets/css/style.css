@@ -21,3 +21,12 @@ footer {
     max-width: 900px;
     margin: 20px auto;
 }
+
+.post-content img,  /* Jekyll의 기본 포스트 내용 클래스 */
+.markdown-body img  /* 일부 Jekyll 테마에서 사용하는 클래스 */
+{
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+}
