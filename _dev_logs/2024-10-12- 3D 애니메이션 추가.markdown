@@ -1,0 +1,121 @@
+---
+layout: post
+title: "Jekyll 블로그에 아이콘 및 3D 애니메이션 효과 추가"
+date: 2024-10-12
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+## 개발
+
+한달 내 할거
+
+블로그 수정
+
+- github, linkedin 등등 추가
+- 댓글 기능 추가
+
+java 코테 준비
+
+<br>
+
+<br>
+
+
+
+여기중에서 github, linkedin 등등 아이콘 추가 작업을 하려고 함.
+
+ _includes 폴더에 social-icons.html 파일을 만들고 
+
+```
+<a href="[your-instagram-url]" target="_blank"><i class="fab fa-instagram"></i></a>
+<a href="[your-github-url]" target="_blank"><i class="fab fa-github"></i></a>
+<a href="[your-linkedin-url]" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="mailto:[your-email]"><i class="fas fa-envelope"></i></a>
+```
+
+추가후 저장.
+
+---
+
+![image-20241017183740377](/assets/img/image-20241017183740377.png)
+
+잘 작동하긴 하는데 너무 아이콘이 작고 디자인도 별로다. 디자인 뭐 해볼까 하다가 3D 애니메이션을 추가해보았다.
+
+```
+/* 3D 효과를 위한 추가 스타일 */
+.social-icon::before,
+.social-icon::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.social-icon::before {
+  transform: translateZ(-1px);
+  opacity: 0.5;
+}
+
+.social-icon::after {
+  transform: translateZ(1px);
+}
+
+.social-icon:hover::before {
+  transform: translateZ(-10px);
+  opacity: 0;
+}
+
+.social-icon:hover::after {
+  transform: translateZ(10px);
+}
+
+/* 아이콘 뒷면 스타일 */
+.social-icon i {
+  backface-visibility: hidden;
+}
+
+.social-icon:hover i {
+  transform: rotateY(180deg);
+}
+```
+
+ 이러면 마우스를 갖다대면 아이콘이 휘리릭 거린다. 
+
+<video src="/../../Documents/카카오톡 받은 파일/KakaoTalk_20241017_185607623.mp4"></video>
+
+<br>
+
+---
+
+<video src="/assets/videos/KakaoTalk_20241017_185607623.mp4" controls></video>
+
+아니면 직접 삽입도 가능하다.1
+
+```
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red">
+    <animate attributeName="r" values="40;20;40" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+```
+
+위와 같은 코드를 작성하면 바로 아래처럼 나온다. 생각보다 잘 나오넹.
+
+<svg width="100" height="100">
+  <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="red">
+    <animate attributeName="r" values="40;20;40" dur="2s" repeatCount="indefinite"/>
+  </circle>
+</svg>
+
+
+
+
+
+
+
+
+
