@@ -3,9 +3,8 @@ layout: default
 title: 추가 공부
 permalink: /further_reading/
 ---
-
 <style>
-.further-readings-container {
+.page-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
@@ -14,12 +13,15 @@ permalink: /further_reading/
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 2rem;
-    text-align: center;
+    text-align: left;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 1rem;
 }
 .readings-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
+    margin-top: 2rem;
 }
 .reading-card {
     background-color: #fff;
@@ -53,25 +55,25 @@ permalink: /further_reading/
 }
 </style>
 
-<div class="further-readings-container">
-  <h1 class="page-title">추가 공부</h1>
-  <div class="readings-grid">
-    {% for reading in site.further_reading %}
-      <div class="reading-card" data-url="{{ reading.url | relative_url }}">
-        <h2 class="reading-title"><a href="{{ reading.url | relative_url }}">{{ reading.title }}</a></h2>
-        <p class="reading-date">작성일: {{ reading.date | date: "%Y-%m-%d" }}</p>
-        <p class="reading-excerpt">{{ reading.excerpt | strip_html | truncatewords: 30 }}</p>
-      </div>
-    {% endfor %}
-  </div>
+<div class="page-container">
+    <h1 class="page-title">추가 공부</h1>
+    <div class="readings-grid">
+        {% for reading in site.further_reading %}
+            <div class="reading-card" data-url="{{ reading.url | relative_url }}">
+                <h2 class="reading-title"><a href="{{ reading.url | relative_url }}">{{ reading.title }}</a></h2>
+                <p class="reading-date">작성일: {{ reading.date | date: "%Y-%m-%d" }}</p>
+                <p class="reading-excerpt">{{ reading.excerpt | strip_html | truncatewords: 30 }}</p>
+            </div>
+        {% endfor %}
+    </div>
 </div>
 
 <script>
 document.querySelectorAll('.reading-card').forEach(function(card) {
-  card.addEventListener('click', function(e) {
-    if (!e.target.closest('a')) {
-      window.location.href = this.getAttribute('data-url');
-    }
-  });
+    card.addEventListener('click', function(e) {
+        if (!e.target.closest('a')) {
+            window.location.href = this.getAttribute('data-url');
+        }
+    });
 });
 </script>

@@ -346,6 +346,336 @@
         .site-header {
             display: none;
         }
+
+        /* 다크모드 토글 버튼 스타일 */
+        .theme-toggle {
+            padding: 10px;
+            border-radius: 50%;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            font-size: 20px;
+            color: #333;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .theme-toggle:hover {
+            background: #e9ecef;
+        }
+
+        /* 다크모드 스타일 */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #ffffff;
+        }
+
+        /* 사이드바 다크모드 */
+        body.dark-mode .sidebar {
+            background-color: #2d2d2d;
+            border-right-color: #3d3d3d;
+        }
+
+        body.dark-mode .sidebar-nav-item {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .sidebar-nav-item:hover {
+            background-color: #3d3d3d;
+        }
+
+        body.dark-mode #calendar {
+            background-color: #2d2d2d;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .fc {
+            background-color: #2d2d2d;
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .fc-toolbar-title {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .fc-button {
+            background-color: #3d3d3d !important;
+            border-color: #4d4d4d !important;
+            color: #e1e1e1 !important;
+        }
+
+        body.dark-mode .fc-button-active {
+            background-color: #4a90e2 !important;
+        }
+
+        body.dark-mode .fc-daygrid-day-number {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .fc-col-header-cell {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .fc-day {
+            background-color: #2d2d2d !important;
+        }
+
+        body.dark-mode .fc-day-today {
+            background-color: rgba(74, 144, 226, 0.2) !important;
+        }
+
+        /* 푸터 다크모드 */
+        body.dark-mode footer {
+            background-color: #2d2d2d;
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .social-icons a {
+            color: #e1e1e1;
+        }
+
+        /* 검색창 다크모드 */
+        body.dark-mode #search-input {
+            background-color: #2d2d2d;
+            border-color: #3d3d3d;
+            color: #e1e1e1;
+        }
+
+        body.dark-mode #search-button {
+            background-color: #4a90e2;
+            color: #ffffff;
+        }
+
+        /* 달력 이벤트 다크모드에서 더 선명하게 */
+        body.dark-mode .post-event {
+            background-color: #5a9fef !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .paper-review-event {
+            background-color: #60d888 !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .further-reading-event {
+            background-color: #ab69c6 !important;
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .dev-log-event {
+            background-color: #f4a932 !important;
+            color: #ffffff !important;
+        }
+
+
+
+        /* 모든 카드 공통 스타일 */
+        .log-card,
+        .reading-card,
+        .review-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* 다크모드 카드 스타일 */
+        body.dark-mode .log-card,
+        body.dark-mode .reading-card,
+        body.dark-mode .review-card {
+            background-color: #2d2d2d;
+            color: #e1e1e1;
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+        }
+
+        /* 다크모드 텍스트 스타일 */
+        body.dark-mode .log-card h2,
+        body.dark-mode .reading-card h2,
+        body.dark-mode .review-card h2,
+        body.dark-mode .log-card a,
+        body.dark-mode .reading-card a,
+        body.dark-mode .review-card a {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .log-card p,
+        body.dark-mode .reading-card p,
+        body.dark-mode .review-card p,
+        body.dark-mode .post-date {
+            color: #b0b0b0;
+        }
+
+        /* 호버 효과 */
+        .log-card:hover,
+        .reading-card:hover,
+        .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .log-card:hover,
+        body.dark-mode .reading-card:hover,
+        body.dark-mode .review-card:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        /* 그리드 컨테이너 스타일 */
+        .dev-logs-container,
+        .further-readings-container,
+        .paper-reviews-container,
+        .logs-grid,
+        .readings-grid,
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* 페이지 제목 다크모드 */
+        body.dark-mode .page-title {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .theme-toggle {
+            color: #ffffff;
+        }
+
+        body.dark-mode .theme-toggle:hover {
+            background-color: #3d3d3d;
+        }
+
+        /* 게시글 다크모드 스타일 */
+        body.dark-mode .article.post {
+            background-color: #2d2d2d;
+            color: #e1e1e1;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(255, 255, 255, 0.05);
+        }
+
+        body.dark-mode .post-title {
+            color: #ffffff;
+        }
+
+        body.dark-mode .post-meta {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode .post-content {
+            color: #e1e1e1;
+        }
+
+        /* 다크모드 메인 컨텐츠 스타일 */
+        body.dark-mode main {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode main article {
+            background-color: #2d2d2d;
+            color: #e1e1e1;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 20px;
+        }
+
+        body.dark-mode .post-content h1,
+        body.dark-mode .post-content h2,
+        body.dark-mode .post-content h3,
+        body.dark-mode .post-content h4,
+        body.dark-mode .post-content h5,
+        body.dark-mode .post-content h6 {
+            color: #ffffff;
+        }
+
+        body.dark-mode main article .post-meta,
+        body.dark-mode main article .post-date {
+            color: #b0b0b0;
+        }
+
+        body.dark-mode main article .post-meta,
+        body.dark-mode main article .post-date {
+            color: #b0b0b0;
+        }
+
+        /* 게시글 본문 스타일 */
+        body.dark-mode main article p,
+        body.dark-mode main article li,
+        body.dark-mode main article table {
+            color: #e1e1e1;
+        }
+
+        body.dark-mode .post-content a {
+            color: #4a90e2;
+        }
+
+        body.dark-mode .post-content a:hover {
+            color: #5a9fef;
+        }
+
+        /* 다크모드에서 게시글 하단 내비게이션 */
+        body.dark-mode .post-navigation {
+            background-color: #2d2d2d;
+            border-top: 1px solid #404040;
+            color: #e1e1e1;
+        }
+
+        /* 코드 블록 스타일 */
+        body.dark-mode main article pre,
+        body.dark-mode main article code {
+            background-color: #1e1e1e;
+            color: #e1e1e1;
+            border: 1px solid #404040;
+        }
+
+        /* 인용구 스타일 */
+        body.dark-mode main article blockquote {
+            background-color: #363636;
+            border-left: 4px solid #4a90e2;
+            color: #e1e1e1;
+            padding: 10px 20px;
+            margin: 20px 0;
+        }
+
+        /* 표 스타일 */
+        body.dark-mode main article table {
+            border-color: #404040;
+        }
+
+        body.dark-mode main article th,
+        body.dark-mode main article td {
+            border-color: #404040;
+            color: #e1e1e1;
+        }
+
+        /* 이미지 캡션 스타일 */
+        body.dark-mode main article figcaption {
+            color: #b0b0b0;
+        }
+
+        /* 수평선 스타일 */
+        body.dark-mode main article hr {
+            border-color: #404040;
+        }
+
+
+
+
+        /* 트랜지션 효과 */
+        body,
+        .sidebar,
+        #calendar,
+        .fc-day,
+        .theme-toggle,
+        .sidebar-nav-item {
+            transition: all 0.3s ease;
+        }
     </style>
 
 </head>
@@ -354,6 +684,9 @@
     <div class="page-container">
         <div class="sidebar">
             <nav class="sidebar-nav">
+                <button id="darkModeToggle" class="theme-toggle">
+                    <i class="fa fa-moon-o"></i>
+                </button>
                 <a href="/" class="sidebar-nav-item">캘린더</a>
                 <a href="/further_reading/" class="sidebar-nav-item">추가 공부</a>
                 <a href="/paper_reviews/" class="sidebar-nav-item">논문 리뷰</a>
@@ -388,6 +721,9 @@
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script src="https://unpkg.com/lunr/lunr.js"></script>
+    <script src="{{ '/assets/js/copy-code.js' | relative_url }}"></script>
+
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             if (typeof mermaid !== 'undefined') {
@@ -412,7 +748,7 @@
             }
         };
     </script>
-    <script src="https://unpkg.com/lunr/lunr.js"></script>
+
     <script>
         var posts = [
             {% for post in site.posts %}
@@ -551,7 +887,34 @@
             });
         }
     </script>
-    <script src="{{ '/assets/js/copy-code.js' | relative_url }}"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const body = document.body;
+
+            // 저장된 테마 불러오기
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'dark') {
+                body.classList.add('dark-mode');
+                darkModeToggle.innerHTML = '<i class="fa fa-sun-o"></i>';
+            }
+
+            darkModeToggle.addEventListener('click', () => {
+                body.classList.toggle('dark-mode');
+
+                // 아이콘 변경
+                if (body.classList.contains('dark-mode')) {
+                    darkModeToggle.innerHTML = '<i class="fa fa-sun-o"></i>';
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    darkModeToggle.innerHTML = '<i class="fa fa-moon-o"></i>';
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        }); ㄹ1
+    </script>
+
 </body>
 
 </html>
