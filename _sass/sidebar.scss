@@ -1,0 +1,31 @@
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    background-color: #f8f9fa;
+    padding: 20px;
+    
+    .sidebar-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      
+      .sidebar-nav-item {
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        border-radius: 5px;
+        
+        &:hover {
+          background-color: #e9ecef;
+        }
+      }
+    }
+  }
+  
+  .content {
+    margin-left: 240px;
+    padding: 20px;
+  }

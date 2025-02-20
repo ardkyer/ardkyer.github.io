@@ -24,31 +24,24 @@
     </script>
 
     <style>
+        /* 기존 코드 블록 스타일 */
         .code-block-container {
             position: relative;
             background-color: #f8f8f8;
             border-radius: 6px;
             margin: 20px 0;
             padding: 20px;
-            /* 패딩 추가로 코드와 컨테이너의 간격 확보 */
             border: 1px solid #e0e0e0;
             overflow-x: auto;
-            /* 코드가 길 경우 가로 스크롤 추가 */
         }
 
         .code-block {
             font-family: 'Roboto Mono', monospace;
-            /* 모양이 더 나은 고정폭 폰트 사용 */
             font-size: 16px;
-            /* 글자 크기를 약간 줄임 */
             font-weight: bold;
-            /* 볼드체를 제거 */
             color: #333;
-            /* 글자 색상 */
             white-space: pre-wrap;
-            /* 긴 줄은 자동으로 줄바꿈 */
             word-wrap: break-word;
-            /* 단어가 너무 길 경우 줄바꿈 */
             margin: 0;
         }
 
@@ -96,6 +89,8 @@
         .copied .check-icon {
             display: inline;
         }
+
+        /* 푸터 및 소셜 아이콘 스타일 */
         footer {
             text-align: center;
             padding: 20px 0;
@@ -126,13 +121,22 @@
             transform: rotateY(180deg);
         }
 
-        /* 각 아이콘별 호버 색상 */
-        .social-icons a:hover .fa-instagram { color: #E1306C; }
-        .social-icons a:hover .fa-github { color: #333; }
-        .social-icons a:hover .fa-linkedin { color: #0077B5; }
-        .social-icons a:hover .fa-envelope { color: #D44638; }
+        .social-icons a:hover .fa-instagram {
+            color: #E1306C;
+        }
 
-        /* 3D 효과를 위한 추가 스타일 */
+        .social-icons a:hover .fa-github {
+            color: #333;
+        }
+
+        .social-icons a:hover .fa-linkedin {
+            color: #0077B5;
+        }
+
+        .social-icons a:hover .fa-envelope {
+            color: #D44638;
+        }
+
         .social-icons a::before,
         .social-icons a::after {
             content: '';
@@ -162,17 +166,185 @@
             transform: translateZ(10px);
         }
 
+        /* 비디오 스타일 */
         .responsive-video {
             max-width: 80%;
             width: 100%;
             display: block;
             margin: 1em auto;
             border-radius: 10px;
-            box-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
         }
 
         .gif-like-video {
             pointer-events: none;
+        }
+
+        /* 레이아웃 스타일 */
+        .page-container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        h1 {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .sidebar {
+            width: 200px;
+            /* 사이드바 너비를 약간 줄임 */
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-right: 1px solid #e9ecef;
+            height: 100vh;
+            position: fixed;
+            left: 0;
+            top: 0;
+        }
+
+        .sidebar-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .sidebar-nav-item {
+            color: #333;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar-nav-item:hover {
+            background-color: #e9ecef;
+        }
+
+        .content-wrap {
+            flex: 1;
+            margin-left: 200px;
+            /* 사이드바 너비에 맞춤 */
+            padding: 20px 20px;
+            /* 좌우 패딩 줄임 */
+            max-width: calc(100% - 200px);
+            /* 컨텐츠 최대 너비 설정 */
+        }
+
+        #calendar {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            /* 달력 너비를 컨테이너에 맞춤 */
+        }
+
+        .fc-header-toolbar {
+            padding: 0 10px;
+            margin-bottom: 1.5em !important;
+        }
+
+        .fc-toolbar-title {
+            font-size: 1.5em !important;
+            font-weight: 600 !important;
+        }
+
+        .fc-daygrid-day {
+            min-height: 120px !important;
+        }
+
+        .fc-daygrid-day-frame {
+            padding: 4px !important;
+        }
+
+        .fc-daygrid-day-number {
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        .fc-day-today {
+            background: rgba(74, 144, 226, 0.1) !important;
+        }
+
+        .fc-event {
+            margin: 2px 0 !important;
+            padding: 3px 5px !important;
+            border-radius: 4px !important;
+            font-size: 0.85em !important;
+        }
+
+        /* 이벤트 타입별 스타일 */
+        .post-event {
+            background-color: #4a90e2 !important;
+            border: none !important;
+            color: white !important;
+        }
+
+        .paper-review-event {
+            background-color: #50c878 !important;
+            border: none !important;
+            color: white !important;
+        }
+
+        .further-reading-event {
+            background-color: #9b59b6 !important;
+            border: none !important;
+            color: white !important;
+        }
+
+        .dev-log-event {
+            background-color: #f39c12 !important;
+            border: none !important;
+            color: white !important;
+        }
+
+        /* 검색 영역 스타일 */
+        #search-container {
+            width: 100%;
+            /* 검색창 너비도 컨테이너에 맞춤 */
+            margin: 20px 0;
+        }
+
+
+        #search-input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 1px solid #e1e1e1;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #search-button {
+            padding: 10px 20px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        #search-button:hover {
+            background-color: #357abd;
+        }
+
+        /* 반응형 스타일 */
+        @media screen and (max-width: 768px) {
+            .fc-toolbar {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .fc-daygrid-day {
+                min-height: 80px !important;
+            }
+        }
+
+        /* 기존 헤더 숨기기 */
+        .site-header {
+            display: none;
         }
     </style>
 
@@ -180,9 +352,16 @@
 
 <body>
     <div class="page-container">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="/" class="sidebar-nav-item">캘린더</a>
+                <a href="/further_reading/" class="sidebar-nav-item">추가 공부</a>
+                <a href="/paper_reviews/" class="sidebar-nav-item">논문 리뷰</a>
+                <a href="/dev_logs/" class="sidebar-nav-item">개발 일지</a>
+            </nav>
+        </div>
         <div class="content-wrap">
             {% include header.html %}
-
             <div id="search-container">
                 <input type="text" id="search-input" placeholder="검색...">
                 <button id="search-button" onclick="search()">검색</button>
@@ -192,16 +371,18 @@
                 {{ content }}
             </main>
         </div>
+    </div>
 
-        <footer>
-            <p>&copy; {{ site.title }}</p>
-            <div class="social-icons">
-                <a href="https://www.instagram.com/kangh_9" target="_blank"><i class="fa fa-instagram"></i></a>
-                <a href="https://github.com/ardkyer" target="_blank"><i class="fa fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/%ED%98%84%EA%B5%AC-%EA%B0%95-683a5a314/" target="_blank"><i class="fa fa-linkedin"></i></a>
-                <a href="mailto:khg0207k@gmail.com"><i class="fa fa-envelope"></i></a>
-            </div>
-        </footer>
+    <footer>
+        <p>&copy; {{ site.title }}</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/kangh_9" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://github.com/ardkyer" target="_blank"><i class="fa fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/%ED%98%84%EA%B5%AC-%EA%B0%95-683a5a314/" target="_blank"><i
+                    class="fa fa-linkedin"></i></a>
+            <a href="mailto:khg0207k@gmail.com"><i class="fa fa-envelope"></i></a>
+        </div>
+    </footer>
     </div>
 
     <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>

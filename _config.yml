@@ -55,11 +55,11 @@ rouge:
 
 date_format: "%Y-%m-%d"
 
-nav:
-  캘린더: /
-  추가 공부: /further_reading/
-  논문 리뷰: /paper_reviews/
-  개발일지: /dev_logs/ 
+# nav:
+#   캘린더: /
+#   추가 공부: /further_reading/
+#   논문 리뷰: /paper_reviews/
+#   개발일지: /dev_logs/ 
 
 collections:
   further_reading:

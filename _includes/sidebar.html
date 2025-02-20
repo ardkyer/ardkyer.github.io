@@ -1,8 +1,8 @@
 <div class="sidebar">
-    <h2>메뉴</h2>
-    <ul>
-        <li><a href="{{ '/' | relative_url }}">캘린더</a></li>
-        <li><a href="{{ '/further-reading/' | relative_url }}">추가 공부</a></li>
-        <li><a href="{{ '/paper-reviews/' | relative_url }}">논문 리뷰</a></li>
-    </ul>
-</div>
+    <nav class="sidebar-nav">
+      <a href="{{ site.baseurl }}/" class="sidebar-nav-item">캘린더</a>
+      <a href="{{ site.baseurl }}/extra-study" class="sidebar-nav-item">추가 공부</a>
+      <a href="{{ site.baseurl }}/paper-reviews" class="sidebar-nav-item">논문 리뷰</a>
+      <a href="{{ site.baseurl }}/dev-logs" class="sidebar-nav-item">개발 일지</a>
+    </nav>
+  </div>
