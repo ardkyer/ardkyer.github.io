@@ -4,20 +4,88 @@ layout: default
 {% include custom-styles.html %}
 {% if page.image_style %}
 <style>
-  .post-content img { {{ page.image_style | replace: '"', '' }} }
+.post-content img { {{ page.image_style | replace: '"', '' }} }
 </style>
 {% endif %}
+
+<style>
+/* 댓글 섹션 스타일 */
+.comments-section {
+    margin-top: 4rem;
+    border-top: 2px solid #e5e5e5;
+    padding-top: 2rem;
+}
+.comments-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: #333;
+}
+/* 다크모드 대응 */
+body.dark-mode .comments-section {
+    border-top-color: #404040;
+}
+body.dark-mode .comments-title {
+    color: #e1e1e1;
+}
+</style>
+
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
         <p class="post-meta">{{ page.date | date: "%Y년 %m월 %d일" }}</p>
     </header>
-
     <div class="post-content">
         {{ content }}
     </div>
+
+    <!-- 댓글 영역 -->
+    {% unless page.comments == false %}
+    <div class="comments-section">
+        <script src="https://giscus.app/client.js"
+            data-repo="ardkyer/ardkyer.github.io"
+            data-repo-id="R_kgDOMfbjzA"
+            data-category="General"
+            data-category-id="DIC_kwDOMfbjzM4CnNxo"
+            data-mapping="pathname"
+            data-strict="0"
+            data-reactions-enabled="1"
+            data-emit-metadata="1"
+            data-input-position="top"
+            data-theme="dark_dimmed"
+            data-lang="en"
+            data-loading="lazy"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+    {% endunless %}
 
     <div class="post-navigation">
         <a href="{{ '/' | relative_url }}" class="back-to-calendar">캘린더로 돌아가기</a>
     </div>
 </article>
+
+<!-- 다크모드 감지 및 테마 변경을 위한 스크립트 추가 -->
+<script>
+    function updateGiscusTheme() {
+        const iframe = document.querySelector('.giscus-frame');
+        if (iframe) {
+            const theme = document.body.classList.contains('dark-mode') ? 'dark_dimmed' : 'light';
+            iframe.contentWindow.postMessage(
+                { giscus: { setConfig: { theme } } },
+                'https://giscus.app'
+            );
+        }
+    }
+
+    // 다크모드 토글 버튼 클릭 이벤트에 연결
+    document.getElementById('darkModeToggle').addEventListener('click', () => {
+        setTimeout(updateGiscusTheme, 100);
+    });
+
+    // 초기 로드시에도 테마 확인
+    document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(updateGiscusTheme, 1000);
+    });
+</script>

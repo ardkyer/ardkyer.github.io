@@ -273,32 +273,43 @@
             padding: 3px 5px !important;
             border-radius: 4px !important;
             font-size: 0.85em !important;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease;
+        }
+
+        .fc-event:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        body.dark-mode .fc-event:hover {
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
         }
 
         /* 이벤트 타입별 스타일 */
         .post-event {
-            background-color: #4a90e2 !important;
-            border: none !important;
-            color: white !important;
-        }
+    background-color: #070808 !important; /* 연한 파랑 */
+    border: none !important;
+    color: #f61212 !important;
+}
 
-        .paper-review-event {
-            background-color: #50c878 !important;
-            border: none !important;
-            color: white !important;
-        }
+.paper-review-event {
+    background-color: rgba(138, 206, 157, 0.8) !important; /* 더 연한 초록 */
+    border: none !important;
+    color: #333 !important;
+}
 
-        .further-reading-event {
-            background-color: #9b59b6 !important;
-            border: none !important;
-            color: white !important;
-        }
+.further-reading-event {
+    background-color: rgba(183, 132, 213, 0.8) !important; /* 더 연한 보라 */
+    border: none !important;
+    color: #333 !important;
+}
 
-        .dev-log-event {
-            background-color: #f39c12 !important;
-            border: none !important;
-            color: white !important;
-        }
+.dev-log-event {
+    background-color: rgba(244, 182, 116, 0.8) !important; /* 더 연한 주황 */
+    border: none !important;
+    color: #333 !important;
+}
 
         /* 검색 영역 스타일 */
         #search-container {
@@ -448,23 +459,31 @@
 
         /* 달력 이벤트 다크모드에서 더 선명하게 */
         body.dark-mode .post-event {
-            background-color: #5a9fef !important;
+            background-color: #486C99 !important;
+            /* 진한 파랑 */
             color: #ffffff !important;
+            opacity: 0.9;
         }
 
         body.dark-mode .paper-review-event {
-            background-color: #60d888 !important;
+            background-color: #517A5F !important;
+            /* 진한 초록 */
             color: #ffffff !important;
+            opacity: 0.9;
         }
 
         body.dark-mode .further-reading-event {
-            background-color: #ab69c6 !important;
+            background-color: #6B4F80 !important;
+            /* 진한 보라 */
             color: #ffffff !important;
+            opacity: 0.9;
         }
 
         body.dark-mode .dev-log-event {
-            background-color: #f4a932 !important;
+            background-color: #956D45 !important;
+            /* 진한 주황 */
             color: #ffffff !important;
+            opacity: 0.9;
         }
 
 
