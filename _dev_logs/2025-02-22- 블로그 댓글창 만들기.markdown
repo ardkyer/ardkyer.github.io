@@ -1,0 +1,106 @@
+---
+layout: post
+title: "블로그 댓글창 만들기"
+date: 2025-02-22
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+
+
+## 댓글창만들기
+
+---
+
+
+
+이번엔 마지막으로 댓글창이다. 사실 얘는 시작도전에 고민이 좀 많았다. 
+
+기존 블로그는 렌더링되는 것만 있기에 백엔드는 신경을 전혀 쓰지 않아도 되었지만 댓글이나 채팅기능은 다른 문제기에 DB라던가 조금 까다롭지 않을까 생각했다.
+
+우선 Claude에게 자문을 구했는데 아래 Thrid Party를 추천해주었다.
+
+1. Utterances (추천)
+
+- GitHub Issues 기반의 댓글 시스템
+- 장점:
+  - 무료이며 광고가 없음
+  - GitHub 계정으로 로그인하므로 스팸 댓글 방지
+  - 가볍고 반응이 빠름
+  - 마크다운 지원
+
+음. 원래 소셜로그인 같은 걸로 스팸 댓글을 방지하려 했는데 이렇게 설정하면 어차피 동시에 될 것 같았다. Deploy도 Github로 하는 김에 이렇게 된거 댓글창도 Github의 도움을 빌리기로 했다. DB설정도 따로 할 필요 없어서 편했다.
+
+
+
+## Utterances 설정법
+
+https://github.com/apps/utterances
+
+사이트에 들어가서 내 해당 사용할 repository를 고른다. 그런 다음 내가 원하는 세팅을 클릭하면 템플릿이 나오게 되고 아래와 같은 템플릿을 html에 붙이기만 하면 된다. 
+
+```
+<!-- 댓글 영역 추가 -->
+  <div class="utterances-comment">
+    <script src="https://utteranc.es/client.js"
+            repo="[사용자명]/[저장소명]"
+            issue-term="pathname"
+            theme="github-dark"
+            crossorigin="anonymous"
+            async>
+    </script>
+  </div>
+```
+
+그러면 댓글이 달릴때마다 자동으로 Github issues에 해당 글의 댓글이 달리고 그게 자동으로 웹페이지에 연동되어 보이게 된다. 
+
+![image-20250223043650238](/assets/images/2025-02-22- 블로그 댓글창 만들기/image-20250223043650238.png)
+
+근데 조금 아쉬운건 댓글 수정기능이 없고 댓글 답글도 없다. 수정은 없다 쳐도 답글은 있어야 될 거 같아 다시 Claude에게 더 나은 방법을 물었더니 Giscus를 추천해주었다.
+
+
+
+## Giscus 설정법
+
+---
+
+Utterances에서 영감을 받은 Third Party이다. 
+
+Utterances가 Github issues를 원리로 작동한다면 이 친구는 Github Disscussions 사용해 작동한다.
+
+그 차이뿐이다. 
+
+https://github.com/apps/giscus 이 사이트에 들어가 설정도 비슷하게 하면 똑같이 템플릿이 산출되고 그걸 코드에 적용하면 된다.
+
+![image-20250223044124181](/assets/images/2025-02-22- 블로그 댓글창 만들기/image-20250223044124181.png)
+
+노린건 아닌데 레이아웃도 전보다 훨씬 깔끔해졌다. 이제 좀 마음에 드네
+
+그리고 댓글창은 다크모드와 직접적으로 또 연동이 안되길래 localstorage와 연동해서 얘도 웹페이지의 지금 모드에 따라 댓글창도 라이트모드, 다크모드가 자동으로 바꾸게 수정하였다. 
+
+아, 그리고 댓글이 달리면 자동으로 메일 알림도 온다. 이 댓글 프로그램 무료인데 되게 유용한 것 같다.
+
+
+
+## 블로그 수정 끝
+
+---
+
+확실히 Claude가 요즘 빠릿빠릿하다. 
+
+내가 생각한 블로그 기능들은 얼추 다 구현이 끝난 것 같다. 
+
+다른거 뭐 구현할 거 없을 것 같다. 이제 뭐하지.
+
+
+
+
+
+
+
+
+
+
+
+
+

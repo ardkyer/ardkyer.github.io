@@ -68,7 +68,7 @@ collections:
   paper_reviews:
     output: true
     permalink: /paper_reviews/:title/
-  dev_logs:  
+  dev_logs:
     output: true
     permalink: /dev_logs/:title/
 

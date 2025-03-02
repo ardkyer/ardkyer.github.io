@@ -1,0 +1,58 @@
+---
+layout: post
+title: "블로그 다크모드 만들기"
+date: 2025-02-21
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+
+
+## 다크모드를 만들었다.
+
+---
+
+확실히 요즘 클로드가 더 빠릿빠릿한거같다.
+
+몇개월전에 만들려했는데 통 말을 못 알아들어서 실패했는데 이번엔 구현에 3시간도 안걸린 것 같다.
+
+비수기라 그런가. 또 대학생들 시험기간되면 LLM 얘들 빌빌댈 생각하니까 끔찍하다.
+
+![image-20250223041524562](/assets/images/2025-02-21- 블로그 다크모드 만들기/image-20250223041524562.png)
+
+이제 좌상단의 달 모양 버튼을 누르면 아래와 같이 바뀐다.
+
+![image-20250223041727767](/assets/images/2025-02-21- 블로그 다크모드 만들기/image-20250223041727767.png)
+
+css 하나하나 다 자연스럽게 바꿔주느라 여간 힘든게 아니었다. 
+
+처음엔 토글 버튼을 눌러야 거기에 맞게 라이트 다크 모드로 바꾸게 했지만 그러면 댓글창이나 다른 부분과 싱크가 안 맞는 경우가 있어 현재 모드를 localstorage에 저장하고 나머지 부분도 거기에 맞춰 모드를 통일화시켜 어긋나지 않도록 수정하였다.
+
+<br>
+
+## 시연 영상
+
+---
+
+
+
+<video src="/assets/videos/dark_mode.mov" 
+       class="responsive-video gif-like-video" 
+       autoplay 
+       loop 
+       muted 
+       playsinline>
+</video>
+
+
+
+영상에도 나와있긴한데 다음에 만들 댓글도 같이 건드려줬다. 이건 다음 포스팅에 작성.
+
+
+
+ 
+
+
+
+
+

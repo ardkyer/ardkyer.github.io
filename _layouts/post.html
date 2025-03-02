@@ -70,22 +70,34 @@ body.dark-mode .comments-title {
 <script>
     function updateGiscusTheme() {
         const iframe = document.querySelector('.giscus-frame');
+        const savedTheme = localStorage.getItem('theme');
+        const isDarkMode = savedTheme === 'dark';
+        
         if (iframe) {
-            const theme = document.body.classList.contains('dark-mode') ? 'dark_dimmed' : 'light';
+            const theme = isDarkMode ? 'dark_dimmed' : 'light';
             iframe.contentWindow.postMessage(
                 { giscus: { setConfig: { theme } } },
                 'https://giscus.app'
             );
         }
     }
-
+    
+    // Giscus 설정에 초기 테마 적용
+    document.addEventListener('DOMContentLoaded', function() {
+        const savedTheme = localStorage.getItem('theme');
+        const giscusScript = document.querySelector('.comments-section script');
+        if (savedTheme === 'dark') {
+            giscusScript.setAttribute('data-theme', 'dark_dimmed');
+        } else {
+            giscusScript.setAttribute('data-theme', 'light');
+        }
+        
+        // iframe이 로드된 후 테마 업데이트
+        setTimeout(updateGiscusTheme, 1000);
+    });
+    
     // 다크모드 토글 버튼 클릭 이벤트에 연결
     document.getElementById('darkModeToggle').addEventListener('click', () => {
         setTimeout(updateGiscusTheme, 100);
     });
-
-    // 초기 로드시에도 테마 확인
-    document.addEventListener('DOMContentLoaded', () => {
-        setTimeout(updateGiscusTheme, 1000);
-    });
-</script>
+    </script>
