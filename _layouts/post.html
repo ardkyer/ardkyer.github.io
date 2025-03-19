@@ -4,32 +4,92 @@ layout: default
 {% include custom-styles.html %}
 {% if page.image_style %}
 <style>
-.post-content img { {{ page.image_style | replace: '"', '' }} }
+    .post-content img {
+        {{ page.image_style | replace: '"', '' }}
+    }
 </style>
 {% endif %}
-
 <style>
-/* 댓글 섹션 스타일 */
-.comments-section {
-    margin-top: 4rem;
-    border-top: 2px solid #e5e5e5;
-    padding-top: 2rem;
-}
-.comments-title {
-    font-size: 1.8rem;
-    font-weight: bold;
-    margin-bottom: 2rem;
-    color: #333;
-}
-/* 다크모드 대응 */
-body.dark-mode .comments-section {
-    border-top-color: #404040;
-}
-body.dark-mode .comments-title {
-    color: #e1e1e1;
-}
-</style>
+    /* 댓글 섹션 스타일 */
+    .comments-section {
+        margin-top: 4rem;
+        border-top: 2px solid #e5e5e5;
+        padding-top: 2rem;
+    }
 
+    .comments-title {
+        font-size: 1.8rem;
+        font-weight: bold;
+        margin-bottom: 2rem;
+        color: #333;
+    }
+
+    /* 다크모드 대응 */
+    body.dark-mode .comments-section {
+        border-top-color: #404040;
+    }
+
+    body.dark-mode .comments-title {
+        color: #e1e1e1;
+    }
+
+    /* 관련 게시물 스타일 */
+    .related-posts {
+        margin-top: 4rem;
+        border-top: 2px solid #e5e5e5;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .related-posts h3 {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 1.5rem;
+        color: #333;
+    }
+
+    .related-posts ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .related-posts li {
+        margin-bottom: 0.8rem;
+    }
+
+    .related-posts a {
+        text-decoration: none;
+        color: #2a7ae2;
+        font-weight: 500;
+    }
+
+    .related-posts a:hover {
+        text-decoration: underline;
+    }
+
+    .related-posts .text-muted {
+        color: #777;
+        font-size: 0.9em;
+        font-style: italic;
+    }
+
+    /* 다크모드 대응 - 관련 게시물 */
+    body.dark-mode .related-posts {
+        border-top-color: #404040;
+    }
+
+    body.dark-mode .related-posts h3 {
+        color: #e1e1e1;
+    }
+
+    body.dark-mode .related-posts a {
+        color: #6ea8fe;
+    }
+
+    body.dark-mode .related-posts .text-muted {
+        color: #aaa;
+    }
+</style>
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
@@ -39,40 +99,29 @@ body.dark-mode .comments-title {
         {{ content }}
     </div>
 
+    <!-- 관련 게시물 영역 -->
+    {% include related-posts.html %}
+
     <!-- 댓글 영역 -->
     {% unless page.comments == false %}
     <div class="comments-section">
-        <script src="https://giscus.app/client.js"
-            data-repo="ardkyer/ardkyer.github.io"
-            data-repo-id="R_kgDOMfbjzA"
-            data-category="General"
-            data-category-id="DIC_kwDOMfbjzM4CnNxo"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="1"
-            data-input-position="top"
-            data-theme="dark_dimmed"
-            data-lang="en"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async>
-        </script>
+        <script src="https://giscus.app/client.js" data-repo="ardkyer/ardkyer.github.io" data-repo-id="R_kgDOMfbjzA"
+            data-category="General" data-category-id="DIC_kwDOMfbjzM4CnNxo" data-mapping="pathname" data-strict="0"
+            data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-theme="dark_dimmed"
+            data-lang="en" data-loading="lazy" crossorigin="anonymous" async>
+            </script>
     </div>
     {% endunless %}
-
     <div class="post-navigation">
         <a href="{{ '/' | relative_url }}" class="back-to-calendar">캘린더로 돌아가기</a>
     </div>
 </article>
-
 <!-- 다크모드 감지 및 테마 변경을 위한 스크립트 추가 -->
 <script>
     function updateGiscusTheme() {
         const iframe = document.querySelector('.giscus-frame');
         const savedTheme = localStorage.getItem('theme');
         const isDarkMode = savedTheme === 'dark';
-        
         if (iframe) {
             const theme = isDarkMode ? 'dark_dimmed' : 'light';
             iframe.contentWindow.postMessage(
@@ -81,9 +130,8 @@ body.dark-mode .comments-title {
             );
         }
     }
-    
     // Giscus 설정에 초기 테마 적용
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const savedTheme = localStorage.getItem('theme');
         const giscusScript = document.querySelector('.comments-section script');
         if (savedTheme === 'dark') {
@@ -91,13 +139,11 @@ body.dark-mode .comments-title {
         } else {
             giscusScript.setAttribute('data-theme', 'light');
         }
-        
         // iframe이 로드된 후 테마 업데이트
         setTimeout(updateGiscusTheme, 1000);
     });
-    
     // 다크모드 토글 버튼 클릭 이벤트에 연결
     document.getElementById('darkModeToggle').addEventListener('click', () => {
         setTimeout(updateGiscusTheme, 100);
     });
-    </script>
+</script>

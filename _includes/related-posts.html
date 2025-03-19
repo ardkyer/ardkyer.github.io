@@ -1,0 +1,155 @@
+<!-- 현재 페이지 URL 디버깅 -->
+<div style="display: none;">
+    현재 페이지 URL: {{ page.url }}
+  </div>
+  
+  {% assign url_without_html = page.url | replace: '.html', '' %}
+  {% assign url_with_html = page.url %}
+  {% assign url_with_spaces = page.url | replace: '-', ' ' %}
+  {% assign url_without_spaces = page.url | replace: ' ', '-' %}
+  
+  {% if site.data.related_posts[url_with_html] or site.data.related_posts[url_without_html] or site.data.related_posts[url_with_spaces] %}
+    <div class="related-posts">
+      <h3 class="related-posts-title">관련 게시물</h3>
+      <div class="related-posts-grid">
+        {% assign related_posts = site.data.related_posts[url_with_html] | default: site.data.related_posts[url_without_html] | default: site.data.related_posts[url_with_spaces] %}
+        {% for post in related_posts limit: 3 %}
+          <a href="{{ post.url }}" class="related-post-card-link">
+            <div class="related-post-card">
+              <h4 class="related-post-title">{{ post.title }}</h4>
+              <p class="related-post-tag">유사한 주제의 게시물</p>
+              {% if post.reason %}
+              <p class="related-post-reason">{{ post.reason }}</p>
+              {% endif %}
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    <!-- URL이 일치하지 않을 때 태그와 카테고리에 기반한 관련 게시물 표시 -->
+    {% assign similar_posts = site.posts | where_exp: "post", "post.url != page.url" | sample: 4 %}
+    {% if similar_posts.size > 0 %}
+      <div class="related-posts">
+        <h3 class="related-posts-title">관련 게시물</h3>
+        <div class="related-posts-grid">
+          {% for post in similar_posts limit: 3 %}
+            <a href="{{ post.url }}" class="related-post-card-link">
+              <div class="related-post-card">
+                <h4 class="related-post-title">{{ post.title }}</h4>
+                <p class="related-post-tag">유사한 주제의 게시물</p>
+                <p class="related-post-date">작성일: {{ post.date | date: "%Y-%m-%d" }}</p>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  {% endif %}
+  
+  <style>
+    .related-posts {
+      margin-top: 4rem;
+      border-top: 2px solid #e5e5e5;
+      padding-top: 2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .related-posts-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #333;
+    }
+    
+    .related-posts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .related-post-card-link {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    
+    .related-post-card {
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      border-left: 4px solid #2196F3;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .related-post-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+      background-color: #f9f9f9;
+    }
+    
+    .related-post-title {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: #333333;
+    }
+    
+    .related-post-tag {
+      font-size: 0.8rem;
+      color: #2196F3;
+      margin-bottom: 0.5rem;
+    }
+    
+    .related-post-reason {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 0.8rem;
+      flex-grow: 1;
+    }
+    
+    .related-post-date {
+      font-size: 0.8rem;
+      color: #7f8c8d;
+      margin-top: auto;
+    }
+    
+    /* 다크 모드 지원 */
+    body.dark-mode .related-posts {
+      border-top-color: #404040;
+    }
+    
+    body.dark-mode .related-posts-title {
+      color: #e1e1e1;
+    }
+    
+    body.dark-mode .related-post-card {
+      background-color: #333333;
+      border-left-color: #4a77db;
+    }
+    
+    body.dark-mode .related-post-card:hover {
+      background-color: #3a3a3a;
+    }
+    
+    body.dark-mode .related-post-title {
+      color: #ecf0f1;
+    }
+    
+    body.dark-mode .related-post-tag {
+      color: #6ea8fe;
+    }
+    
+    body.dark-mode .related-post-reason {
+      color: #bdc3c7;
+    }
+    
+    body.dark-mode .related-post-date {
+      color: #95a5a6;
+    }
+  </style>
