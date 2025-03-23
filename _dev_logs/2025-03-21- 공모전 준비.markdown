@@ -169,6 +169,54 @@ PDF 문서 -> OCR/텍스트 추출 -> 전처리 -> 청크 분할 -> 임베딩 �
 
 
 
+## 초기 파일구조
+
+```
+labor-policy-assistant/
+├── backend/
+│   ├── app/
+│   │   ├── api/
+│   │   │   ├── endpoints/
+│   │   │   │   ├── auth.py
+│   │   │   │   ├── policies.py
+│   │   │   │   ├── profiles.py
+│   │   │   │   └── chat.py
+│   │   │   └── deps.py
+│   │   ├── core/
+│   │   │   ├── config.py
+│   │   │   └── security.py
+│   │   ├── db/
+│   │   │   ├── base.py
+│   │   │   └── models.py
+│   │   ├── services/
+│   │   │   ├── pdf_processor.py
+│   │   │   ├── vector_search.py
+│   │   │   ├── policy_matcher.py
+│   │   │   ├── llm_service.py
+│   │   │   └── notification.py
+│   │   └── main.py
+│   ├── celery_worker.py
+│   ├── Dockerfile
+│   └── requirements.txt
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── App.js
+│   │   └── index.js
+│   ├── package.json
+│   └── Dockerfile
+├── data/
+│   └── policies/
+├── scripts/
+│   ├── pdf_parser.py
+│   └── vector_indexer.py
+├── docker-compose.yml
+└── README.md
+```
+
 
 
 
