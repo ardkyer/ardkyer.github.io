@@ -81,7 +81,7 @@ def perform_ocr_on_images(image_folder, output_folder, num_pages):
 
 우선 5페이지로 샘플링된 pdf로 테스트해보니 이미지, 해당 페이지의 텍스트, 전체 테스트까지 잘 산출되었다.
 
-![image-20250324020313158](/assets/img2025-03-23- PDF OCR 하기/image-20250324020313158.png)
+###### ![image-20250327015445777](/assets/img//image-20250327015445777.png)
 
 **Page_3.txt**
 
@@ -310,7 +310,7 @@ if __name__ == "__main__":
 
 python scripts/upload_vectors.py
 
-![image-20250324021337047](/assets/img2025-03-23- PDF OCR 하기/image-20250324021337047.png)
+![image-20250327015502208](/assets/img//image-20250327015502208.png)
 
 원래는 page는 저장이 안되었는데 코드를 수정하여
 

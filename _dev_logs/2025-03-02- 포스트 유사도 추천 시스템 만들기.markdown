@@ -41,19 +41,19 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 ### 티스토리
 
-![image-20250304005248660](/assets/images/2025-03-02- 포스트 유사도 추천 시스템 만들기/image-20250304005248660.png)
+![image-20250327014955743](/assets/img//image-20250327014955743.png)
 
 
 
 ### Velog
 
-![image-20250304005145673](/assets/images/2025-03-02- 포스트 유사도 추천 시스템 만들기/image-20250304005145673.png)
+![image-20250327015009429](/assets/img//image-20250327015009429.png)
 
 
 
 ### 네이버 블로그
 
-![image-20250304005542345](/assets/images/2025-03-02- 포스트 유사도 추천 시스템 만들기/image-20250304005542345.png)
+![image-20250327015031154](/assets/img//image-20250327015031154.png)
 
 
 

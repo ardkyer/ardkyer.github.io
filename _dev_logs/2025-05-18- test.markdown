@@ -8,4 +8,3 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 
 
-![image-20250324122333569](/assets/img//image-20250324122333569.png)

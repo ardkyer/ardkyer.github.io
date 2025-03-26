@@ -48,7 +48,9 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 걍 css도 위에다 붙였다.
 
-![image-20250223010907892](/assets/images/2025-02-20- 블로그 사이드바 만들기/image-20250223010907892.png)
+![image-20250327014715039](/assets/img//image-20250327014715039.png)
+
+
 
 음 전보다 훨씬 깔끔한듯. 전에거 찍어놓을걸. 리셋하고 다시 찍기 귀찮다.
 
