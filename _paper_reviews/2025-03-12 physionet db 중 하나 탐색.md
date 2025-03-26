@@ -23,7 +23,7 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 ## s3의 데이터
 
-![image-20250319152051626](/assets/img2025-03-12 physionet db 중 하나 탐색/image-20250319152051626.png)
+![image-20250327020503810](/assets/img/image-20250327020503810.png)
 
 
 
@@ -53,13 +53,13 @@ height_threshold = np.std(ecg_data) * 2 이렇게하니까 peak가 잘 검출이
 
 height_threshold = np.std(ecg_data) * 1.5 값도 수정해보면서 해보려햇는데 워낙 비정규적이라 애매함.
 
-![image-20250319152328487](/assets/img2025-03-12 physionet db 중 하나 탐색/image-20250319152328487.png)
+![image-20250327020516588](/assets/img/image-20250327020516588.png)
 
 
 
 피크검출이 안 대서 그래프가 이상하게 나옴
 
-![image-20250319152351324](/assets/img2025-03-12 physionet db 중 하나 탐색/image-20250319152351324.png)
+![image-20250327020530979](/assets/img/image-20250327020530979.png)
 
 
 

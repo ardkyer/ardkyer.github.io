@@ -14,19 +14,19 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 걷기, 뛰기, 저저항 자전거, 고저항 자전거에서의 ECG와 PPG 그래프 비교
 
-![image-20250319153736148](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319153736148.png)
+![image-20250327020554890](/assets/img/image-20250327020554890.png)
 
 
 
-![image-20250319153804276](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319153804276.png)
+![image-20250327020611476](/assets/img/image-20250327020611476.png)
 
 
 
-![image-20250319153825788](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319153825788.png)
+![image-20250327020626180](/assets/img/image-20250327020626180.png)
 
 
 
-![image-20250319153841293](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319153841293.png)
+![image-20250327020639187](/assets/img/image-20250327020639187.png)
 
 
 
@@ -100,11 +100,11 @@ A: 순서가 달라서 안댐. 우리가 그걸 운동이라고 알고 필터링
 
 ## 시간도메인 그래프
 
-![image-20250319154204217](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319154204217.png)
+![image-20250327020655288](/assets/img/image-20250327020655288.png)
 
 ## 주파수 도메인 그래프
 
-![image-20250319154235262](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319154235262.png)
+![image-20250327020707420](/assets/img/image-20250327020707420.png)
 
 
 
@@ -129,19 +129,19 @@ GPT Answer:
 
 ## 시간 도메인 그래프 
 
-![image-20250319154339103](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319154339103.png)
+![image-20250327020727047](/assets/img/image-20250327020727047.png)
 
 
 
 ## 주파수 도메인 그래프
 
-![image-20250319154400618](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319154400618.png)
+![image-20250327020739978](/assets/img/image-20250327020739978.png)
 
 
 
 
 
-![image-20250319154420375](/assets/img2025-03-19 Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링/image-20250319154420375.png)
+![image-20250327020754780](/assets/img/image-20250327020754780.png)
 
 
 
