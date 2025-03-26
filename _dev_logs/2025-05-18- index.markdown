@@ -7,5 +7,3 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 ---
 
 Test
-
-![image-20250327015942001](/assets/img//image-20250327015942001.png)
