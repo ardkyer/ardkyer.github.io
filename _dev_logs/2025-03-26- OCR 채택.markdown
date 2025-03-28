@@ -702,7 +702,7 @@ Contents
 
 
 
-1. Pinecone에 OCR로 바뀐 샘플링된 텍스트 넣기
+1. Pinecone에 OCR로 바뀐 샘플링된 텍스트 넣기 - python scripts/upload_vectors_langchain.py   
 2. 백엔드 API 구성하고 샘플링된 텍스트데이터로 잘 되나 테스트
    - LLM 만들기
    - 추천시스템 만들기
