@@ -1,0 +1,172 @@
+---
+layout: post
+title: "프젝 시마이치고 배포"
+date: 2025-12-31
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+## 저번 포스팅에서 할일
+
+규칙 기반 추천 시스템 구현 계획
+
+이건 솔직히 데이터들이 너무 파편화되어잇고 상태가 별로라 하는게 힘들것같다.
+
+이걸 할 거 같은데 잘 모르것다. 솔직히 데이터찾는게 더 오래걸려서. 
+
+최대한 데이터찾고
+
+프랜차이즈나 지역별 유행업종 이런류의 데이터도 찾고
+
+ 하나의 .csv로 변환하고
+
+그러면 좀 나으려나..? 아니면 걍 여기까지 할까. 
+
+
+
+## 음.. 그래서
+
+솔직히 좀 막막해서 자면서 여러가지 생각을 해봤다. 솔직히 추천 시스템 파이프라인을 만지는 일은 어렵지 않다. 데이터가 풍부하면 풍부할수록 최대한 다양화 해줄 수 도 있다.
+
+근데 문제가 너무 데이터가 한정적이다. 지금 보이는 것도 최신 거 없어서 2022년도 쓰고있기도 하고, 이게 실제 쓰일일은 없겠지만 정확하지 않은 불안정한 데이터로 누군가에게 함부로 추천을 한다는 일은 너무도 위험한 일이라고 생각했다.
+
+그리고 결정적으로 이거 공모전 제출이 3~4일밖에 안남았다. 그냥 지금까지 한거에서 완성도를 높이고 배포하고 제출하는게 낫다고 판단되었다.
+
+
+
+# 서울 스타트업 네비게이터 프로젝트 개발 과정: UI/UX 개선과 인터랙션 디자인
+
+'서울 스타트업 네비게이터' 프로젝트의 UI/UX를 크게 개선
+
+## 기존 문제점
+
+1. 사용자 첫인상 부재
+   - 앱 실행 시 인트로나 브랜딩 요소 없이 바로 지도가 표시됨
+   - 앱의 목적과 기능을 직관적으로 이해하기 어려움
+2. UI 요소 간 일관성 부족
+   - 헤더, 챗봇 등 각 UI 요소가 시각적으로 통일성이 부족함
+   - 색상 체계가 일관되지 않아 산만한 느낌
+3. 사용자 인터랙션 피드백 부족
+   - 챗봇 로딩 표시가 정적인 "..." 텍스트로만 표현됨
+   - 챗봇 창의 위치가 적절하지 않아 사용성 저하
+
+## 개선 내용
+
+### 1. 인트로 시퀀스 구현
+
+```jsx
+// IntroSequence.js
+import React, { useEffect, useState } from 'react';
+import './IntroSequence.css';
+
+const IntroSequence = ({ onComplete }) => {
+  const [minimized, setMinimized] = useState(false);
+  
+  useEffect(() => {
+    // 인트로 → 헤더 전환 애니메이션
+    const timer1 = setTimeout(() => setMinimized(true), 2000);
+    const timer2 = setTimeout(() => onComplete(), 3200);
+    
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+    };
+  }, [onComplete]);
+  
+  return (
+    <div className={`intro-overlay ${minimized ? 'minimized' : ''}`}>
+      <div className={`intro-content ${minimized ? 'minimized' : ''}`}>
+        <h1>서울 스타트업 네비게이터</h1>
+        <p className="tagline">데이터로 보는 서울의 창업 기회</p>
+      </div>
+    </div>
+  );
+};
+```
+
+- 앱 실행 시 전체 화면 인트로가 표시된 후 자연스럽게 상단 헤더로 전환
+- 부드러운 애니메이션으로 시각적 즐거움 제공
+- 사용자에게 앱의 목적을 직관적으로 전달
+
+### 2. 챗봇 UI/UX 개선
+
+```css
+/* 로딩 애니메이션 개선 */
+@keyframes bounce {
+  0%, 80%, 100% {
+    transform: scale(0);
+    opacity: 0.2;
+  }
+  40% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.loading-indicator span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin: 0 3px;
+  background-color: #666;
+  border-radius: 50%;
+  animation: bounce 1.4s infinite ease-in-out both;
+}
+```
+
+- 챗봇 버튼 위치와 크기 최적화
+- 챗봇 창이 버튼 바로 위에 나타나도록 위치 조정
+- 로딩 인디케이터에 애니메이션 추가하여 반응성 향상
+
+### 3. 레이아웃 및 공간 활용 개선
+
+```css
+.app-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  z-index: 100;
+}
+
+.map-container {
+  top: 64px;
+  height: calc(100vh - 64px);
+}
+```
+
+- 헤더와 지도 간 간격 최적화
+- 화면 하단의 요소들이 모두 보이도록 여백 조정
+- 전체적인 화면 구성의 균형과 가독성 향상
+
+
+
+## 배포 -> Vercel
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

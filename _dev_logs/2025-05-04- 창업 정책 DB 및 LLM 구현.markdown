@@ -1,0 +1,124 @@
+---
+layout: post
+title: "창업 정책 DB 및 LLM 구현"
+date: 2025-05-04
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+## 이렇게 해서 지도는 완성했다. 근데 다음에 만들게 
+
+- 간단한 규칙 기반 추천 시스템 구현 (예: 업종별 성공 요인, 지역별 추천 업종)
+- 창업 정책 데이터베이스 구축 및 LLM 통합
+
+이건데 어카지. 좀 막막하다. 지금의 미약한 데이터베이스로는 얘네를 솔직히 만들 자신이 없다. 
+
+
+
+우선 창업정책들을 쭈아악 받아보고 LLM에 넣어서 한번 그것부터 만들어볼까..
+
+아니면 크롤링해가지고 지역별 추천음식점, 프랜차이즈 이런거라도 있어야 댈거같은데.. 흠..
+
+
+
+1. 규칙 기반 추천 시스템 구현 계획
+
+이건 솔직히 데이터들이 너무 파편화되어잇고 상태가 별로라 하는게 힘들것같다.
+
+2. 창업 정책 DB 및 LLM 통합 설계
+
+이것부터 구현하자.
+
+
+
+## 창업 정책 DB 및 LLM 통합 설계
+
+
+
+![image-20250504070356664](/assets/img/image-20250504070356664.png)
+
+
+
+## 완성
+
+이번엔 벡터DB안쓰고 걍 .json을 토대로 함.
+
+데이터가 너무 부족하기도 하고 사실 이번엔 상식적인 질문들이 많을 것 같아서 그냥 Chatgpt에게 권한을 많이 위임했음.
+
+대신에 추천 질문을 미리 스크립트화 해놔서 사용자가 최대한 올바른 길로 가게 해놨음.
+
+```
+async getChatResponse(message, chatHistory = []) {
+        try {
+            // 시스템 프롬프트 설정
+            const systemPrompt = `당신은 서울시 창업 정책 어드바이저입니다.
+        다음 정책 데이터를 기반으로 사용자의 창업 관련 질문에 답변해주세요.
+        친절하고 쉬운 말로 설명해주세요. 전문 용어는 가능한 풀어서 설명하고,
+        긴 문단보다는 짧은 문장으로 끊어서 설명하는 것이 좋습니다.
+        필요한 경우 글머리 기호(•)를 사용하여 내용을 구분하세요.
+        정책 정보가 부족하거나 불확실할 때는, 솔직하게 모른다고 말하고,
+        대신 적절한 기관을 추천해주세요.
+
+        정책 데이터: ${JSON.stringify(startupPolicies)}`;
+
+            // 채팅 기록 포맷팅
+            const formattedHistory = chatHistory.map(msg => ({
+                role: msg.sender === 'user' ? 'user' : 'assistant',
+                content: msg.content
+            }));
+
+            // API 요청 데이터
+            const requestData = {
+                model: "gpt-3.5-turbo", // 또는 다른 모델
+                messages: [
+                    { role: "system", content: systemPrompt },
+                    ...formattedHistory,
+                    { role: "user", content: message }
+                ],
+                temperature: 0.7,
+                max_tokens: 500
+            };
+
+            // API 호출
+            const response = await axios.post(
+                OPENAI_API_URL,
+                requestData,
+                {
+                    headers: {
+                        'Authorization': `Bearer ${this.apiKey}`,
+                        'Content-Type': 'application/json'
+                    }
+                }
+            );
+```
+
+
+
+벡터DB도 안쓰고 백엔드도 구현안하고 만든거라 이번엔 저번보다 훨씬 빨리만든듯.
+
+대신 좀 대답이 약간 아쉬울 수 있다. 이정도? 
+
+
+
+## 아마 다음 포스팅에는
+
+규칙 기반 추천 시스템 구현 계획
+
+이건 솔직히 데이터들이 너무 파편화되어잇고 상태가 별로라 하는게 힘들것같다.
+
+이걸 할 거 같은데 잘 모르것다. 솔직히 데이터찾는게 더 오래걸려서. 
+
+최대한 데이터찾고
+
+프랜차이즈나 지역별 유행업종 이런류의 데이터도 찾고
+
+ 하나의 .csv로 변환하고
+
+그러면 좀 나으려나..? 아니면 걍 여기까지 할까. 
+
+
+
+
+
+
+
