@@ -1,0 +1,270 @@
+---
+layout: post
+title: "종설프1"
+date: 2025-05-16
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+
+
+
+
+```
+aod-frontend/
+├── public/
+│   ├── index.html
+│   ├── favicon.ico
+│   └── assets/
+│       └── images/
+│
+├── src/
+│   ├── api/
+│   │   ├── index.js
+│   │   ├── moviesApi.js
+│   │   ├── gamesApi.js
+│   │   ├── webtoonsApi.js
+│   │   ├── novelsApi.js
+│   │   └── ottApi.js
+│   │
+│   ├── components/
+│   │   ├── common/
+│   │   │   ├── Navbar.js
+│   │   │   ├── Sidebar.js
+│   │   │   ├── Footer.js
+│   │   │   ├── ContentCard.js
+│   │   │   ├── ContentGrid.js
+│   │   │   ├── ContentTabs.js
+│   │   │   ├── Pagination.js
+│   │   │   ├── SearchBox.js
+│   │   │   └── LoadingSpinner.js
+│   │   │
+│   │   ├── movies/
+│   │   │   ├── MovieDetail.js
+│   │   │   ├── MovieList.js
+│   │   │   └── MovieFilters.js
+│   │   │
+│   │   ├── games/
+│   │   │   ├── GameDetail.js
+│   │   │   ├── GameList.js
+│   │   │   └── GameFilters.js
+│   │   │
+│   │   ├── webtoons/
+│   │   │   ├── WebtoonDetail.js
+│   │   │   ├── WebtoonList.js
+│   │   │   └── WebtoonFilters.js
+│   │   │
+│   │   ├── novels/
+│   │   │   ├── NovelDetail.js
+│   │   │   ├── NovelList.js
+│   │   │   └── NovelFilters.js
+│   │   │
+│   │   └── ott/
+│   │       ├── OttDetail.js
+│   │       ├── OttList.js
+│   │       └── OttFilters.js
+│   │
+│   ├── contexts/
+│   │   ├── ThemeContext.js
+│   │   ├── AuthContext.js
+│   │   └── ContentContext.js
+│   │
+│   ├── hooks/
+│   │   ├── useDebounce.js
+│   │   ├── usePagination.js
+│   │   ├── useLocalStorage.js
+│   │   └── useContentFetch.js
+│   │
+│   ├── pages/
+│   │   ├── Home.js
+│   │   ├── MoviePage.js
+│   │   ├── GamePage.js
+│   │   ├── WebtoonPage.js
+│   │   ├── NovelPage.js
+│   │   ├── OttPage.js
+│   │   ├── SearchResults.js
+│   │   ├── Favorites.js
+│   │   ├── History.js
+│   │   └── NotFound.js
+│   │
+│   ├── utils/
+│   │   ├── formatters.js
+│   │   ├── validators.js
+│   │   ├── constants.js
+│   │   └── helpers.js
+│   │
+│   ├── styles/
+│   │   ├── main.css
+│   │   ├── variables.css
+│   │   └── themes.css
+│   │
+│   ├── App.js
+│   ├── index.js
+│   └── setupTests.js
+│
+├── package.json
+├── README.md
+├── .gitignore
+├── .eslintrc.js
+└── tailwind.config.js
+```
+
+
+
+크롤링해서 db저장
+
+- Steam 게임 댐
+- movie댐 
+
+http://localhost:8080/api/steam-games
+
+http://localhost:8080/api/movies
+
+
+
+- 웹툰 창이 월~일까지 계속 바뀌긴하는데 에러나면서 저장안댐
+
+  
+
+- 웹소설 25개 저장되고 끝남 왜끝나지? 그리고 테이블에 웹소설 테이블이 없어서 저장이 안댐
+
+- 넷플릭스 로그인이 댓는데 내 프로필 클릭못하고 끝남. 
+
+
+
+
+
+com/example/AOD/controller/MoviesController.java
+
+```
+package com.example.AOD.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
+public class MoviesController {
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    @GetMapping("/movies")
+    public ResponseEntity<List<Map<String, Object>>> getMovies() {
+        try {
+            // 직접 SQL 쿼리를 사용하여 movies 테이블에서 데이터를 가져옴
+            String sql = "SELECT * FROM movies";
+            List<Map<String, Object>> movies = jdbcTemplate.queryForList(sql);
+
+            System.out.println("Movies count: " + movies.size());
+            System.out.println("First movie: " + (movies.isEmpty() ? "None" : movies.get(0)));
+
+            return ResponseEntity.ok(movies);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+
+    @GetMapping("/steam-games")
+    public ResponseEntity<List<Map<String, Object>>> getSteamGames() {
+        try {
+            // 직접 SQL 쿼리를 사용하여 steam_game 테이블에서 데이터를 가져옴
+            String sql = "SELECT * FROM steam_game";
+            List<Map<String, Object>> games = jdbcTemplate.queryForList(sql);
+
+            System.out.println("Games count: " + games.size());
+            System.out.println("First game: " + (games.isEmpty() ? "None" : games.get(0)));
+
+            return ResponseEntity.ok(games);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.badRequest().body(null);
+        }
+    }
+}
+```
+
+
+
+Properties
+
+```
+
+# basic server setting
+spring.application.name=AOD
+spring.docker.compose.enabled=false
+server.port=8080
+
+# database setting for h2
+#spring.datasource.url=jdbc:h2:mem:moviesdb;DB_CLOSE_DELAY=-1
+#spring.datasource.driverClassName=org.h2.Driver
+#spring.datasource.username=sa
+#spring.datasource.password=
+#spring.h2.console.enabled=true
+#spring.h2.console.path=/h2-console
+
+
+# database setting for postgreSQL
+spring.datasource.url=jdbc:postgresql://localhost:5432/aodDB
+spring.datasource.username=postgres
+spring.datasource.password=password
+spring.datasource.driver-class-name=org.postgresql.Driver
+spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+
+
+# jpa setting
+spring.jpa.show-sql=true
+spring.jpa.properties.hibernate.format_sql=true
+spring.jpa.hibernate.ddl-auto=update
+
+# log setting
+logging.level.com.example.AOD=DEBUG
+logging.level.org.springframework=INFO
+logging.level.org.springframework.jdbc.core=INFO
+logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n
+logging.file.name=cgv-crawler.log
+
+# CORS 설정
+spring.web.cors.allowed-origins=http://localhost:3000
+spring.web.cors.allowed-methods=GET,POST,PUT,DELETE,OPTIONS
+spring.web.cors.allowed-headers=*
+spring.web.cors.allow-credentials=true
+spring.web.cors.max-age=3600
+```
+
+
+
+```
+private String driver_path = "/opt/homebrew/bin/chromedriver";
+
+```
+
+
+
+
+
+백엔드 api 테스트
+
+회원가입
+
+![image-20250518031738677](/assets/img/image-20250518031738677.png)
+
+
+
+로그인
+
+![image-20250518031824149](/assets/img/image-20250518031824149.png)
+
+![image-20250518031835550](/assets/img/image-20250518031835550.png)
+
+로그인 성공시 db저장도 확인
+
+
+

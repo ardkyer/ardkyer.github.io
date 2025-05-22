@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "고용노동 정책 어시스턴트 배포 및 완료"
-date: 2025-12-31
+date: 2025-04-24
 typora-root-url: ../
 image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
 ---
