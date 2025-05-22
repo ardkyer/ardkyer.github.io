@@ -18,14 +18,12 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 - **개요**: 블로그, 뉴스 등의 콘텐츠에서 키워드, 요약, 카테고리 등을 자동 추출하는 도구
 
-- 구현 내용
-
-  :
+- 구현 내용:
 
   - LLM을 활용한 텍스트 요약 및 핵심 키워드 추출
   - 콘텐츠 카테고리 자동 분류 및 태깅
   - 배치 처리와 API 엔드포인트 구현
-
+  
 - **기술 스택**: Python, Flask/FastAPI, Hugging Face Transformers, SQLite
 
 - **장점**: 네이버의 UGC 메타데이터 처리와 연관성이 높으며, 검색 인덱싱에 도움이 됨
@@ -88,9 +86,7 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
      <br>
 
-     <br>
-
-     <br>
+     
 
    **디시인사이드**
 
@@ -103,6 +99,8 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
    - **일반 크롤러 전체 사이트 크롤링 금지**
 
    이외에도 대부분 커뮤니티 사이트는 크롤링이 금지된다. 당연한 얘기지만 운영자 입장에서도 데이터를 굳이 줘서 좋을게 없다. 옛날에 에펨코리아에 문의해서 연도별 게시판 활성화 유저 수를 프로젝트에 쓰고 싶어서 문의했는데 바로 거절당한 기억도 있다.   
+
+   <br>
 
    언론사(MBN)
 
@@ -148,6 +146,8 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
    **AI 특정 크롤러는 전체 사이트 크롤링 금지.**
 
+   <br>
+
    한겨례
 
    ```
@@ -180,7 +180,7 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
 
 프로젝트가 정치적이다. 정확히 말하자면
 
-## 의도는 정치적이지 않으나, 결과는 정치적일 수 있다.
+**의도는 정치적이지 않으나, 결과는 정치적일 수 있다.**
 
 사실 통계라는것은 끼워맞추기가 가능하다. 유리한 건 넣고 불리한 건 빼면서 특정 후보에게 유리한 결과를 시각화가 가능하다.
 
@@ -229,7 +229,7 @@ image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px;
                         └─────────────────┘
 ```
 
-### 
+
 
 ## 🛠️ 기술 스택
 
