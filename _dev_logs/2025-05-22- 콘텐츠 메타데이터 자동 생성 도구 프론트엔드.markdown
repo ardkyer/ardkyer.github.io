@@ -1,0 +1,140 @@
+---
+layout: post
+title: "콘텐츠 메타데이터 자동 생성 도구 프론트엔드 & 배포"
+date: 2025-12-31
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+## 저저번 포스팅에서의 향후 개선 계획
+
+- 규칙 기반이 아닌 KoNLPy등 hugging face 모델 사용하게 하기
+
+- 프론트엔드 구현
+
+- 최신 기사들 갖다 붙여서 잘되나 테스트
+
+  
+
+여기서 모델은 해결햇고, 이제 프론트엔드 대충 기워만들고 최신기사들 갖다 붙여서 잘 되나 테스트해보고 고도화할거 보이면 대충 만들고 배포하고 시마이칩시다. 3일이면 오래햇다.
+
+
+
+uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+
+
+
+
+
+
+
+
+
+![image-20250523142621084](/assets/img/image-20250523142621084.png)
+
+
+
+![image-20250523142642739](/assets/img/image-20250523142642739.png)
+
+
+
+![image-20250523142658127](/assets/img/image-20250523142658127.png)
+
+
+
+
+
+
+
+![image-20250523142714970](/assets/img/image-20250523142714970.png)
+
+
+
+
+
+MYSQL_HOST = yamanote.proxy.rlwy.net
+MYSQL_PORT = 10157
+MYSQL_USER = root  
+MYSQL_PASSWORD = XNEhJoXTTqFgycSxkjcBzeAccUeakOHN
+MYSQL_DATABASE = railway
+
+![image-20250523142728255](/assets/img/image-20250523142728255.png)
+
+
+
+
+
+
+
+```
+src/main/java/com/example/AOD/
+│
+├── recommendation/                           # 추천 시스템 패키지 (새로 생성)
+│   ├── domain/                              # 도메인 엔티티
+│   │   ├── UserPreference.java              # 사용자 선호도 엔티티
+│   │   ├── ContentRating.java               # 콘텐츠 평가 엔티티
+│   │   └── LLMRecommendationRequest.java    # LLM 추천 요청 엔티티
+│   │
+│   ├── repository/                          # 리포지토리 인터페이스
+│   │   ├── UserPreferenceRepository.java
+│   │   ├── ContentRatingRepository.java
+│   │   └── LLMRecommendationRequestRepository.java
+│   │
+│   ├── service/                             # 서비스 클래스
+│   │   ├── TraditionalRecommendationService.java
+│   │   ├── LLMRecommendationService.java
+│   │   ├── UserPreferenceService.java
+│   │   └── ContentRatingService.java
+│   │
+│   ├── controller/                          # REST 컨트롤러
+│   │   └── RecommendationController.java
+│   │
+│   ├── config/                              # 설정 클래스
+│   │   └── RecommendationConfig.java
+│   │
+│   ├── scheduler/                           # 스케줄러
+│   │   └── RecommendationScheduler.java
+│   │
+│   └── dto/                                 # DTO 클래스 (필요시)
+│       ├── RecommendationRequest.java
+│       └── RecommendationResponse.java
+│
+├── common/ (기존 유지)
+├── controller/ (기존 유지)
+├── user/ (기존 유지)
+└── security/ (기존 유지)
+```
+
+
+
+
+
+```
+src/
+│
+├── components/                              # 기존 components 폴더
+│   ├── recommendation/                      # 추천 시스템 컴포넌트 (새로 생성)
+│   │   ├── RecommendationSystem.js         # 메인 추천 시스템 컴포넌트
+│   │   ├── RecommendationPage.js           # 추천 페이지 래퍼
+│   │   ├── UserDashboard.js                # 사용자 대시보드
+│   │   ├── RatingComponent.js              # 평가 컴포넌트
+│   │   ├── PreferenceModal.js              # 선호도 설정 모달
+│   │   └── ContentCard.js                  # 향상된 콘텐츠 카드
+│   │
+│   ├── Login.js (기존 유지)
+│   ├── Register.js (기존 유지)
+│   ├── Profile.js (기존 유지)
+│   ├── AuthNav.js (기존 유지)
+│   └── PrivateRoute.js (기존 유지)
+│
+├── styles/                                  # 스타일 파일 (선택사항)
+│   ├── recommendation.css
+│   └── dashboard.css
+│
+├── api.js (수정 필요)                        # API 함수들 추가
+├── App.js (수정 필요)                        # 라우트 추가
+├── App.css (수정 필요)                       # 스타일 추가
+├── ContentPlatform.js (수정 필요)            # 평가 기능 통합
+└── index.js (기존 유지)
+```
+

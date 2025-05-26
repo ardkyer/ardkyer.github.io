@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "콘텐츠 메타데이터 자동 생성 도구 만들기"
+title: "콘텐츠 메타데이터 자동 생성 도구 만들기 backend작업"
 date: 2025-05-20
 typora-root-url: ../
 image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
