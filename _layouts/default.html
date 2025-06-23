@@ -288,28 +288,32 @@
 
         /* 이벤트 타입별 스타일 */
         .post-event {
-    background-color: #070808 !important; /* 연한 파랑 */
-    border: none !important;
-    color: #f61212 !important;
-}
+            background-color: #070808 !important;
+            /* 연한 파랑 */
+            border: none !important;
+            color: #f61212 !important;
+        }
 
-.paper-review-event {
-    background-color: rgba(138, 206, 157, 0.8) !important; /* 더 연한 초록 */
-    border: none !important;
-    color: #333 !important;
-}
+        .paper-review-event {
+            background-color: rgba(138, 206, 157, 0.8) !important;
+            /* 더 연한 초록 */
+            border: none !important;
+            color: #333 !important;
+        }
 
-.further-reading-event {
-    background-color: rgba(183, 132, 213, 0.8) !important; /* 더 연한 보라 */
-    border: none !important;
-    color: #333 !important;
-}
+        .further-reading-event {
+            background-color: rgba(183, 132, 213, 0.8) !important;
+            /* 더 연한 보라 */
+            border: none !important;
+            color: #333 !important;
+        }
 
-.dev-log-event {
-    background-color: rgba(244, 182, 116, 0.8) !important; /* 더 연한 주황 */
-    border: none !important;
-    color: #333 !important;
-}
+        .dev-log-event {
+            background-color: rgba(244, 182, 116, 0.8) !important;
+            /* 더 연한 주황 */
+            border: none !important;
+            color: #333 !important;
+        }
 
         /* 검색 영역 스타일 */
         #search-container {
@@ -770,22 +774,78 @@
 
     <script>
         var posts = [
+            // 일반 포스트
             {% for post in site.posts %}
         {
             "title": "{{ post.title | escape }}",
                 "url": "{{ site.baseurl }}{{ post.url }}",
-                    "date": "{{ post.date }}",
-                        "content": "{{ post.content | strip_html | strip_newlines | escape }}"
+                    "date": "{{ post.date | date: '%Y-%m-%d' }}",
+                        "content": "{{ post.content | strip_html | strip_newlines | escape }}",
+                            "category": "학습",
+                                "categoryClass": "post-category"
         } {% unless forloop.last %}, {% endunless %}
         {% endfor %}
-        ];
+
+        // 논문 리뷰
+        {% if site.paper_reviews.size > 0 %},
+        {% for review in site.paper_reviews %}
+        {
+            "title": "{{ review.title | escape }}",
+                "url": "{{ site.baseurl }}{{ review.url }}",
+                    "date": "{{ review.date | date: '%Y-%m-%d' }}",
+                        "content": "{{ review.content | strip_html | strip_newlines | escape }}",
+                            "category": "논문 리뷰",
+                                "categoryClass": "paper-review-category"
+        } {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+        {% endif %}
+
+        // 추가 공부
+        {% if site.further_reading.size > 0 %},
+        {% for reading in site.further_reading %}
+        {
+            "title": "{{ reading.title | escape }}",
+                "url": "{{ site.baseurl }}{{ reading.url }}",
+                    "date": "{{ reading.date | date: '%Y-%m-%d' }}",
+                        "content": "{{ reading.content | strip_html | strip_newlines | escape }}",
+                            "category": "추가 공부",
+                                "categoryClass": "further-reading-category"
+        } {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+        {% endif %}
+
+        // 개발일지
+        {% if site.dev_logs.size > 0 %},
+        {% for log in site.dev_logs %}
+        {
+            "title": "{{ log.title | escape }}",
+                "url": "{{ site.baseurl }}{{ log.url }}",
+                    "date": "{{ log.date | date: '%Y-%m-%d' }}",
+                        "content": "{{ log.content | strip_html | strip_newlines | escape }}",
+                            "category": "개발일지",
+                                "categoryClass": "dev-log-category"
+        } {% unless forloop.last %}, {% endunless %}
+        {% endfor %}
+        {% endif %}
+];
 
         function formatDate(dateString) {
-            var date = new Date(dateString);
-            var year = date.getFullYear();
-            var month = ('0' + (date.getMonth() + 1)).slice(-2);
-            var day = ('0' + date.getDate()).slice(-2);
-            return year + '-' + month + '-' + day;
+            if (dateString && dateString.match(/^\d{4}-\d{2}-\d{2}$/)) {
+                return dateString;
+            }
+
+            try {
+                var date = new Date(dateString);
+                if (isNaN(date.getTime())) {
+                    return "날짜 없음";
+                }
+                var year = date.getFullYear();
+                var month = ('0' + (date.getMonth() + 1)).slice(-2);
+                var day = ('0' + date.getDate()).slice(-2);
+                return year + '-' + month + '-' + day;
+            } catch (e) {
+                return "날짜 없음";
+            }
         }
 
         function search() {
@@ -793,50 +853,156 @@
             var resultsContainer = document.getElementById("results-container");
             resultsContainer.innerHTML = "";
 
+            if (query.trim() === "") {
+                return;
+            }
+
             var results = posts.filter(function (post) {
                 return post.title.toLowerCase().includes(query) ||
-                    post.content.toLowerCase().includes(query);
+                    post.content.toLowerCase().includes(query) ||
+                    post.category.toLowerCase().includes(query);
             });
 
             if (results.length === 0) {
-                resultsContainer.innerHTML = "<p>검색 결과가 없습니다.</p>";
+                resultsContainer.innerHTML = "<p style='text-align: center; color: #666; padding: 20px;'>검색 결과가 없습니다.</p>";
             } else {
+                // 결과 수 표시
+                var countDiv = document.createElement("div");
+                countDiv.style.cssText = "margin-bottom: 20px; color: #666; font-size: 0.9em;";
+                countDiv.textContent = `총 ${results.length}개의 결과를 찾았습니다.`;
+                resultsContainer.appendChild(countDiv);
+
                 results.forEach(function (post) {
                     var div = document.createElement("div");
                     div.className = "search-result";
+                    div.style.cssText = "background: white; padding: 20px; margin: 15px 0; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); border-left: 4px solid #4a90e2; transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;";
 
+                    // 호버 효과
+                    div.addEventListener('mouseenter', function () {
+                        this.style.transform = 'translateY(-2px)';
+                        this.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+                    });
+                    div.addEventListener('mouseleave', function () {
+                        this.style.transform = 'translateY(0)';
+                        this.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                    });
+
+                    // 카테고리 태그
+                    var categoryTag = document.createElement("span");
+                    categoryTag.className = post.categoryClass;
+                    categoryTag.textContent = post.category;
+                    categoryTag.style.cssText = getCategoryStyle(post.category) +
+                        "display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 0.8em; font-weight: bold; margin-bottom: 10px;";
+                    div.appendChild(categoryTag);
+
+                    // 제목
                     var h3 = document.createElement("h3");
+                    h3.style.cssText = "margin: 0 0 8px 0; font-size: 1.3em; line-height: 1.3;";
                     var a = document.createElement("a");
                     a.href = post.url;
                     a.innerHTML = highlightText(post.title, query);
+                    a.style.cssText = "color: #2c3e50; text-decoration: none; font-weight: 600;";
                     h3.appendChild(a);
                     div.appendChild(h3);
 
+                    // 날짜
                     var date = document.createElement("p");
-                    date.textContent = "작성일: " + formatDate(post.date);
+                    date.style.cssText = "margin: 0 0 12px 0; color: #7f8c8d; font-size: 0.9em; display: flex; align-items: center;";
+                    date.innerHTML = '<i class="fa fa-calendar" style="margin-right: 6px;"></i>작성일: ' + formatDate(post.date);
                     div.appendChild(date);
 
+                    // 내용 미리보기
                     var snippet = post.content.toLowerCase().indexOf(query);
                     if (snippet !== -1) {
                         var p = document.createElement("p");
-                        p.innerHTML = "..." + highlightText(post.content.substring(Math.max(0, snippet - 50), snippet + query.length + 50), query) + "...";
+                        p.style.cssText = "margin: 0; color: #555; font-size: 0.95em; line-height: 1.5; text-align: justify;";
+                        var start = Math.max(0, snippet - 80);
+                        var end = Math.min(post.content.length, snippet + query.length + 80);
+                        var preview = post.content.substring(start, end);
+                        if (start > 0) preview = "..." + preview;
+                        if (end < post.content.length) preview = preview + "...";
+                        p.innerHTML = highlightText(preview, query);
+                        div.appendChild(p);
+                    } else {
+                        // 검색어가 제목에만 있는 경우 내용 미리보기
+                        var p = document.createElement("p");
+                        p.style.cssText = "margin: 0; color: #555; font-size: 0.95em; line-height: 1.5; text-align: justify;";
+                        var preview = post.content.substring(0, 150);
+                        if (post.content.length > 150) preview += "...";
+                        p.textContent = preview;
                         div.appendChild(p);
                     }
+
+                    // 클릭 이벤트
+                    div.addEventListener('click', function () {
+                        window.location.href = post.url;
+                    });
 
                     resultsContainer.appendChild(div);
                 });
             }
         }
 
-        function highlightText(text, query) {
-            var regex = new RegExp("(" + query + ")", "gi");
-            return text.replace(regex, '<span class="highlight">$1</span>');
+        function getCategoryStyle(category) {
+            switch (category) {
+                case "학습":
+                    return "background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;";
+                case "논문 리뷰":
+                    return "background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white;";
+                case "추가 공부":
+                    return "background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white;";
+                case "개발일지":
+                    return "background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); color: #333;";
+                default:
+                    return "background: #e0e0e0; color: #333;";
+            }
         }
 
+        function highlightText(text, query) {
+            var regex = new RegExp("(" + escapeRegExp(query) + ")", "gi");
+            return text.replace(regex, '<span style="background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%); padding: 2px 4px; border-radius: 3px; font-weight: bold;">$1</span>');
+        }
+
+        function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }
+
+        // 검색 입력 이벤트
         document.getElementById("search-input").addEventListener("keyup", function (event) {
             if (event.key === "Enter") {
                 search();
             }
+        });
+
+        document.getElementById("search-input").addEventListener("input", function () {
+            var query = this.value.trim();
+            if (query.length >= 1) {
+                search();
+            } else if (query.length === 0) {
+                document.getElementById("results-container").innerHTML = "";
+            }
+        });
+
+        function updateSearchStyles() {
+            var isDarkMode = document.body.classList.contains('dark-mode');
+            var searchResults = document.querySelectorAll('.search-result');
+
+            searchResults.forEach(function (result) {
+                if (isDarkMode) {
+                    result.style.background = '#2d2d2d';
+                    result.style.color = '#e1e1e1';
+                    result.style.boxShadow = '0 4px 6px rgba(255, 255, 255, 0.1)';
+                } else {
+                    result.style.background = 'white';
+                    result.style.color = '#333';
+                    result.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+                }
+            });
+        }
+
+        // 다크모드 토글 시 검색 결과 스타일 업데이트
+        document.getElementById('darkModeToggle').addEventListener('click', function () {
+            setTimeout(updateSearchStyles, 100);
         });
     </script>
 
@@ -931,7 +1097,7 @@
                     localStorage.setItem('theme', 'light');
                 }
             });
-        }); ㄹ1
+        }); 
     </script>
 
 </body>
