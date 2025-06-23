@@ -50,7 +50,7 @@ uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
 
 
 
-
+git push origin HEAD --force
 
 MYSQL_HOST = yamanote.proxy.rlwy.net
 MYSQL_PORT = 10157

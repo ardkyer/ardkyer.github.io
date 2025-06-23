@@ -1,0 +1,161 @@
+---
+layout: post
+title: "종설프 마무리 작업"
+date: 2025-06-02
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+
+
+```
+1. 이제 카테고리별로 장르, 최신순, 오래된순 이런거 컬럼 다 다르니까 그거에 맞춰서 프론트엔드 수정
+
+우선 영화끝. movie_common release_date랑 summary가비어잇음. -> 요약, 개봉일, 최신순, 오래된순 없음.
+
+스팀게임 끝. game_common_genre 비어잇어서 장르 없음. 출시날짜 컬럼 없음. -> 최신순, 오래된순 없음.
+
+웹툰 끝.
+
+웹소설 끝. summary가비어잇음. 연재날짜 없음. -> 요약, 연재날짜, 최신순, 오래된순, 없음. 
+
+OTT끝. release_year 비어잇음. -> 개봉일, 최신순, 오래된순 없음.
+
+2. LLM도 고장낫네.. 이거부터 고치자. -> 끝. 
+
+3. 그 다음 이제 고장난 추천시스템 고치기 -> 끝. 대충 하자.
+
+4. 아 추천탭에 왜 이미지 안 나오냐. -> 해결
+
+5. 홈 꾸미기 -> 끝.
+
+6. 기존 별점 매긴거 수정할수잇게. -> 끝.
+
+7. 검색고장난거 -> 고침.
+
+8. header가 고정되어잇는거 수정. 그리고 llm모달 최대화 햇을때 header 보이는것도 없애기. -> 끝.
+
+9. 다른 카테고리들도 css수정. -> 완.
+
+10. 지금 평점순으로 하는거 적용되게 해서 배치되게. 지금은 딴거 쓰고잇음. -> 끝.
+
+
+
+
+```
+
+
+
+
+
+```
+game_common
+final_price
+initial_price
+id
+required_age
+version
+summary
+image_url
+platform
+title
+created_at
+updated_at
+
+game_common_developer
+game_id
+developer
+
+game_common_publisher
+game_id
+publisher
+
+movie_common
+running_time
+total_audience
+id
+version
+age_rating
+director
+image_url
+release_date
+summary
+title
+country
+created_at
+is_rerelease
+rating
+reservation_rate
+updated_at
+
+movie_common_actors
+movie_id
+actor
+
+movie_common_genre
+movie_id
+genre
+
+novel_common
+created_at
+id
+updated_at
+version
+image_url
+summary
+age_rating
+publisher
+status
+title
+
+novel_common_author
+novel_id
+author
+
+novel_common_genre
+novel_id
+genre
+
+ott_common
+release_year
+id
+version
+description
+creator
+image_url
+maturity_rating
+thumbnail
+title
+type
+created_at
+updated_at
+
+ott_common_actors
+ott_id
+actor
+
+ott_common_genre
+ott_id
+genre
+
+webtoon_common
+id
+summary
+image_url
+platform
+publish_date
+title
+created_at
+updated_at
+version
+
+webtoon_common_author
+webtoon_id
+author
+
+webtoon_common_genre
+webtoon_id
+genre
+
+```
+
