@@ -8,6 +8,18 @@ layout: default
         {{ page.image_style | replace: '"', '' }}
     }
 </style>
+<!-- 임시 디버깅 -->
+<div style="border: 2px solid red; padding: 10px; margin: 10px;">
+    <h3>디버깅 정보</h3>
+    <p>현재 URL: {{ page.url }}</p>
+    <p>관련 게시물 데이터 크기: {{ site.data.related_posts | size }}</p>
+    <p>추천 시스템 버전: {{ site.data.related_posts._metadata.version }}</p>
+    {% if site.data.related_posts.recommendations[page.url] %}
+      <p>✅ 이 페이지의 추천 있음: {{ site.data.related_posts.recommendations[page.url] | size }}개</p>
+    {% else %}
+      <p>❌ 이 페이지의 추천 없음</p>
+    {% endif %}
+  </div>
 {% endif %}
 <style>
     /* 댓글 섹션 스타일 */
