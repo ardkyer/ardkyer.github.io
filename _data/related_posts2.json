@@ -1,0 +1,3754 @@
+{
+  "_metadata": {
+    "generated_at": "2025-06-25T19:12:51.729411",
+    "total_posts": 144,
+    "total_recommendations": 144,
+    "avg_recommendations_per_post": 3.986111111111111,
+    "method": "TF-IDF + Cosine Similarity (Optimized)",
+    "version": "2.0-fixed-urls",
+    "tfidf_params": {
+      "max_features": 2000,
+      "stop_words": null,
+      "ngram_range": [
+        1,
+        3
+      ],
+      "min_df": 2,
+      "max_df": 0.8
+    }
+  },
+  "recommendations": {
+    "/2024/12/17/FastAPI를-활용한-Online-Serving.html": [
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.316",
+        "similarity": 0.316
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.275",
+        "similarity": 0.275
+      },
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.245",
+        "similarity": 0.245
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.226",
+        "similarity": 0.226
+      }
+    ],
+    "/2024/10/29/추천시스템1.html": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.349",
+        "similarity": 0.349
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.339",
+        "similarity": 0.339
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.293",
+        "similarity": 0.293
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.277",
+        "similarity": 0.277
+      }
+    ],
+    "/2024/10/07/공원,학교-피처-돌려보기.html": [
+      {
+        "title": "공원 데이터 다루기3",
+        "url": "/2024/10/05/공원-데이터-다루기3.html",
+        "reason": "내용 유사도 0.444",
+        "similarity": 0.444
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      },
+      {
+        "title": "학교 데이터 다루기",
+        "url": "/2024/10/06/학교-데이터-다루기.html",
+        "reason": "내용 유사도 0.156",
+        "similarity": 0.156
+      },
+      {
+        "title": "knn 모델 마지막",
+        "url": "/2024/10/17/knn-모델-마지막.html",
+        "reason": "내용 유사도 0.109",
+        "similarity": 0.109
+      }
+    ],
+    "/2024/09/13/모델-학습-파이프라인.html": [
+      {
+        "title": "앙상블",
+        "url": "/2024/09/14/앙상블.html",
+        "reason": "내용 유사도 0.556",
+        "similarity": 0.556
+      },
+      {
+        "title": "하이퍼파라미터",
+        "url": "/2024/09/16/하이퍼파라미터.html",
+        "reason": "내용 유사도 0.368",
+        "similarity": 0.368
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.336",
+        "similarity": 0.336
+      },
+      {
+        "title": "마르코프 연쇄 몬테카를로 방법",
+        "url": "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html",
+        "reason": "내용 유사도 0.334",
+        "similarity": 0.334
+      }
+    ],
+    "/2024/08/25/Week3-주간-학습정리.html": [
+      {
+        "title": "Week1 주간 학습정리",
+        "url": "/2024/08/11/Week1-주간-학습정리.html",
+        "reason": "내용 유사도 0.942",
+        "similarity": 0.942
+      },
+      {
+        "title": "Week2 주간 학습정리",
+        "url": "/2024/08/18/Week2-주간-학습정리.html",
+        "reason": "내용 유사도 0.924",
+        "similarity": 0.924
+      },
+      {
+        "title": "Typora 시작",
+        "url": "/2024/08/26/Typora-시작.html",
+        "reason": "내용 유사도 0.720",
+        "similarity": 0.72
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.524",
+        "similarity": 0.524
+      }
+    ],
+    "/2024/08/09/학습정리.html": [
+      {
+        "title": "선형회귀, 경사하강법",
+        "url": "/2024/08/08/학습정리.html",
+        "reason": "내용 유사도 0.412",
+        "similarity": 0.412
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.310",
+        "similarity": 0.31
+      },
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.284",
+        "similarity": 0.284
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.236",
+        "similarity": 0.236
+      }
+    ],
+    "/2024/09/20/프로젝트-데이터-EDA.html": [
+      {
+        "title": "내일할거",
+        "url": "/2024/10/14/내일할거.html",
+        "reason": "내용 유사도 0.196",
+        "similarity": 0.196
+      },
+      {
+        "title": "데이콘 시작",
+        "url": "/further_reading/데이콘-시작/",
+        "reason": "내용 유사도 0.183",
+        "similarity": 0.183
+      },
+      {
+        "title": "EDA",
+        "url": "/2024/11/03/EDA.html",
+        "reason": "내용 유사도 0.160",
+        "similarity": 0.16
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.159",
+        "similarity": 0.159
+      }
+    ],
+    "/2024/12/16/Airflow를-활용한-Batch-Serving.html": [
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.243",
+        "similarity": 0.243
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.242",
+        "similarity": 0.242
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.235",
+        "similarity": 0.235
+      },
+      {
+        "title": "NLP 마스터클래스",
+        "url": "/2025/01/17/NLP-마스터클래스.html",
+        "reason": "내용 유사도 0.221",
+        "similarity": 0.221
+      }
+    ],
+    "/2025/01/12/Upstage-API-Test.html": [
+      {
+        "title": "Google Colab 유료 체험기",
+        "url": "/2024/12/06/코랩유료체험.html",
+        "reason": "내용 유사도 0.206",
+        "similarity": 0.206
+      },
+      {
+        "title": "개발 청사진 짜기",
+        "url": "/2025/01/11/개발-청사진-짜기.html",
+        "reason": "내용 유사도 0.198",
+        "similarity": 0.198
+      },
+      {
+        "title": "Transformer",
+        "url": "/2024/08/14/학습정리.html",
+        "reason": "내용 유사도 0.189",
+        "similarity": 0.189
+      },
+      {
+        "title": "할거",
+        "url": "/2025/01/18/할거.html",
+        "reason": "내용 유사도 0.151",
+        "similarity": 0.151
+      }
+    ],
+    "/2024/09/22/Week7-주간-학습정리.html": [
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.848",
+        "similarity": 0.848
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.786",
+        "similarity": 0.786
+      },
+      {
+        "title": "Week6 주간 학습정리",
+        "url": "/2024/09/15/Week6-주간-학습정리.html",
+        "reason": "내용 유사도 0.769",
+        "similarity": 0.769
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.744",
+        "similarity": 0.744
+      }
+    ],
+    "/2024/09/06/데이터의-가치측정-및-해석.html": [
+      {
+        "title": "데이터 전처리, Feature engineering",
+        "url": "/2024/09/12/Feature-engineering.html",
+        "reason": "내용 유사도 0.305",
+        "similarity": 0.305
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.290",
+        "similarity": 0.29
+      },
+      {
+        "title": "비트,책",
+        "url": "/2024/12/19/비트코인,-책.html",
+        "reason": "내용 유사도 0.241",
+        "similarity": 0.241
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.238",
+        "similarity": 0.238
+      }
+    ],
+    "/2025/02/09/Mac-text.html": [
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 1.000",
+        "similarity": 1.0
+      },
+      {
+        "title": "index",
+        "url": "/paper_review/2025-99-98-index/",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "index",
+        "url": "/2025/12/nn/기본.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/index/",
+        "reason": "내용 유사도 0.645",
+        "similarity": 0.645
+      }
+    ],
+    "/2024/12/19/비트코인,-책.html": [
+      {
+        "title": "데이터 전처리, Feature engineering",
+        "url": "/2024/09/12/Feature-engineering.html",
+        "reason": "내용 유사도 0.244",
+        "similarity": 0.244
+      },
+      {
+        "title": "데이터의 가치측정 및 해석",
+        "url": "/2024/09/06/데이터의-가치측정-및-해석.html",
+        "reason": "내용 유사도 0.241",
+        "similarity": 0.241
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.235",
+        "similarity": 0.235
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.233",
+        "similarity": 0.233
+      }
+    ],
+    "/2024/10/17/knn-모델-마지막.html": [
+      {
+        "title": "knn 진짜 끝",
+        "url": "/2024/10/18/knn-진짜-끝.html",
+        "reason": "내용 유사도 0.844",
+        "similarity": 0.844
+      },
+      {
+        "title": "knn모델 성능 개선",
+        "url": "/2024/10/16/knn모델-성능개선.html",
+        "reason": "내용 유사도 0.834",
+        "similarity": 0.834
+      },
+      {
+        "title": "클러스터링",
+        "url": "/2024/10/10/클러스터링.html",
+        "reason": "내용 유사도 0.229",
+        "similarity": 0.229
+      },
+      {
+        "title": "데이터 전처리, Feature engineering",
+        "url": "/2024/09/12/Feature-engineering.html",
+        "reason": "내용 유사도 0.175",
+        "similarity": 0.175
+      }
+    ],
+    "/2024/12/12/이력서를-쓰면서-회고.html": [
+      {
+        "title": "어떤 개발자가 되야하는가",
+        "url": "/dev_log/어떤-개발자가-되야하는가/",
+        "reason": "내용 유사도 0.473",
+        "similarity": 0.473
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.426",
+        "similarity": 0.426
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.257",
+        "similarity": 0.257
+      },
+      {
+        "title": "공원 데이터 다루기1",
+        "url": "/2024/10/01/공원-데이터-다루기.html",
+        "reason": "내용 유사도 0.244",
+        "similarity": 0.244
+      }
+    ],
+    "/2024/08/14/학습정리.html": [
+      {
+        "title": "Self-Attentive Sequential Recommendation",
+        "url": "/paper_review/Attentive-Sequential-Recommendation/",
+        "reason": "내용 유사도 0.326",
+        "similarity": 0.326
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.276",
+        "similarity": 0.276
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.263",
+        "similarity": 0.263
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.243",
+        "similarity": 0.243
+      }
+    ],
+    "/2024/11/19/RecBole-사용방법.html": [
+      {
+        "title": "지식 그래프 기반 추천 모델을 위한 데이터셋 구성 방법",
+        "url": "/2024/11/21/지식-그래프-기반-추천-모델을-위한-데이터셋-구성-방법.html",
+        "reason": "내용 유사도 0.395",
+        "similarity": 0.395
+      },
+      {
+        "title": "4번째 프로젝트 github 코드리뷰",
+        "url": "/2024/12/09/프젝4-github-코드리뷰.html",
+        "reason": "내용 유사도 0.285",
+        "similarity": 0.285
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.265",
+        "similarity": 0.265
+      },
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.191",
+        "similarity": 0.191
+      }
+    ],
+    "/2025/06/19/빅분기공부.html": [
+      {
+        "title": "Probabilistic Matrix Factorization",
+        "url": "/paper_review/2024-09-04-Probabilistic-Matrix-Factorization/",
+        "reason": "내용 유사도 0.327",
+        "similarity": 0.327
+      },
+      {
+        "title": "On the difficulty of training Recurrent Neural Networks",
+        "url": "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/",
+        "reason": "내용 유사도 0.191",
+        "similarity": 0.191
+      },
+      {
+        "title": "PPG 데이터베이스 시각화",
+        "url": "/paper_review/2025-02-19-PPG-데이터베이스-시각화/",
+        "reason": "내용 유사도 0.165",
+        "similarity": 0.165
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.162",
+        "similarity": 0.162
+      }
+    ],
+    "/2024/12/09/프젝4-github-코드리뷰.html": [
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.285",
+        "similarity": 0.285
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.189",
+        "similarity": 0.189
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.180",
+        "similarity": 0.18
+      },
+      {
+        "title": "models.py",
+        "url": "/2024/11/16/models.html",
+        "reason": "내용 유사도 0.166",
+        "similarity": 0.166
+      }
+    ],
+    "/2024/09/14/앙상블.html": [
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.556",
+        "similarity": 0.556
+      },
+      {
+        "title": "하이퍼파라미터",
+        "url": "/2024/09/16/하이퍼파라미터.html",
+        "reason": "내용 유사도 0.295",
+        "similarity": 0.295
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.251",
+        "similarity": 0.251
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.240",
+        "similarity": 0.24
+      }
+    ],
+    "/2024/08/04/마크다운-문법.html": [
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.408",
+        "similarity": 0.408
+      },
+      {
+        "title": "데이터 시각화 기본",
+        "url": "/2024/08/20/학습정리.html",
+        "reason": "내용 유사도 0.362",
+        "similarity": 0.362
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.340",
+        "similarity": 0.34
+      },
+      {
+        "title": "선형회귀, 경사하강법",
+        "url": "/2024/08/08/학습정리.html",
+        "reason": "내용 유사도 0.275",
+        "similarity": 0.275
+      }
+    ],
+    "/2024/09/08/Week5-주간-학습정리.html": [
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.848",
+        "similarity": 0.848
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.784",
+        "similarity": 0.784
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.737",
+        "similarity": 0.737
+      },
+      {
+        "title": "Week6 주간 학습정리",
+        "url": "/2024/09/15/Week6-주간-학습정리.html",
+        "reason": "내용 유사도 0.660",
+        "similarity": 0.66
+      }
+    ],
+    "/2024/08/08/학습정리.html": [
+      {
+        "title": "이진 분류, 이진 교차 엔트로피",
+        "url": "/2024/08/09/학습정리.html",
+        "reason": "내용 유사도 0.412",
+        "similarity": 0.412
+      },
+      {
+        "title": "마크다운 문법 모음",
+        "url": "/2024/08/04/마크다운-문법.html",
+        "reason": "내용 유사도 0.275",
+        "similarity": 0.275
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.258",
+        "similarity": 0.258
+      },
+      {
+        "title": "데이터 시각화 기본",
+        "url": "/2024/08/20/학습정리.html",
+        "reason": "내용 유사도 0.257",
+        "similarity": 0.257
+      }
+    ],
+    "/2024/09/07/인과성과-기계학습.html": [
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.305",
+        "similarity": 0.305
+      },
+      {
+        "title": "마르코프 연쇄 몬테카를로 방법",
+        "url": "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html",
+        "reason": "내용 유사도 0.298",
+        "similarity": 0.298
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.278",
+        "similarity": 0.278
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.261",
+        "similarity": 0.261
+      }
+    ],
+    "/2024/08/05/회고록-시작.html": [
+      {
+        "title": "다시 시작",
+        "url": "/2024/10/28/다시-시작.html",
+        "reason": "내용 유사도 0.822",
+        "similarity": 0.822
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/index/",
+        "reason": "내용 유사도 0.764",
+        "similarity": 0.764
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/개발일지-시작/",
+        "reason": "내용 유사도 0.396",
+        "similarity": 0.396
+      },
+      {
+        "title": "데이콘 시작",
+        "url": "/further_reading/데이콘-시작/",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      }
+    ],
+    "/2024/08/30/학습정리.html": [
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.297",
+        "similarity": 0.297
+      },
+      {
+        "title": "마르코프 연쇄 몬테카를로 방법",
+        "url": "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html",
+        "reason": "내용 유사도 0.250",
+        "similarity": 0.25
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "앙상블",
+        "url": "/2024/09/14/앙상블.html",
+        "reason": "내용 유사도 0.238",
+        "similarity": 0.238
+      }
+    ],
+    "/2024/11/03/EDA.html": [
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.280",
+        "similarity": 0.28
+      },
+      {
+        "title": "프로젝트 데이터 전처리",
+        "url": "/2024/09/19/프로젝트-데이터-전처리.html",
+        "reason": "내용 유사도 0.209",
+        "similarity": 0.209
+      },
+      {
+        "title": "프로젝트 데이터 EDA",
+        "url": "/2024/09/20/프로젝트-데이터-EDA.html",
+        "reason": "내용 유사도 0.160",
+        "similarity": 0.16
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.142",
+        "similarity": 0.142
+      }
+    ],
+    "/2024/10/10/클러스터링.html": [
+      {
+        "title": "공원 데이터 다루기2",
+        "url": "/2024/10/02/공원-데이터-다루기2.html",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "knn 진짜 끝",
+        "url": "/2024/10/18/knn-진짜-끝.html",
+        "reason": "내용 유사도 0.240",
+        "similarity": 0.24
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.231",
+        "similarity": 0.231
+      },
+      {
+        "title": "knn 모델 마지막",
+        "url": "/2024/10/17/knn-모델-마지막.html",
+        "reason": "내용 유사도 0.229",
+        "similarity": 0.229
+      }
+    ],
+    "/2025/01/18/할거.html": [
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.190",
+        "similarity": 0.19
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      },
+      {
+        "title": "Upstage API Test",
+        "url": "/2025/01/12/Upstage-API-Test.html",
+        "reason": "내용 유사도 0.151",
+        "similarity": 0.151
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.144",
+        "similarity": 0.144
+      }
+    ],
+    "/2024/10/15/EDA정리.html": [
+      {
+        "title": "A survey on Image Data Augmentation for Deep Learning",
+        "url": "/paper_review/A-survey-on-Image-Data-Augmentation-for-Deep-Learning/",
+        "reason": "내용 유사도 0.263",
+        "similarity": 0.263
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.223",
+        "similarity": 0.223
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.212",
+        "similarity": 0.212
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.169",
+        "similarity": 0.169
+      }
+    ],
+    "/2024/12/06/코랩유료체험.html": [
+      {
+        "title": "Upstage API Test",
+        "url": "/2025/01/12/Upstage-API-Test.html",
+        "reason": "내용 유사도 0.206",
+        "similarity": 0.206
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.189",
+        "similarity": 0.189
+      },
+      {
+        "title": "이력서를 쓰면서 회고",
+        "url": "/2024/12/12/이력서를-쓰면서-회고.html",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      },
+      {
+        "title": "Transformer",
+        "url": "/2024/08/14/학습정리.html",
+        "reason": "내용 유사도 0.184",
+        "similarity": 0.184
+      }
+    ],
+    "/2024/11/15/베이스라인-공부.html": [
+      {
+        "title": "modules.py",
+        "url": "/2024/11/16/modules.py.html",
+        "reason": "내용 유사도 0.268",
+        "similarity": 0.268
+      },
+      {
+        "title": "models.py",
+        "url": "/2024/11/16/models.html",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.071",
+        "similarity": 0.071
+      },
+      {
+        "title": "Zero-Shot Recommendation as Language Modeling",
+        "url": "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/",
+        "reason": "내용 유사도 0.055",
+        "similarity": 0.055
+      }
+    ],
+    "/2025/02/01/퀴즈-프롬프팅-확정-및-코드.html": [
+      {
+        "title": "성능 테스트 및 퀴즈 생성 최적화",
+        "url": "/2025/01/25/성능-테스트.html",
+        "reason": "내용 유사도 0.222",
+        "similarity": 0.222
+      },
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.140",
+        "similarity": 0.14
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.140",
+        "similarity": 0.14
+      },
+      {
+        "title": "index",
+        "url": "/paper_review/2025-99-98-index/",
+        "reason": "내용 유사도 0.098",
+        "similarity": 0.098
+      }
+    ],
+    "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html": [
+      {
+        "title": "지식 그래프 기반 추천 모델을 위한 데이터셋 구성 방법",
+        "url": "/2024/11/21/지식-그래프-기반-추천-모델을-위한-데이터셋-구성-방법.html",
+        "reason": "내용 유사도 0.395",
+        "similarity": 0.395
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.265",
+        "similarity": 0.265
+      },
+      {
+        "title": "EDA정리",
+        "url": "/2024/10/15/EDA정리.html",
+        "reason": "내용 유사도 0.223",
+        "similarity": 0.223
+      },
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.216",
+        "similarity": 0.216
+      }
+    ],
+    "/2024/09/21/기본-모델-돌려보기.html": [
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.277",
+        "similarity": 0.277
+      },
+      {
+        "title": "데이터 전처리, Feature engineering",
+        "url": "/2024/09/12/Feature-engineering.html",
+        "reason": "내용 유사도 0.228",
+        "similarity": 0.228
+      },
+      {
+        "title": "클러스터링",
+        "url": "/2024/10/10/클러스터링.html",
+        "reason": "내용 유사도 0.218",
+        "similarity": 0.218
+      },
+      {
+        "title": " A novel cryptocurrency price trend forecasting model based on LightGBM",
+        "url": "/paper_review/2024-09-09--A-novel-cryptocurrency-price-trend-forecasting-model-based-on--LightGBM/",
+        "reason": "내용 유사도 0.212",
+        "similarity": 0.212
+      }
+    ],
+    "/2024/09/16/하이퍼파라미터.html": [
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.368",
+        "similarity": 0.368
+      },
+      {
+        "title": "앙상블",
+        "url": "/2024/09/14/앙상블.html",
+        "reason": "내용 유사도 0.295",
+        "similarity": 0.295
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.272",
+        "similarity": 0.272
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.266",
+        "similarity": 0.266
+      }
+    ],
+    "/2024/10/19/오늘-할거.html": [
+      {
+        "title": "앙상블 방식 개선 및 성능 향상 제안",
+        "url": "/2024/11/25/앙상블-방식-개선-및-성능-향상-제안.html",
+        "reason": "내용 유사도 0.224",
+        "similarity": 0.224
+      },
+      {
+        "title": "Feature Engineering",
+        "url": "/2024/11/04/피처엔지니어링.html",
+        "reason": "내용 유사도 0.152",
+        "similarity": 0.152
+      },
+      {
+        "title": "Google Colab 유료 체험기",
+        "url": "/2024/12/06/코랩유료체험.html",
+        "reason": "내용 유사도 0.127",
+        "similarity": 0.127
+      },
+      {
+        "title": "FastAPI를 활용한 Online Serving",
+        "url": "/2024/12/17/FastAPI를-활용한-Online-Serving.html",
+        "reason": "내용 유사도 0.122",
+        "similarity": 0.122
+      }
+    ],
+    "/2024/10/14/내일할거.html": [
+      {
+        "title": "블로그 댓글창 만들기",
+        "url": "/dev_log/블로그-댓글창-만들기/",
+        "reason": "내용 유사도 0.292",
+        "similarity": 0.292
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 프론트엔드 & 배포",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-프론트엔드/",
+        "reason": "내용 유사도 0.236",
+        "similarity": 0.236
+      },
+      {
+        "title": "Jekyll 블로그에 아이콘 및 3D 애니메이션 효과 추가",
+        "url": "/dev_log/3D-애니메이션-추가/",
+        "reason": "내용 유사도 0.232",
+        "similarity": 0.232
+      },
+      {
+        "title": "프로젝트 데이터 EDA",
+        "url": "/2024/09/20/프로젝트-데이터-EDA.html",
+        "reason": "내용 유사도 0.196",
+        "similarity": 0.196
+      }
+    ],
+    "/2025/01/26/raw_text.html": [
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.110",
+        "similarity": 0.11
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.109",
+        "similarity": 0.109
+      },
+      {
+        "title": "추천 시스템을 위한 유전 알고리즘 적용",
+        "url": "/paper_review/추천-시스템을-위한-유전-알고리즘-연구/",
+        "reason": "내용 유사도 0.068",
+        "similarity": 0.068
+      },
+      {
+        "title": "백엔드, 프론트엔드 연동",
+        "url": "/dev_log/백엔드,-프론트엔드-연동-테스트/",
+        "reason": "내용 유사도 0.066",
+        "similarity": 0.066
+      }
+    ],
+    "/2024/09/04/변분추론-II.html": [
+      {
+        "title": "변분추론",
+        "url": "/2024/09/04/변분추론.html",
+        "reason": "내용 유사도 0.502",
+        "similarity": 0.502
+      },
+      {
+        "title": "마르코프 연쇄 몬테카를로 방법",
+        "url": "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html",
+        "reason": "내용 유사도 0.213",
+        "similarity": 0.213
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.202",
+        "similarity": 0.202
+      },
+      {
+        "title": "생성모델",
+        "url": "/2024/08/30/학습정리.html",
+        "reason": "내용 유사도 0.189",
+        "similarity": 0.189
+      }
+    ],
+    "/2024/10/13/Week8-주간-학습정리.html": [
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.786",
+        "similarity": 0.786
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.760",
+        "similarity": 0.76
+      },
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.737",
+        "similarity": 0.737
+      },
+      {
+        "title": "Week6 주간 학습정리",
+        "url": "/2024/09/15/Week6-주간-학습정리.html",
+        "reason": "내용 유사도 0.710",
+        "similarity": 0.71
+      }
+    ],
+    "/2024/08/22/학습정리.html": [
+      {
+        "title": "데이터 시각화 기본",
+        "url": "/2024/08/20/학습정리.html",
+        "reason": "내용 유사도 0.790",
+        "similarity": 0.79
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.513",
+        "similarity": 0.513
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.483",
+        "similarity": 0.483
+      },
+      {
+        "title": "마크다운 문법 모음",
+        "url": "/2024/08/04/마크다운-문법.html",
+        "reason": "내용 유사도 0.408",
+        "similarity": 0.408
+      }
+    ],
+    "/2024/11/21/지식-그래프-기반-추천-모델을-위한-데이터셋-구성-방법.html": [
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.395",
+        "similarity": 0.395
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.395",
+        "similarity": 0.395
+      },
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.261",
+        "similarity": 0.261
+      },
+      {
+        "title": "pdf 파서해서 pinecone에 넣기",
+        "url": "/dev_log/pdf-파서해서-pinecone에-넣기/",
+        "reason": "내용 유사도 0.229",
+        "similarity": 0.229
+      }
+    ],
+    "/2024/11/04/피처엔지니어링.html": [
+      {
+        "title": "베이스라인 오피스아워",
+        "url": "/2024/10/29/추천시스템1.html",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      },
+      {
+        "title": "블로그 사진 튀어나오는 거 수정",
+        "url": "/dev_log/2024-10-05-블로그-사진-튀어나오는-거-수정/",
+        "reason": "내용 유사도 0.164",
+        "similarity": 0.164
+      },
+      {
+        "title": "오늘 할거",
+        "url": "/2024/10/19/오늘-할거.html",
+        "reason": "내용 유사도 0.152",
+        "similarity": 0.152
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.116",
+        "similarity": 0.116
+      }
+    ],
+    "/2024/09/04/변분추론.html": [
+      {
+        "title": "변분추론 II",
+        "url": "/2024/09/04/변분추론-II.html",
+        "reason": "내용 유사도 0.502",
+        "similarity": 0.502
+      },
+      {
+        "title": "생성모델",
+        "url": "/2024/08/30/학습정리.html",
+        "reason": "내용 유사도 0.204",
+        "similarity": 0.204
+      },
+      {
+        "title": "마르코프 연쇄 몬테카를로 방법",
+        "url": "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html",
+        "reason": "내용 유사도 0.197",
+        "similarity": 0.197
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.130",
+        "similarity": 0.13
+      }
+    ],
+    "/2024/09/01/Week4-주간-학습정리.html": [
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.527",
+        "similarity": 0.527
+      },
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.515",
+        "similarity": 0.515
+      },
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.473",
+        "similarity": 0.473
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.454",
+        "similarity": 0.454
+      }
+    ],
+    "/2025/01/17/NLP-마스터클래스.html": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.413",
+        "similarity": 0.413
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.335",
+        "similarity": 0.335
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.295",
+        "similarity": 0.295
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.291",
+        "similarity": 0.291
+      }
+    ],
+    "/2024/11/25/앙상블-방식-개선-및-성능-향상-제안.html": [
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "오늘 할거",
+        "url": "/2024/10/19/오늘-할거.html",
+        "reason": "내용 유사도 0.224",
+        "similarity": 0.224
+      },
+      {
+        "title": "앙상블",
+        "url": "/2024/09/14/앙상블.html",
+        "reason": "내용 유사도 0.210",
+        "similarity": 0.21
+      }
+    ],
+    "/2024/08/21/학습정리.html": [
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.483",
+        "similarity": 0.483
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.399",
+        "similarity": 0.399
+      },
+      {
+        "title": "마크다운 문법 모음",
+        "url": "/2024/08/04/마크다운-문법.html",
+        "reason": "내용 유사도 0.340",
+        "similarity": 0.34
+      },
+      {
+        "title": "데이터 시각화 기본",
+        "url": "/2024/08/20/학습정리.html",
+        "reason": "내용 유사도 0.333",
+        "similarity": 0.333
+      }
+    ],
+    "/2024/10/28/다시-시작.html": [
+      {
+        "title": "회고록 시작",
+        "url": "/2024/08/05/회고록-시작.html",
+        "reason": "내용 유사도 0.822",
+        "similarity": 0.822
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/index/",
+        "reason": "내용 유사도 0.628",
+        "similarity": 0.628
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/개발일지-시작/",
+        "reason": "내용 유사도 0.325",
+        "similarity": 0.325
+      },
+      {
+        "title": "데이콘 시작",
+        "url": "/further_reading/데이콘-시작/",
+        "reason": "내용 유사도 0.154",
+        "similarity": 0.154
+      }
+    ],
+    "/2024/12/23/Prunning.html": [
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 1.000",
+        "similarity": 1.0
+      },
+      {
+        "title": "index",
+        "url": "/paper_review/2025-99-98-index/",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "index",
+        "url": "/2025/12/nn/기본.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/index/",
+        "reason": "내용 유사도 0.645",
+        "similarity": 0.645
+      }
+    ],
+    "/2024/09/05/마르코프-연쇄-몬테카를로-방법.html": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.348",
+        "similarity": 0.348
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.334",
+        "similarity": 0.334
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.318",
+        "similarity": 0.318
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.308",
+        "similarity": 0.308
+      }
+    ],
+    "/2024/10/13/knn모델.html": [
+      {
+        "title": "학교 데이터 다루기",
+        "url": "/2024/10/06/학교-데이터-다루기.html",
+        "reason": "내용 유사도 0.315",
+        "similarity": 0.315
+      },
+      {
+        "title": "공원 데이터 다루기1",
+        "url": "/2024/10/01/공원-데이터-다루기.html",
+        "reason": "내용 유사도 0.242",
+        "similarity": 0.242
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.149",
+        "similarity": 0.149
+      },
+      {
+        "title": "데이터의 가치측정 및 해석",
+        "url": "/2024/09/06/데이터의-가치측정-및-해석.html",
+        "reason": "내용 유사도 0.146",
+        "similarity": 0.146
+      }
+    ],
+    "/2024/08/13/학습정리.html": [
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.513",
+        "similarity": 0.513
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.399",
+        "similarity": 0.399
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.382",
+        "similarity": 0.382
+      },
+      {
+        "title": "데이터 시각화 기본",
+        "url": "/2024/08/20/학습정리.html",
+        "reason": "내용 유사도 0.351",
+        "similarity": 0.351
+      }
+    ],
+    "/2024/08/18/Week2-주간-학습정리.html": [
+      {
+        "title": "Week3 주간 학습정리",
+        "url": "/2024/08/25/Week3-주간-학습정리.html",
+        "reason": "내용 유사도 0.924",
+        "similarity": 0.924
+      },
+      {
+        "title": "Week1 주간 학습정리",
+        "url": "/2024/08/11/Week1-주간-학습정리.html",
+        "reason": "내용 유사도 0.915",
+        "similarity": 0.915
+      },
+      {
+        "title": "Typora 시작",
+        "url": "/2024/08/26/Typora-시작.html",
+        "reason": "내용 유사도 0.697",
+        "similarity": 0.697
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.515",
+        "similarity": 0.515
+      }
+    ],
+    "/2024/11/16/modules.py.html": [
+      {
+        "title": "models.py",
+        "url": "/2024/11/16/models.html",
+        "reason": "내용 유사도 0.499",
+        "similarity": 0.499
+      },
+      {
+        "title": "preprocessing, datasets 베이스라인 탐구",
+        "url": "/2024/11/15/베이스라인-공부.html",
+        "reason": "내용 유사도 0.268",
+        "similarity": 0.268
+      },
+      {
+        "title": "Transformer",
+        "url": "/2024/08/14/학습정리.html",
+        "reason": "내용 유사도 0.154",
+        "similarity": 0.154
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.149",
+        "similarity": 0.149
+      }
+    ],
+    "/2024/11/05/프젝2-코드리뷰.html": [
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.210",
+        "similarity": 0.21
+      },
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.176",
+        "similarity": 0.176
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.168",
+        "similarity": 0.168
+      },
+      {
+        "title": "모듈화 작업",
+        "url": "/2024/10/21/모듈화-작업.html",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      }
+    ],
+    "/2025/01/20/해커톤-사전-질문서-탐방.html": [
+      {
+        "title": "index",
+        "url": "/paper_review/2025-99-98-index/",
+        "reason": "내용 유사도 0.529",
+        "similarity": 0.529
+      },
+      {
+        "title": "index",
+        "url": "/2025/12/nn/기본.html",
+        "reason": "내용 유사도 0.529",
+        "similarity": 0.529
+      },
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.372",
+        "similarity": 0.372
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.372",
+        "similarity": 0.372
+      }
+    ],
+    "/2024/10/09/지하철,-금리-데이터-다루기.html": [
+      {
+        "title": "공원 데이터 다루기3",
+        "url": "/2024/10/05/공원-데이터-다루기3.html",
+        "reason": "내용 유사도 0.372",
+        "similarity": 0.372
+      },
+      {
+        "title": "프로젝트 데이터 전처리",
+        "url": "/2024/09/19/프로젝트-데이터-전처리.html",
+        "reason": "내용 유사도 0.318",
+        "similarity": 0.318
+      },
+      {
+        "title": "학교 데이터 다루기",
+        "url": "/2024/10/06/학교-데이터-다루기.html",
+        "reason": "내용 유사도 0.314",
+        "similarity": 0.314
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.302",
+        "similarity": 0.302
+      }
+    ],
+    "/2024/11/21/순차-추천-모델의-데이터-분할-전략-개선-(Random-Split-→-Leave-one-out-Split).html": [
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.165",
+        "similarity": 0.165
+      },
+      {
+        "title": "데이터 전처리, Feature engineering",
+        "url": "/2024/09/12/Feature-engineering.html",
+        "reason": "내용 유사도 0.135",
+        "similarity": 0.135
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.135",
+        "similarity": 0.135
+      },
+      {
+        "title": "Self-Attentive Sequential Recommendation",
+        "url": "/paper_review/Attentive-Sequential-Recommendation/",
+        "reason": "내용 유사도 0.127",
+        "similarity": 0.127
+      }
+    ],
+    "/2024/08/11/Week1-주간-학습정리.html": [
+      {
+        "title": "Week3 주간 학습정리",
+        "url": "/2024/08/25/Week3-주간-학습정리.html",
+        "reason": "내용 유사도 0.942",
+        "similarity": 0.942
+      },
+      {
+        "title": "Week2 주간 학습정리",
+        "url": "/2024/08/18/Week2-주간-학습정리.html",
+        "reason": "내용 유사도 0.915",
+        "similarity": 0.915
+      },
+      {
+        "title": "Typora 시작",
+        "url": "/2024/08/26/Typora-시작.html",
+        "reason": "내용 유사도 0.690",
+        "similarity": 0.69
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.518",
+        "similarity": 0.518
+      }
+    ],
+    "/2024/08/12/학습정리.html": [
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.382",
+        "similarity": 0.382
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.319",
+        "similarity": 0.319
+      },
+      {
+        "title": "이진 분류, 이진 교차 엔트로피",
+        "url": "/2024/08/09/학습정리.html",
+        "reason": "내용 유사도 0.310",
+        "similarity": 0.31
+      },
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.298",
+        "similarity": 0.298
+      }
+    ],
+    "/2024/09/19/프로젝트-데이터-전처리.html": [
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.318",
+        "similarity": 0.318
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.261",
+        "similarity": 0.261
+      },
+      {
+        "title": "공원 데이터 다루기3",
+        "url": "/2024/10/05/공원-데이터-다루기3.html",
+        "reason": "내용 유사도 0.250",
+        "similarity": 0.25
+      },
+      {
+        "title": "EDA",
+        "url": "/2024/11/03/EDA.html",
+        "reason": "내용 유사도 0.209",
+        "similarity": 0.209
+      }
+    ],
+    "/2024/08/26/Typora-시작.html": [
+      {
+        "title": "Week3 주간 학습정리",
+        "url": "/2024/08/25/Week3-주간-학습정리.html",
+        "reason": "내용 유사도 0.720",
+        "similarity": 0.72
+      },
+      {
+        "title": "Week2 주간 학습정리",
+        "url": "/2024/08/18/Week2-주간-학습정리.html",
+        "reason": "내용 유사도 0.697",
+        "similarity": 0.697
+      },
+      {
+        "title": "Week1 주간 학습정리",
+        "url": "/2024/08/11/Week1-주간-학습정리.html",
+        "reason": "내용 유사도 0.690",
+        "similarity": 0.69
+      },
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.409",
+        "similarity": 0.409
+      }
+    ],
+    "/2024/09/15/Week6-주간-학습정리.html": [
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.769",
+        "similarity": 0.769
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.710",
+        "similarity": 0.71
+      },
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.660",
+        "similarity": 0.66
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.595",
+        "similarity": 0.595
+      }
+    ],
+    "/2024/09/11/비트코인-데이터-다루기.html": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.295",
+        "similarity": 0.295
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.288",
+        "similarity": 0.288
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.269",
+        "similarity": 0.269
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.255",
+        "similarity": 0.255
+      }
+    ],
+    "/2024/10/21/모듈화-작업.html": [
+      {
+        "title": "프젝2 코드리뷰",
+        "url": "/2024/11/05/프젝2-코드리뷰.html",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.082",
+        "similarity": 0.082
+      },
+      {
+        "title": "어떤 개발자가 되야하는가",
+        "url": "/dev_log/어떤-개발자가-되야하는가/",
+        "reason": "내용 유사도 0.080",
+        "similarity": 0.08
+      },
+      {
+        "title": "Feature Engineering",
+        "url": "/2024/11/04/피처엔지니어링.html",
+        "reason": "내용 유사도 0.079",
+        "similarity": 0.079
+      }
+    ],
+    "/2024/08/20/학습정리.html": [
+      {
+        "title": "고급 시각화, 데이터분석과 UX",
+        "url": "/2024/08/22/학습정리.html",
+        "reason": "내용 유사도 0.790",
+        "similarity": 0.79
+      },
+      {
+        "title": "마크다운 문법 모음",
+        "url": "/2024/08/04/마크다운-문법.html",
+        "reason": "내용 유사도 0.362",
+        "similarity": 0.362
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.351",
+        "similarity": 0.351
+      },
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.333",
+        "similarity": 0.333
+      }
+    ],
+    "/2024/09/12/Feature-engineering.html": [
+      {
+        "title": "정형/시계열데이터와 피쳐엔지니어링, 이미지 & 텍스트 데이터 전처리와 분석",
+        "url": "/2024/08/21/학습정리.html",
+        "reason": "내용 유사도 0.318",
+        "similarity": 0.318
+      },
+      {
+        "title": "데이터의 가치측정 및 해석",
+        "url": "/2024/09/06/데이터의-가치측정-및-해석.html",
+        "reason": "내용 유사도 0.305",
+        "similarity": 0.305
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.304",
+        "similarity": 0.304
+      },
+      {
+        "title": "비트,책",
+        "url": "/2024/12/19/비트코인,-책.html",
+        "reason": "내용 유사도 0.244",
+        "similarity": 0.244
+      }
+    ],
+    "/2025/01/11/개발-청사진-짜기.html": [
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.253",
+        "similarity": 0.253
+      },
+      {
+        "title": "고용노동 정책 어시스턴트 배포 및 완료",
+        "url": "/dev_log/배포-완/",
+        "reason": "내용 유사도 0.213",
+        "similarity": 0.213
+      },
+      {
+        "title": "Upstage API Test",
+        "url": "/2025/01/12/Upstage-API-Test.html",
+        "reason": "내용 유사도 0.198",
+        "similarity": 0.198
+      },
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.193",
+        "similarity": 0.193
+      }
+    ],
+    "/2025/01/25/성능-테스트.html": [
+      {
+        "title": "퀴즈 프롬프팅 확정 및 퀴즈 탭 완성",
+        "url": "/2025/02/01/퀴즈-프롬프팅-확정-및-코드.html",
+        "reason": "내용 유사도 0.222",
+        "similarity": 0.222
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.175",
+        "similarity": 0.175
+      },
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.151",
+        "similarity": 0.151
+      },
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.143",
+        "similarity": 0.143
+      }
+    ],
+    "/2024/10/01/공원-데이터-다루기.html": [
+      {
+        "title": "학교 데이터 다루기",
+        "url": "/2024/10/06/학교-데이터-다루기.html",
+        "reason": "내용 유사도 0.329",
+        "similarity": 0.329
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.267",
+        "similarity": 0.267
+      },
+      {
+        "title": "이력서를 쓰면서 회고",
+        "url": "/2024/12/12/이력서를-쓰면서-회고.html",
+        "reason": "내용 유사도 0.244",
+        "similarity": 0.244
+      },
+      {
+        "title": "knn모델",
+        "url": "/2024/10/13/knn모델.html",
+        "reason": "내용 유사도 0.242",
+        "similarity": 0.242
+      }
+    ],
+    "/2024/10/06/학교-데이터-다루기.html": [
+      {
+        "title": "공원 데이터 다루기3",
+        "url": "/2024/10/05/공원-데이터-다루기3.html",
+        "reason": "내용 유사도 0.344",
+        "similarity": 0.344
+      },
+      {
+        "title": "공원 데이터 다루기1",
+        "url": "/2024/10/01/공원-데이터-다루기.html",
+        "reason": "내용 유사도 0.329",
+        "similarity": 0.329
+      },
+      {
+        "title": "knn모델",
+        "url": "/2024/10/13/knn모델.html",
+        "reason": "내용 유사도 0.315",
+        "similarity": 0.315
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.314",
+        "similarity": 0.314
+      }
+    ],
+    "/2024/12/22/genesis-사용기.html": [
+      {
+        "title": "데이콘 시작",
+        "url": "/further_reading/데이콘-시작/",
+        "reason": "내용 유사도 0.422",
+        "similarity": 0.422
+      },
+      {
+        "title": "블로그 댓글창 만들기",
+        "url": "/dev_log/블로그-댓글창-만들기/",
+        "reason": "내용 유사도 0.271",
+        "similarity": 0.271
+      },
+      {
+        "title": "FastAPI를 활용한 Online Serving",
+        "url": "/2024/12/17/FastAPI를-활용한-Online-Serving.html",
+        "reason": "내용 유사도 0.245",
+        "similarity": 0.245
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.244",
+        "similarity": 0.244
+      }
+    ],
+    "/2024/08/07/첫-해커톤.html": [
+      {
+        "title": "창업 정책 DB 및 LLM 구현",
+        "url": "/dev_log/창업-정책-DB-및-LLM-구현/",
+        "reason": "내용 유사도 0.286",
+        "similarity": 0.286
+      },
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.195",
+        "similarity": 0.195
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.177",
+        "similarity": 0.177
+      },
+      {
+        "title": "어떤 개발자가 되야하는가",
+        "url": "/dev_log/어떤-개발자가-되야하는가/",
+        "reason": "내용 유사도 0.171",
+        "similarity": 0.171
+      }
+    ],
+    "/2024/10/12/책-공부.html": [
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.609",
+        "similarity": 0.609
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.556",
+        "similarity": 0.556
+      },
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.527",
+        "similarity": 0.527
+      },
+      {
+        "title": "Week9 주간 학습정리",
+        "url": "/2024/10/20/Week9-주간-학습정리.html",
+        "reason": "내용 유사도 0.490",
+        "similarity": 0.49
+      }
+    ],
+    "/2025/12/nn/기본.html": [
+      {
+        "title": "index",
+        "url": "/2025/12/nn/기본.html",
+        "reason": "내용 유사도 1.000",
+        "similarity": 1.0
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "index",
+        "url": "/2025/01/20/해커톤-사전-질문서-탐방.html",
+        "reason": "내용 유사도 0.529",
+        "similarity": 0.529
+      }
+    ],
+    "/2024/10/02/공원-데이터-다루기2.html": [
+      {
+        "title": "공원 데이터 다루기3",
+        "url": "/2024/10/05/공원-데이터-다루기3.html",
+        "reason": "내용 유사도 0.396",
+        "similarity": 0.396
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.365",
+        "similarity": 0.365
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.308",
+        "similarity": 0.308
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.303",
+        "similarity": 0.303
+      }
+    ],
+    "/2024/10/18/knn-진짜-끝.html": [
+      {
+        "title": "knn 모델 마지막",
+        "url": "/2024/10/17/knn-모델-마지막.html",
+        "reason": "내용 유사도 0.844",
+        "similarity": 0.844
+      },
+      {
+        "title": "knn모델 성능 개선",
+        "url": "/2024/10/16/knn모델-성능개선.html",
+        "reason": "내용 유사도 0.700",
+        "similarity": 0.7
+      },
+      {
+        "title": "클러스터링",
+        "url": "/2024/10/10/클러스터링.html",
+        "reason": "내용 유사도 0.240",
+        "similarity": 0.24
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.177",
+        "similarity": 0.177
+      }
+    ],
+    "/2024/10/05/공원-데이터-다루기3.html": [
+      {
+        "title": "공원, 학교 피처 베이스라인에 넣어보기",
+        "url": "/2024/10/07/공원,학교-피처-돌려보기.html",
+        "reason": "내용 유사도 0.444",
+        "similarity": 0.444
+      },
+      {
+        "title": "공원 데이터 다루기2",
+        "url": "/2024/10/02/공원-데이터-다루기2.html",
+        "reason": "내용 유사도 0.396",
+        "similarity": 0.396
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.372",
+        "similarity": 0.372
+      },
+      {
+        "title": "학교 데이터 다루기",
+        "url": "/2024/10/06/학교-데이터-다루기.html",
+        "reason": "내용 유사도 0.344",
+        "similarity": 0.344
+      }
+    ],
+    "/2024/10/20/Week9-주간-학습정리.html": [
+      {
+        "title": "Week5 주간 학습정리",
+        "url": "/2024/09/08/Week5-주간-학습정리.html",
+        "reason": "내용 유사도 0.784",
+        "similarity": 0.784
+      },
+      {
+        "title": "Week8 주간 학습정리",
+        "url": "/2024/10/13/Week8-주간-학습정리.html",
+        "reason": "내용 유사도 0.760",
+        "similarity": 0.76
+      },
+      {
+        "title": "Week7 주간 학습정리",
+        "url": "/2024/09/22/Week7-주간-학습정리.html",
+        "reason": "내용 유사도 0.744",
+        "similarity": 0.744
+      },
+      {
+        "title": "Week6 주간 학습정리",
+        "url": "/2024/09/15/Week6-주간-학습정리.html",
+        "reason": "내용 유사도 0.595",
+        "similarity": 0.595
+      }
+    ],
+    "/2024/10/16/knn모델-성능개선.html": [
+      {
+        "title": "knn 모델 마지막",
+        "url": "/2024/10/17/knn-모델-마지막.html",
+        "reason": "내용 유사도 0.834",
+        "similarity": 0.834
+      },
+      {
+        "title": "knn 진짜 끝",
+        "url": "/2024/10/18/knn-진짜-끝.html",
+        "reason": "내용 유사도 0.700",
+        "similarity": 0.7
+      },
+      {
+        "title": "클러스터링",
+        "url": "/2024/10/10/클러스터링.html",
+        "reason": "내용 유사도 0.176",
+        "similarity": 0.176
+      },
+      {
+        "title": "지하철, 금리 데이터 다루기",
+        "url": "/2024/10/09/지하철,-금리-데이터-다루기.html",
+        "reason": "내용 유사도 0.116",
+        "similarity": 0.116
+      }
+    ],
+    "/2024/11/16/models.html": [
+      {
+        "title": "modules.py",
+        "url": "/2024/11/16/modules.py.html",
+        "reason": "내용 유사도 0.499",
+        "similarity": 0.499
+      },
+      {
+        "title": "이진 분류, 이진 교차 엔트로피",
+        "url": "/2024/08/09/학습정리.html",
+        "reason": "내용 유사도 0.174",
+        "similarity": 0.174
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.173",
+        "similarity": 0.173
+      },
+      {
+        "title": "preprocessing, datasets 베이스라인 탐구",
+        "url": "/2024/11/15/베이스라인-공부.html",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      }
+    ],
+    "/dev_log/서울경진대회_사업계획서/": [
+      {
+        "title": "2025-05-01- 서울 공모전 시작.markdown",
+        "url": "/dev_log/서울-공모전-시작/",
+        "reason": "내용 유사도 0.762",
+        "similarity": 0.762
+      },
+      {
+        "title": "2025 관광데이터 활용 공모전",
+        "url": "/dev_log/2025-관광데이터-활용-공모전-제안서-작성/",
+        "reason": "내용 유사도 0.311",
+        "similarity": 0.311
+      },
+      {
+        "title": "창업 정책 DB 및 LLM 구현",
+        "url": "/dev_log/창업-정책-DB-및-LLM-구현/",
+        "reason": "내용 유사도 0.294",
+        "similarity": 0.294
+      },
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.219",
+        "similarity": 0.219
+      }
+    ],
+    "/dev_log/블로그-추천시스템-가다듬기/": [
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.258",
+        "similarity": 0.258
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기2",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기2/",
+        "reason": "내용 유사도 0.220",
+        "similarity": 0.22
+      },
+      {
+        "title": "Airflow를 활용한 Batch Serving",
+        "url": "/2024/12/16/Airflow를-활용한-Batch-Serving.html",
+        "reason": "내용 유사도 0.217",
+        "similarity": 0.217
+      },
+      {
+        "title": "개발 청사진 짜기",
+        "url": "/2025/01/11/개발-청사진-짜기.html",
+        "reason": "내용 유사도 0.193",
+        "similarity": 0.193
+      }
+    ],
+    "/dev_log/포스트-유사도-추천-시스템-만들기2/": [
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.220",
+        "similarity": 0.22
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.174",
+        "similarity": 0.174
+      },
+      {
+        "title": "FastAPI를 활용한 Online Serving",
+        "url": "/2024/12/17/FastAPI를-활용한-Online-Serving.html",
+        "reason": "내용 유사도 0.142",
+        "similarity": 0.142
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.125",
+        "similarity": 0.125
+      }
+    ],
+    "/dev_log/공공데이터공모전_사업계획서/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.203",
+        "similarity": 0.203
+      },
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.201",
+        "similarity": 0.201
+      },
+      {
+        "title": "백엔드, 프론트엔드 연동",
+        "url": "/dev_log/백엔드,-프론트엔드-연동-테스트/",
+        "reason": "내용 유사도 0.200",
+        "similarity": 0.2
+      },
+      {
+        "title": "2025 관광데이터 활용 공모전",
+        "url": "/dev_log/2025-관광데이터-활용-공모전-제안서-작성/",
+        "reason": "내용 유사도 0.192",
+        "similarity": 0.192
+      }
+    ],
+    "/dev_log/OCR중-critical한-오류-발생/": [
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.317",
+        "similarity": 0.317
+      },
+      {
+        "title": "PDF 100장 넣고 테스트",
+        "url": "/dev_log/2025-03-29-PDF-100장-넣고-테스트/",
+        "reason": "내용 유사도 0.294",
+        "similarity": 0.294
+      },
+      {
+        "title": "OCR 채택",
+        "url": "/dev_log/OCR-채택/",
+        "reason": "내용 유사도 0.263",
+        "similarity": 0.263
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.197",
+        "similarity": 0.197
+      }
+    ],
+    "/dev_log/종설프-마무리작업/": [
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 backend작업",
+        "url": "/dev_log/2025-05-20-콘텐츠-메타데이터-자동-생성-도구-만들기/",
+        "reason": "내용 유사도 0.226",
+        "similarity": 0.226
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.099",
+        "similarity": 0.099
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기2",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기2/",
+        "reason": "내용 유사도 0.092",
+        "similarity": 0.092
+      },
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.085",
+        "similarity": 0.085
+      }
+    ],
+    "/dev_log/PDF-OCR-하기/": [
+      {
+        "title": "pdf 파서해서 pinecone에 넣기",
+        "url": "/dev_log/pdf-파서해서-pinecone에-넣기/",
+        "reason": "내용 유사도 0.607",
+        "similarity": 0.607
+      },
+      {
+        "title": "지식 그래프 기반 추천 모델을 위한 데이터셋 구성 방법",
+        "url": "/2024/11/21/지식-그래프-기반-추천-모델을-위한-데이터셋-구성-방법.html",
+        "reason": "내용 유사도 0.261",
+        "similarity": 0.261
+      },
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.240",
+        "similarity": 0.24
+      },
+      {
+        "title": "프로젝트1 다른 조 코드에서 인사이트 찾기",
+        "url": "/2024/10/13/프로젝트1-다른-조-코드-리뷰-&-인사이트.html",
+        "reason": "내용 유사도 0.216",
+        "similarity": 0.216
+      }
+    ],
+    "/dev_log/프론트엔드-마무리-작업/": [
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.517",
+        "similarity": 0.517
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.462",
+        "similarity": 0.462
+      },
+      {
+        "title": "백엔드, 프론트엔드 연동",
+        "url": "/dev_log/백엔드,-프론트엔드-연동-테스트/",
+        "reason": "내용 유사도 0.422",
+        "similarity": 0.422
+      },
+      {
+        "title": "NLP 마스터클래스",
+        "url": "/2025/01/17/NLP-마스터클래스.html",
+        "reason": "내용 유사도 0.413",
+        "similarity": 0.413
+      }
+    ],
+    "/dev_log/3D-애니메이션-추가/": [
+      {
+        "title": "블로그 사이드바 만들기",
+        "url": "/dev_log/블로그-사이드바-만들기/",
+        "reason": "내용 유사도 0.357",
+        "similarity": 0.357
+      },
+      {
+        "title": "블로그 다크모드 만들기",
+        "url": "/dev_log/블로그-다크모드-만들기/",
+        "reason": "내용 유사도 0.266",
+        "similarity": 0.266
+      },
+      {
+        "title": "내일할거",
+        "url": "/2024/10/14/내일할거.html",
+        "reason": "내용 유사도 0.232",
+        "similarity": 0.232
+      },
+      {
+        "title": "프젝 시마이치고 배포",
+        "url": "/dev_log/시마이치고-배포/",
+        "reason": "내용 유사도 0.170",
+        "similarity": 0.17
+      }
+    ],
+    "/dev_log/고용노동부-API-개발/": [
+      {
+        "title": "OCR 채택",
+        "url": "/dev_log/OCR-채택/",
+        "reason": "내용 유사도 0.707",
+        "similarity": 0.707
+      },
+      {
+        "title": "PDF 100장 넣고 테스트",
+        "url": "/dev_log/2025-03-29-PDF-100장-넣고-테스트/",
+        "reason": "내용 유사도 0.411",
+        "similarity": 0.411
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.342",
+        "similarity": 0.342
+      },
+      {
+        "title": "OCR중 critical한 문제 해결",
+        "url": "/dev_log/OCR중-critical한-오류-발생/",
+        "reason": "내용 유사도 0.317",
+        "similarity": 0.317
+      }
+    ],
+    "/dev_log/블로그-댓글창-만들기/": [
+      {
+        "title": "내일할거",
+        "url": "/2024/10/14/내일할거.html",
+        "reason": "내용 유사도 0.292",
+        "similarity": 0.292
+      },
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.271",
+        "similarity": 0.271
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.221",
+        "similarity": 0.221
+      },
+      {
+        "title": "블로그 사진 튀어나오는 거 수정",
+        "url": "/dev_log/2024-10-05-블로그-사진-튀어나오는-거-수정/",
+        "reason": "내용 유사도 0.208",
+        "similarity": 0.208
+      }
+    ],
+    "/dev_log/공모전-준비/": [
+      {
+        "title": "백엔드, 프론트엔드 연동",
+        "url": "/dev_log/백엔드,-프론트엔드-연동-테스트/",
+        "reason": "내용 유사도 0.279",
+        "similarity": 0.279
+      },
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.258",
+        "similarity": 0.258
+      },
+      {
+        "title": "개발 청사진 짜기",
+        "url": "/2025/01/11/개발-청사진-짜기.html",
+        "reason": "내용 유사도 0.253",
+        "similarity": 0.253
+      },
+      {
+        "title": "창업 정책 DB 및 LLM 구현",
+        "url": "/dev_log/창업-정책-DB-및-LLM-구현/",
+        "reason": "내용 유사도 0.231",
+        "similarity": 0.231
+      }
+    ],
+    "/dev_log/OCR-채택/": [
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.707",
+        "similarity": 0.707
+      },
+      {
+        "title": "PDF 100장 넣고 테스트",
+        "url": "/dev_log/2025-03-29-PDF-100장-넣고-테스트/",
+        "reason": "내용 유사도 0.330",
+        "similarity": 0.33
+      },
+      {
+        "title": "OCR중 critical한 문제 해결",
+        "url": "/dev_log/OCR중-critical한-오류-발생/",
+        "reason": "내용 유사도 0.263",
+        "similarity": 0.263
+      },
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.150",
+        "similarity": 0.15
+      }
+    ],
+    "/dev_log/창업-정책-DB-및-LLM-구현/": [
+      {
+        "title": "2025-05-01- 서울 공모전 시작.markdown",
+        "url": "/dev_log/서울-공모전-시작/",
+        "reason": "내용 유사도 0.332",
+        "similarity": 0.332
+      },
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.294",
+        "similarity": 0.294
+      },
+      {
+        "title": "첫 해커톤",
+        "url": "/2024/08/07/첫-해커톤.html",
+        "reason": "내용 유사도 0.286",
+        "similarity": 0.286
+      },
+      {
+        "title": "프젝 시마이치고 배포",
+        "url": "/dev_log/시마이치고-배포/",
+        "reason": "내용 유사도 0.272",
+        "similarity": 0.272
+      }
+    ],
+    "/dev_log/배포-완/": [
+      {
+        "title": "개발 청사진 짜기",
+        "url": "/2025/01/11/개발-청사진-짜기.html",
+        "reason": "내용 유사도 0.213",
+        "similarity": 0.213
+      },
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.174",
+        "similarity": 0.174
+      },
+      {
+        "title": "pdf 파서해서 pinecone에 넣기",
+        "url": "/dev_log/pdf-파서해서-pinecone에-넣기/",
+        "reason": "내용 유사도 0.143",
+        "similarity": 0.143
+      },
+      {
+        "title": "백엔드, 프론트엔드 연동",
+        "url": "/dev_log/백엔드,-프론트엔드-연동-테스트/",
+        "reason": "내용 유사도 0.135",
+        "similarity": 0.135
+      }
+    ],
+    "/dev_log/개발일지-시작/": [
+      {
+        "title": "회고록 시작",
+        "url": "/2024/08/05/회고록-시작.html",
+        "reason": "내용 유사도 0.396",
+        "similarity": 0.396
+      },
+      {
+        "title": "다시 시작",
+        "url": "/2024/10/28/다시-시작.html",
+        "reason": "내용 유사도 0.325",
+        "similarity": 0.325
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/index/",
+        "reason": "내용 유사도 0.302",
+        "similarity": 0.302
+      },
+      {
+        "title": "블로그 사진 튀어나오는 거 수정",
+        "url": "/dev_log/2024-10-05-블로그-사진-튀어나오는-거-수정/",
+        "reason": "내용 유사도 0.272",
+        "similarity": 0.272
+      }
+    ],
+    "/dev_log/Discord-Claude/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.462",
+        "similarity": 0.462
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.372",
+        "similarity": 0.372
+      },
+      {
+        "title": "공원 데이터 다루기2",
+        "url": "/2024/10/02/공원-데이터-다루기2.html",
+        "reason": "내용 유사도 0.365",
+        "similarity": 0.365
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.351",
+        "similarity": 0.351
+      }
+    ],
+    "/dev_log/k8s-세미나/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.517",
+        "similarity": 0.517
+      },
+      {
+        "title": "이력서를 쓰면서 회고",
+        "url": "/2024/12/12/이력서를-쓰면서-회고.html",
+        "reason": "내용 유사도 0.426",
+        "similarity": 0.426
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.351",
+        "similarity": 0.351
+      },
+      {
+        "title": "어떤 개발자가 되야하는가",
+        "url": "/dev_log/어떤-개발자가-되야하는가/",
+        "reason": "내용 유사도 0.330",
+        "similarity": 0.33
+      }
+    ],
+    "/dev_log/index/": [
+      {
+        "title": "회고록 시작",
+        "url": "/2024/08/05/회고록-시작.html",
+        "reason": "내용 유사도 0.764",
+        "similarity": 0.764
+      },
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.645",
+        "similarity": 0.645
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.645",
+        "similarity": 0.645
+      },
+      {
+        "title": "다시 시작",
+        "url": "/2024/10/28/다시-시작.html",
+        "reason": "내용 유사도 0.628",
+        "similarity": 0.628
+      }
+    ],
+    "/dev_log/2025-05-20-콘텐츠-메타데이터-자동-생성-도구-만들기/": [
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.309",
+        "similarity": 0.309
+      },
+      {
+        "title": "종설프 마무리 작업",
+        "url": "/dev_log/종설프-마무리작업/",
+        "reason": "내용 유사도 0.226",
+        "similarity": 0.226
+      },
+      {
+        "title": "FastAPI를 활용한 Online Serving",
+        "url": "/2024/12/17/FastAPI를-활용한-Online-Serving.html",
+        "reason": "내용 유사도 0.158",
+        "similarity": 0.158
+      },
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.131",
+        "similarity": 0.131
+      }
+    ],
+    "/dev_log/pdf-파서해서-pinecone에-넣기/": [
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.607",
+        "similarity": 0.607
+      },
+      {
+        "title": "지식 그래프 기반 추천 모델을 위한 데이터셋 구성 방법",
+        "url": "/2024/11/21/지식-그래프-기반-추천-모델을-위한-데이터셋-구성-방법.html",
+        "reason": "내용 유사도 0.229",
+        "similarity": 0.229
+      },
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.213",
+        "similarity": 0.213
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.204",
+        "similarity": 0.204
+      }
+    ],
+    "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/": [
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 backend작업",
+        "url": "/dev_log/2025-05-20-콘텐츠-메타데이터-자동-생성-도구-만들기/",
+        "reason": "내용 유사도 0.309",
+        "similarity": 0.309
+      },
+      {
+        "title": "Self-Attentive Sequential Recommendation",
+        "url": "/paper_review/Attentive-Sequential-Recommendation/",
+        "reason": "내용 유사도 0.218",
+        "similarity": 0.218
+      },
+      {
+        "title": "pdf 파서해서 pinecone에 넣기",
+        "url": "/dev_log/pdf-파서해서-pinecone에-넣기/",
+        "reason": "내용 유사도 0.204",
+        "similarity": 0.204
+      },
+      {
+        "title": "PDF OCR하기",
+        "url": "/dev_log/PDF-OCR-하기/",
+        "reason": "내용 유사도 0.195",
+        "similarity": 0.195
+      }
+    ],
+    "/dev_log/2025-03-29-PDF-100장-넣고-테스트/": [
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.411",
+        "similarity": 0.411
+      },
+      {
+        "title": "OCR 채택",
+        "url": "/dev_log/OCR-채택/",
+        "reason": "내용 유사도 0.330",
+        "similarity": 0.33
+      },
+      {
+        "title": "OCR중 critical한 문제 해결",
+        "url": "/dev_log/OCR중-critical한-오류-발생/",
+        "reason": "내용 유사도 0.294",
+        "similarity": 0.294
+      },
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.171",
+        "similarity": 0.171
+      }
+    ],
+    "/dev_log/종설프1/": [
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 프론트엔드 & 배포",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-프론트엔드/",
+        "reason": "내용 유사도 0.512",
+        "similarity": 0.512
+      },
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.113",
+        "similarity": 0.113
+      },
+      {
+        "title": "프젝 시마이치고 배포",
+        "url": "/dev_log/시마이치고-배포/",
+        "reason": "내용 유사도 0.084",
+        "similarity": 0.084
+      },
+      {
+        "title": "블로그 댓글창 만들기",
+        "url": "/dev_log/블로그-댓글창-만들기/",
+        "reason": "내용 유사도 0.083",
+        "similarity": 0.083
+      }
+    ],
+    "/dev_log/2024-10-05-블로그-사진-튀어나오는-거-수정/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.340",
+        "similarity": 0.34
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.337",
+        "similarity": 0.337
+      },
+      {
+        "title": "개발일지 시작",
+        "url": "/dev_log/개발일지-시작/",
+        "reason": "내용 유사도 0.272",
+        "similarity": 0.272
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.264",
+        "similarity": 0.264
+      }
+    ],
+    "/dev_log/백엔드,-프론트엔드-연동-테스트/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.422",
+        "similarity": 0.422
+      },
+      {
+        "title": "제4회 고용노동 공공데이터 활용 공모전 탐색",
+        "url": "/dev_log/공모전-준비/",
+        "reason": "내용 유사도 0.279",
+        "similarity": 0.279
+      },
+      {
+        "title": "NLP 마스터클래스",
+        "url": "/2025/01/17/NLP-마스터클래스.html",
+        "reason": "내용 유사도 0.250",
+        "similarity": 0.25
+      },
+      {
+        "title": "고용노동부 어시스턴트 API 개발 및 테스트",
+        "url": "/dev_log/고용노동부-API-개발/",
+        "reason": "내용 유사도 0.227",
+        "similarity": 0.227
+      }
+    ],
+    "/dev_log/블로그-사이드바-만들기/": [
+      {
+        "title": "Jekyll 블로그에 아이콘 및 3D 애니메이션 효과 추가",
+        "url": "/dev_log/3D-애니메이션-추가/",
+        "reason": "내용 유사도 0.357",
+        "similarity": 0.357
+      },
+      {
+        "title": "마크다운 문법 모음",
+        "url": "/2024/08/04/마크다운-문법.html",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      },
+      {
+        "title": "블로그 다크모드 만들기",
+        "url": "/dev_log/블로그-다크모드-만들기/",
+        "reason": "내용 유사도 0.160",
+        "similarity": 0.16
+      },
+      {
+        "title": "블로그 댓글창 만들기",
+        "url": "/dev_log/블로그-댓글창-만들기/",
+        "reason": "내용 유사도 0.152",
+        "similarity": 0.152
+      }
+    ],
+    "/dev_log/시마이치고-배포/": [
+      {
+        "title": "창업 정책 DB 및 LLM 구현",
+        "url": "/dev_log/창업-정책-DB-및-LLM-구현/",
+        "reason": "내용 유사도 0.272",
+        "similarity": 0.272
+      },
+      {
+        "title": "Jekyll 블로그에 아이콘 및 3D 애니메이션 효과 추가",
+        "url": "/dev_log/3D-애니메이션-추가/",
+        "reason": "내용 유사도 0.170",
+        "similarity": 0.17
+      },
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.168",
+        "similarity": 0.168
+      },
+      {
+        "title": "개발 청사진 짜기",
+        "url": "/2025/01/11/개발-청사진-짜기.html",
+        "reason": "내용 유사도 0.165",
+        "similarity": 0.165
+      }
+    ],
+    "/dev_log/콘텐츠-메타데이터-자동-생성-도구-프론트엔드/": [
+      {
+        "title": "종설프1",
+        "url": "/dev_log/종설프1/",
+        "reason": "내용 유사도 0.512",
+        "similarity": 0.512
+      },
+      {
+        "title": "내일할거",
+        "url": "/2024/10/14/내일할거.html",
+        "reason": "내용 유사도 0.236",
+        "similarity": 0.236
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.185",
+        "similarity": 0.185
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.178",
+        "similarity": 0.178
+      }
+    ],
+    "/dev_log/어떤-개발자가-되야하는가/": [
+      {
+        "title": "이력서를 쓰면서 회고",
+        "url": "/2024/12/12/이력서를-쓰면서-회고.html",
+        "reason": "내용 유사도 0.473",
+        "similarity": 0.473
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.330",
+        "similarity": 0.33
+      },
+      {
+        "title": "공원 데이터 다루기1",
+        "url": "/2024/10/01/공원-데이터-다루기.html",
+        "reason": "내용 유사도 0.229",
+        "similarity": 0.229
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.218",
+        "similarity": 0.218
+      }
+    ],
+    "/dev_log/서울-공모전-시작/": [
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.762",
+        "similarity": 0.762
+      },
+      {
+        "title": "창업 정책 DB 및 LLM 구현",
+        "url": "/dev_log/창업-정책-DB-및-LLM-구현/",
+        "reason": "내용 유사도 0.332",
+        "similarity": 0.332
+      },
+      {
+        "title": "2025 관광데이터 활용 공모전",
+        "url": "/dev_log/2025-관광데이터-활용-공모전-제안서-작성/",
+        "reason": "내용 유사도 0.192",
+        "similarity": 0.192
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.181",
+        "similarity": 0.181
+      }
+    ],
+    "/dev_log/2025-관광데이터-활용-공모전-제안서-작성/": [
+      {
+        "title": "서울 경진대회 사업계획서 작성",
+        "url": "/dev_log/서울경진대회_사업계획서/",
+        "reason": "내용 유사도 0.311",
+        "similarity": 0.311
+      },
+      {
+        "title": "2025-05-01- 서울 공모전 시작.markdown",
+        "url": "/dev_log/서울-공모전-시작/",
+        "reason": "내용 유사도 0.192",
+        "similarity": 0.192
+      },
+      {
+        "title": "공공데이터 공모전 사업계획서 작성",
+        "url": "/dev_log/공공데이터공모전_사업계획서/",
+        "reason": "내용 유사도 0.192",
+        "similarity": 0.192
+      },
+      {
+        "title": "OCR중 critical한 문제 해결",
+        "url": "/dev_log/OCR중-critical한-오류-발생/",
+        "reason": "내용 유사도 0.166",
+        "similarity": 0.166
+      }
+    ],
+    "/dev_log/블로그-다크모드-만들기/": [
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.352",
+        "similarity": 0.352
+      },
+      {
+        "title": "Claude API 끌어와서 Discord 봇 만들기",
+        "url": "/dev_log/Discord-Claude/",
+        "reason": "내용 유사도 0.297",
+        "similarity": 0.297
+      },
+      {
+        "title": "Jekyll 블로그에 아이콘 및 3D 애니메이션 효과 추가",
+        "url": "/dev_log/3D-애니메이션-추가/",
+        "reason": "내용 유사도 0.266",
+        "similarity": 0.266
+      },
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.252",
+        "similarity": 0.252
+      }
+    ],
+    "/dev_log/포스트-유사도-추천-시스템-만들기/": [
+      {
+        "title": "k8s 컨퍼런스 Staff 참여",
+        "url": "/dev_log/k8s-세미나/",
+        "reason": "내용 유사도 0.311",
+        "similarity": 0.311
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.303",
+        "similarity": 0.303
+      },
+      {
+        "title": "NLP 마스터클래스",
+        "url": "/2025/01/17/NLP-마스터클래스.html",
+        "reason": "내용 유사도 0.270",
+        "similarity": 0.27
+      },
+      {
+        "title": "블로그 사진 튀어나오는 거 수정",
+        "url": "/dev_log/2024-10-05-블로그-사진-튀어나오는-거-수정/",
+        "reason": "내용 유사도 0.264",
+        "similarity": 0.264
+      }
+    ],
+    "/further_reading/데이콘-시작/": [
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.422",
+        "similarity": 0.422
+      },
+      {
+        "title": "PPG 데이터베이스 시각화",
+        "url": "/paper_review/2025-02-19-PPG-데이터베이스-시각화/",
+        "reason": "내용 유사도 0.205",
+        "similarity": 0.205
+      },
+      {
+        "title": "블로그 댓글창 만들기",
+        "url": "/dev_log/블로그-댓글창-만들기/",
+        "reason": "내용 유사도 0.203",
+        "similarity": 0.203
+      },
+      {
+        "title": "회고록 시작",
+        "url": "/2024/08/05/회고록-시작.html",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      }
+    ],
+    "/further_reading/python-advanced/": [
+      {
+        "title": "추천 시스템을 위한 유전 알고리즘 적용",
+        "url": "/paper_review/추천-시스템을-위한-유전-알고리즘-연구/",
+        "reason": "내용 유사도 0.186",
+        "similarity": 0.186
+      },
+      {
+        "title": "생성모델",
+        "url": "/2024/08/30/학습정리.html",
+        "reason": "내용 유사도 0.179",
+        "similarity": 0.179
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.162",
+        "similarity": 0.162
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.121",
+        "similarity": 0.121
+      }
+    ],
+    "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/": [
+      {
+        "title": "PPG 신호의 진단적 특징",
+        "url": "/paper_review/2025-01-15-PPG-신호의-진단적-특징/",
+        "reason": "내용 유사도 0.470",
+        "similarity": 0.47
+      },
+      {
+        "title": "지식증류와 스칼로그램",
+        "url": "/paper_review/2025-05-07-지식증류와-스칼로그램/",
+        "reason": "내용 유사도 0.408",
+        "similarity": 0.408
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.397",
+        "similarity": 0.397
+      },
+      {
+        "title": "미분기반 피크검출",
+        "url": "/paper_review/2025-04-02-미분기반-피크검출/",
+        "reason": "내용 유사도 0.359",
+        "similarity": 0.359
+      }
+    ],
+    "/paper_review/BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding/": [
+      {
+        "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale (Vision Transformer)",
+        "url": "/paper_review/An-Image-is-Worth-16x16-Words-Transformers-for-Image-Recognition-at-Scale-(Vision-Transformer)/",
+        "reason": "내용 유사도 0.399",
+        "similarity": 0.399
+      },
+      {
+        "title": "On the difficulty of training Recurrent Neural Networks",
+        "url": "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/",
+        "reason": "내용 유사도 0.282",
+        "similarity": 0.282
+      },
+      {
+        "title": "A survey on Image Data Augmentation for Deep Learning",
+        "url": "/paper_review/A-survey-on-Image-Data-Augmentation-for-Deep-Learning/",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "Attention Is All You Need",
+        "url": "/paper_review/Attention-Is-All-You-Need/",
+        "reason": "내용 유사도 0.242",
+        "similarity": 0.242
+      }
+    ],
+    "/paper_review/2025-01-15-PPG-신호의-진단적-특징/": [
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.470",
+        "similarity": 0.47
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.450",
+        "similarity": 0.45
+      },
+      {
+        "title": "지식증류와 스칼로그램",
+        "url": "/paper_review/2025-05-07-지식증류와-스칼로그램/",
+        "reason": "내용 유사도 0.377",
+        "similarity": 0.377
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.349",
+        "similarity": 0.349
+      }
+    ],
+    "/paper_review/2024-09-04-Probabilistic-Matrix-Factorization/": [
+      {
+        "title": "index",
+        "url": "/2025/06/19/빅분기공부.html",
+        "reason": "내용 유사도 0.327",
+        "similarity": 0.327
+      },
+      {
+        "title": "Zero-Shot Recommendation as Language Modeling",
+        "url": "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/",
+        "reason": "내용 유사도 0.282",
+        "similarity": 0.282
+      },
+      {
+        "title": "AutoRec: Autoencoders Meet Collaborative Filtering",
+        "url": "/paper_review/AutoRec-Autoencoders-Meet-Collaborative-Filtering/",
+        "reason": "내용 유사도 0.264",
+        "similarity": 0.264
+      },
+      {
+        "title": "On the difficulty of training Recurrent Neural Networks",
+        "url": "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/",
+        "reason": "내용 유사도 0.186",
+        "similarity": 0.186
+      }
+    ],
+    "/paper_review/2025-02-26-PPG-논문-고도화/": [
+      {
+        "title": "PPG 신호의 진단적 특징",
+        "url": "/paper_review/2025-01-15-PPG-신호의-진단적-특징/",
+        "reason": "내용 유사도 0.450",
+        "similarity": 0.45
+      },
+      {
+        "title": "지식증류와 스칼로그램",
+        "url": "/paper_review/2025-05-07-지식증류와-스칼로그램/",
+        "reason": "내용 유사도 0.404",
+        "similarity": 0.404
+      },
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.397",
+        "similarity": 0.397
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.303",
+        "similarity": 0.303
+      }
+    ],
+    "/paper_review/An-Image-is-Worth-16x16-Words-Transformers-for-Image-Recognition-at-Scale-(Vision-Transformer)/": [
+      {
+        "title": "Attention Is All You Need",
+        "url": "/paper_review/Attention-Is-All-You-Need/",
+        "reason": "내용 유사도 0.428",
+        "similarity": 0.428
+      },
+      {
+        "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "url": "/paper_review/BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding/",
+        "reason": "내용 유사도 0.399",
+        "similarity": 0.399
+      },
+      {
+        "title": "On the difficulty of training Recurrent Neural Networks",
+        "url": "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/",
+        "reason": "내용 유사도 0.167",
+        "similarity": 0.167
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.162",
+        "similarity": 0.162
+      }
+    ],
+    "/paper_review/A-survey-on-Image-Data-Augmentation-for-Deep-Learning/": [
+      {
+        "title": "EDA정리",
+        "url": "/2024/10/15/EDA정리.html",
+        "reason": "내용 유사도 0.263",
+        "similarity": 0.263
+      },
+      {
+        "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "url": "/paper_review/BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding/",
+        "reason": "내용 유사도 0.249",
+        "similarity": 0.249
+      },
+      {
+        "title": "생성모델",
+        "url": "/2024/08/30/학습정리.html",
+        "reason": "내용 유사도 0.176",
+        "similarity": 0.176
+      },
+      {
+        "title": "RecBole 사용방법",
+        "url": "/2024/11/19/RecBole-사용방법.html",
+        "reason": "내용 유사도 0.142",
+        "similarity": 0.142
+      }
+    ],
+    "/paper_review/무제/": [
+      {
+        "title": "프젝 시마이치고 배포",
+        "url": "/dev_log/시마이치고-배포/",
+        "reason": "내용 유사도 0.115",
+        "similarity": 0.115
+      },
+      {
+        "title": "고용노동 정책 어시스턴트 배포 및 완료",
+        "url": "/dev_log/배포-완/",
+        "reason": "내용 유사도 0.095",
+        "similarity": 0.095
+      }
+    ],
+    "/paper_review/2025-04-09-PPG_Wrist_G_AC와-ECG신호를-사용하여-wrist_s,-wrist_e-인덱스와-비교/": [
+      {
+        "title": "미분기반 피크검출",
+        "url": "/paper_review/2025-04-02-미분기반-피크검출/",
+        "reason": "내용 유사도 0.457",
+        "similarity": 0.457
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.326",
+        "similarity": 0.326
+      },
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.258",
+        "similarity": 0.258
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.253",
+        "similarity": 0.253
+      }
+    ],
+    "/paper_review/2025-03-12-physionet-db-중-하나-탐색/": [
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.450",
+        "similarity": 0.45
+      },
+      {
+        "title": "Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링",
+        "url": "/paper_review/운동-중-손목-PPG-&-필터링/",
+        "reason": "내용 유사도 0.432",
+        "similarity": 0.432
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.246",
+        "similarity": 0.246
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.155",
+        "similarity": 0.155
+      }
+    ],
+    "/paper_review/2025-03-05-Vital-DB에서-ppg데이터-사용해보기/": [
+      {
+        "title": "Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링",
+        "url": "/paper_review/운동-중-손목-PPG-&-필터링/",
+        "reason": "내용 유사도 0.398",
+        "similarity": 0.398
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.288",
+        "similarity": 0.288
+      },
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.287",
+        "similarity": 0.287
+      },
+      {
+        "title": "지식증류와 스칼로그램",
+        "url": "/paper_review/2025-05-07-지식증류와-스칼로그램/",
+        "reason": "내용 유사도 0.250",
+        "similarity": 0.25
+      }
+    ],
+    "/paper_review/Attention-Is-All-You-Need/": [
+      {
+        "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale (Vision Transformer)",
+        "url": "/paper_review/An-Image-is-Worth-16x16-Words-Transformers-for-Image-Recognition-at-Scale-(Vision-Transformer)/",
+        "reason": "내용 유사도 0.428",
+        "similarity": 0.428
+      },
+      {
+        "title": "On the difficulty of training Recurrent Neural Networks",
+        "url": "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/",
+        "reason": "내용 유사도 0.251",
+        "similarity": 0.251
+      },
+      {
+        "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "url": "/paper_review/BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding/",
+        "reason": "내용 유사도 0.242",
+        "similarity": 0.242
+      },
+      {
+        "title": "Transformer",
+        "url": "/2024/08/14/학습정리.html",
+        "reason": "내용 유사도 0.204",
+        "similarity": 0.204
+      }
+    ],
+    "/paper_review/2025-04-30-손목,-손가락-피크-비교/": [
+      {
+        "title": "physionet db 중 하나 탐색",
+        "url": "/paper_review/2025-03-12-physionet-db-중-하나-탐색/",
+        "reason": "내용 유사도 0.450",
+        "similarity": 0.45
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.436",
+        "similarity": 0.436
+      },
+      {
+        "title": "미분기반 피크검출",
+        "url": "/paper_review/2025-04-02-미분기반-피크검출/",
+        "reason": "내용 유사도 0.431",
+        "similarity": 0.431
+      },
+      {
+        "title": "Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링",
+        "url": "/paper_review/운동-중-손목-PPG-&-필터링/",
+        "reason": "내용 유사도 0.353",
+        "similarity": 0.353
+      }
+    ],
+    "/paper_review/AutoRec-Autoencoders-Meet-Collaborative-Filtering/": [
+      {
+        "title": "Zero-Shot Recommendation as Language Modeling",
+        "url": "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/",
+        "reason": "내용 유사도 0.289",
+        "similarity": 0.289
+      },
+      {
+        "title": "Probabilistic Matrix Factorization",
+        "url": "/paper_review/2024-09-04-Probabilistic-Matrix-Factorization/",
+        "reason": "내용 유사도 0.264",
+        "similarity": 0.264
+      },
+      {
+        "title": "index",
+        "url": "/2025/06/19/빅분기공부.html",
+        "reason": "내용 유사도 0.161",
+        "similarity": 0.161
+      },
+      {
+        "title": "Neural Network",
+        "url": "/2024/08/13/학습정리.html",
+        "reason": "내용 유사도 0.153",
+        "similarity": 0.153
+      }
+    ],
+    "/paper_review/Attentive-Sequential-Recommendation/": [
+      {
+        "title": "Transformer",
+        "url": "/2024/08/14/학습정리.html",
+        "reason": "내용 유사도 0.326",
+        "similarity": 0.326
+      },
+      {
+        "title": "콘텐츠 메타데이터 자동 생성 도구 만들기 모델작업",
+        "url": "/dev_log/콘텐츠-메타데이터-자동-생성-도구-모델/",
+        "reason": "내용 유사도 0.218",
+        "similarity": 0.218
+      },
+      {
+        "title": "Attention Is All You Need",
+        "url": "/paper_review/Attention-Is-All-You-Need/",
+        "reason": "내용 유사도 0.178",
+        "similarity": 0.178
+      },
+      {
+        "title": "Zero-Shot Recommendation as Language Modeling",
+        "url": "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/",
+        "reason": "내용 유사도 0.166",
+        "similarity": 0.166
+      }
+    ],
+    "/paper_review/On-the-difficulty-of-training-Recurrent-Neural-Networks/": [
+      {
+        "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+        "url": "/paper_review/BERT-Pre-training-of-Deep-Bidirectional-Transformers-for-Language-Understanding/",
+        "reason": "내용 유사도 0.282",
+        "similarity": 0.282
+      },
+      {
+        "title": "Attention Is All You Need",
+        "url": "/paper_review/Attention-Is-All-You-Need/",
+        "reason": "내용 유사도 0.251",
+        "similarity": 0.251
+      },
+      {
+        "title": "index",
+        "url": "/2025/06/19/빅분기공부.html",
+        "reason": "내용 유사도 0.191",
+        "similarity": 0.191
+      },
+      {
+        "title": "Probabilistic Matrix Factorization",
+        "url": "/paper_review/2024-09-04-Probabilistic-Matrix-Factorization/",
+        "reason": "내용 유사도 0.186",
+        "similarity": 0.186
+      }
+    ],
+    "/paper_review/추천-시스템을-위한-유전-알고리즘-연구/": [
+      {
+        "title": "Zero-Shot Recommendation as Language Modeling",
+        "url": "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/",
+        "reason": "내용 유사도 0.284",
+        "similarity": 0.284
+      },
+      {
+        "title": "포스트 유사도 추천 시스템 만들기1",
+        "url": "/dev_log/포스트-유사도-추천-시스템-만들기/",
+        "reason": "내용 유사도 0.220",
+        "similarity": 0.22
+      },
+      {
+        "title": "지도학습과 비지도학습의 실제 사례",
+        "url": "/further_reading/python-advanced/",
+        "reason": "내용 유사도 0.186",
+        "similarity": 0.186
+      },
+      {
+        "title": "블로그 추천시스템 가다듬기",
+        "url": "/dev_log/블로그-추천시스템-가다듬기/",
+        "reason": "내용 유사도 0.144",
+        "similarity": 0.144
+      }
+    ],
+    "/paper_review/운동-중-손목-PPG-&-필터링/": [
+      {
+        "title": "physionet db 중 하나 탐색",
+        "url": "/paper_review/2025-03-12-physionet-db-중-하나-탐색/",
+        "reason": "내용 유사도 0.432",
+        "similarity": 0.432
+      },
+      {
+        "title": "Vital DB에서 ppg데이터 사용해보기",
+        "url": "/paper_review/2025-03-05-Vital-DB에서-ppg데이터-사용해보기/",
+        "reason": "내용 유사도 0.398",
+        "similarity": 0.398
+      },
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.385",
+        "similarity": 0.385
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.353",
+        "similarity": 0.353
+      }
+    ],
+    "/paper_review/2025-02-19-PPG-데이터베이스-시각화/": [
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.238",
+        "similarity": 0.238
+      },
+      {
+        "title": "지식증류와 스칼로그램",
+        "url": "/paper_review/2025-05-07-지식증류와-스칼로그램/",
+        "reason": "내용 유사도 0.219",
+        "similarity": 0.219
+      },
+      {
+        "title": "데이콘 시작",
+        "url": "/further_reading/데이콘-시작/",
+        "reason": "내용 유사도 0.205",
+        "similarity": 0.205
+      },
+      {
+        "title": "genesis 사용후기",
+        "url": "/2024/12/22/genesis-사용기.html",
+        "reason": "내용 유사도 0.201",
+        "similarity": 0.201
+      }
+    ],
+    "/paper_review/2024-09-09--A-novel-cryptocurrency-price-trend-forecasting-model-based-on--LightGBM/": [
+      {
+        "title": "기본 모델 돌려보기",
+        "url": "/2024/09/21/기본-모델-돌려보기.html",
+        "reason": "내용 유사도 0.212",
+        "similarity": 0.212
+      },
+      {
+        "title": "Linear Regression, ML algorithm",
+        "url": "/2024/08/12/학습정리.html",
+        "reason": "내용 유사도 0.198",
+        "similarity": 0.198
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.187",
+        "similarity": 0.187
+      },
+      {
+        "title": "비트,책",
+        "url": "/2024/12/19/비트코인,-책.html",
+        "reason": "내용 유사도 0.160",
+        "similarity": 0.16
+      }
+    ],
+    "/paper_review/2025-05-07-지식증류와-스칼로그램/": [
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.408",
+        "similarity": 0.408
+      },
+      {
+        "title": "PPG 논문 고도화",
+        "url": "/paper_review/2025-02-26-PPG-논문-고도화/",
+        "reason": "내용 유사도 0.404",
+        "similarity": 0.404
+      },
+      {
+        "title": "PPG 신호의 진단적 특징",
+        "url": "/paper_review/2025-01-15-PPG-신호의-진단적-특징/",
+        "reason": "내용 유사도 0.377",
+        "similarity": 0.377
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.326",
+        "similarity": 0.326
+      }
+    ],
+    "/paper_review/2025-04-02-미분기반-피크검출/": [
+      {
+        "title": "Peak 검출 기반 정렬 & 지연 시간 기반 정렬 탐색",
+        "url": "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/",
+        "reason": "내용 유사도 0.541",
+        "similarity": 0.541
+      },
+      {
+        "title": "PPG_Wrist_G_AC와 ECG신호를 사용하여 wrist_s, wrist_e 인덱스와 비교",
+        "url": "/paper_review/2025-04-09-PPG_Wrist_G_AC와-ECG신호를-사용하여-wrist_s,-wrist_e-인덱스와-비교/",
+        "reason": "내용 유사도 0.457",
+        "similarity": 0.457
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.431",
+        "similarity": 0.431
+      },
+      {
+        "title": "Photoplethysmogram Analysis and Applications: An Integrative Review",
+        "url": "/paper_review/2025-02-02-Photoplethysmogram-Analysis-and-Applications:-An-Integrative-Review/",
+        "reason": "내용 유사도 0.359",
+        "similarity": 0.359
+      }
+    ],
+    "/paper_review/2025-03-26-Peak-검출-기반-정렬-&-지연-시간-기반-정렬-탐색/": [
+      {
+        "title": "미분기반 피크검출",
+        "url": "/paper_review/2025-04-02-미분기반-피크검출/",
+        "reason": "내용 유사도 0.541",
+        "similarity": 0.541
+      },
+      {
+        "title": "손목, 손가락 피크 비교",
+        "url": "/paper_review/2025-04-30-손목,-손가락-피크-비교/",
+        "reason": "내용 유사도 0.436",
+        "similarity": 0.436
+      },
+      {
+        "title": "프론트엔드 마무리 작업",
+        "url": "/dev_log/프론트엔드-마무리-작업/",
+        "reason": "내용 유사도 0.402",
+        "similarity": 0.402
+      },
+      {
+        "title": "Wrist PPG During Exercise - 운동 중 손목 PPG & 필터링",
+        "url": "/paper_review/운동-중-손목-PPG-&-필터링/",
+        "reason": "내용 유사도 0.385",
+        "similarity": 0.385
+      }
+    ],
+    "/paper_review/Zero-Shot-Recommendation-as-Language-Modeling-(copy)/": [
+      {
+        "title": "AutoRec: Autoencoders Meet Collaborative Filtering",
+        "url": "/paper_review/AutoRec-Autoencoders-Meet-Collaborative-Filtering/",
+        "reason": "내용 유사도 0.289",
+        "similarity": 0.289
+      },
+      {
+        "title": "추천 시스템을 위한 유전 알고리즘 적용",
+        "url": "/paper_review/추천-시스템을-위한-유전-알고리즘-연구/",
+        "reason": "내용 유사도 0.284",
+        "similarity": 0.284
+      },
+      {
+        "title": "Probabilistic Matrix Factorization",
+        "url": "/paper_review/2024-09-04-Probabilistic-Matrix-Factorization/",
+        "reason": "내용 유사도 0.282",
+        "similarity": 0.282
+      },
+      {
+        "title": "모델 학습 파이프라인",
+        "url": "/2024/09/13/모델-학습-파이프라인.html",
+        "reason": "내용 유사도 0.220",
+        "similarity": 0.22
+      }
+    ],
+    "/paper_review/2025-99-98-index/": [
+      {
+        "title": "index",
+        "url": "/2025/12/nn/기본.html",
+        "reason": "내용 유사도 1.000",
+        "similarity": 1.0
+      },
+      {
+        "title": "Macbook test",
+        "url": "/2025/02/09/Mac-text.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "Pruning",
+        "url": "/2024/12/23/Prunning.html",
+        "reason": "내용 유사도 0.702",
+        "similarity": 0.702
+      },
+      {
+        "title": "index",
+        "url": "/2025/01/20/해커톤-사전-질문서-탐방.html",
+        "reason": "내용 유사도 0.529",
+        "similarity": 0.529
+      }
+    ]
+  }
+}

@@ -8,19 +8,28 @@ layout: default
         {{ page.image_style | replace: '"', '' }}
     }
 </style>
+{% endif %}
+
 <!-- 임시 디버깅 -->
-<div style="border: 2px solid red; padding: 10px; margin: 10px;">
+<!-- <div style="border: 2px solid red; padding: 10px; margin: 10px;">
     <h3>디버깅 정보</h3>
     <p>현재 URL: {{ page.url }}</p>
+    <p>디코딩된 URL: {{ page.url | url_decode }}</p>
     <p>관련 게시물 데이터 크기: {{ site.data.related_posts | size }}</p>
     <p>추천 시스템 버전: {{ site.data.related_posts._metadata.version }}</p>
+    
+    {% assign decoded_url = page.url | url_decode %}
     {% if site.data.related_posts.recommendations[page.url] %}
-      <p>✅ 이 페이지의 추천 있음: {{ site.data.related_posts.recommendations[page.url] | size }}개</p>
+      <p>✅ 원본 URL로 추천 있음: {{ site.data.related_posts.recommendations[page.url] | size }}개</p>
+    {% elsif site.data.related_posts.recommendations[decoded_url] %}
+      <p>✅ 디코딩된 URL로 추천 있음: {{ site.data.related_posts.recommendations[decoded_url] | size }}개</p>
     {% else %}
       <p>❌ 이 페이지의 추천 없음</p>
+      <p>시도한 URL: {{ page.url }}</p>
+      <p>디코딩된 URL: {{ decoded_url }}</p>
     {% endif %}
-  </div>
-{% endif %}
+</div> -->
+
 <style>
     /* 댓글 섹션 스타일 */
     .comments-section {
@@ -102,6 +111,7 @@ layout: default
         color: #aaa;
     }
 </style>
+
 <article class="post">
     <header class="post-header">
         <h1 class="post-title">{{ page.title }}</h1>
@@ -128,6 +138,7 @@ layout: default
         <a href="{{ '/' | relative_url }}" class="back-to-calendar">캘린더로 돌아가기</a>
     </div>
 </article>
+
 <!-- 다크모드 감지 및 테마 변경을 위한 스크립트 추가 -->
 <script>
     function updateGiscusTheme() {
