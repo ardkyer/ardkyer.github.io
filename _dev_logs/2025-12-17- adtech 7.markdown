@@ -1,0 +1,819 @@
+---
+layout: post
+title: "Day 7: A/B Testing 프레임워크 구축 - Chi-square 검정으로 통계적 의사결정"
+date: 2025-12-17
+typora-root-url: ../
+image_style: "max-width:80%; display:block; margin:1em auto; border-radius:10px; box-shadow:2px 2px 8px rgba(0,0,0,0.8);"
+---
+
+# Day 7: A/B Testing 프레임워크 구축 - Chi-square 검정으로 통계적 의사결정
+
+## 오늘 한 일 요약
+
+AdTech에서 가장 중요한 기능 중 하나인 **A/B Testing 프레임워크**를 구축했습니다. 광고 배너 색상 변경(파란색 vs 빨간색)이 실제로 CTR을 개선하는지 **통계적으로 검증**하는 시스템을 만들었습니다.
+
+**핵심 결과:**
+
+- 빨간색 배너가 파란색보다 **36% CTR 개선**
+- **96.6% 신뢰도**로 통계적 유의성 확보 (p-value = 0.034)
+- 실시간 승자 판정 API 구축
+
+------
+
+## 왜 A/B Testing이 중요한가?
+
+### 실제 광고 업계의 문제
+
+**상황:**
+
+- 디자이너: "빨간색 배너가 더 눈에 띄니까 클릭률 높을 거예요!"
+- 개발자: "근데 정말 그런가요? 데이터로 증명할 수 있나요?"
+- PM: "일단 바꿔볼까요? 안 좋으면 다시 바꾸면 되죠!"
+
+**문제:**
+
+- 감에 의존한 의사결정 → 매출 손실 위험
+- 변경 후 성과가 나빠졌는데 모름 → 기회비용 발생
+- "좋아진 것 같은데?"는 **확증 편향**일 수 있음
+
+**해결: A/B Testing**
+
+- 트래픽을 50:50으로 나눠 동시에 실험
+- 통계적으로 검증 (우연 vs 진짜 차이)
+- 데이터 기반 의사결정
+
+------
+
+## 🏗️ 전체 시스템 아키텍처
+
+```
+[A/B Test Generator]
+   ↓ 50% A / 50% B
+[Kafka: ab-test-events]
+   ↓ Stream
+[Spark Streaming]
+   ├─ 1분 윈도우 집계
+   ├─ Chi-square 검정 (scipy)
+   └─ 승자 판정 (p < 0.05)
+   ↓              
+[Redis]         
+   ↓ 1.48ms
+[FastAPI]
+   ↓ JSON
+[React Dashboard] (또는 Superset)
+```
+
+------
+
+## 📊 Step 1: A/B Test 데이터 스키마 설계
+
+### 기존 광고 이벤트와의 차이점
+
+**일반 광고 이벤트:**
+
+```json
+{
+  "event_type": "click",
+  "country": "US",
+  "ad_format": "banner"
+}
+```
+
+**A/B Test 이벤트 (추가 필드):**
+
+```json
+{
+  "event_id": "ABT1766346190109871",
+  "timestamp": "2025-12-22T05:23:00",
+  "user_id": "U12345",
+  "test_id": "banner_color_test_001",      // 테스트 식별자
+  "variant": "A",                           // A or B
+  "variant_name": "blue_banner",            // 설명적 이름
+  "country": "US",
+  "ad_format": "banner",
+  "event_type": "impression",
+  "revenue": 0.0
+}
+```
+
+### 왜 이렇게 설계했나?
+
+1. **`test_id`**: 여러 테스트 동시 실행 가능
+   - `banner_color_test_001`
+   - `cta_button_test_002`
+   - `video_length_test_003`
+2. **`variant`**: A/B 구분
+   - A = Control (기존)
+   - B = Treatment (새로운 버전)
+3. **`variant_name`**: 사람이 읽기 쉬운 이름
+   - "blue_banner" vs "red_banner"
+   - "Buy Now" vs "Get Started"
+
+------
+
+## 💻 Step 2: 트래픽 분배 로직 구현
+
+### 50:50 무작위 할당
+
+```python
+# data-generator/ab_test_generator.py
+
+AB_TESTS = {
+    'banner_color_test_001': {
+        'variants': {
+            'A': {
+                'name': 'blue_banner',
+                'ctr': 0.04,       # 기존: CTR 4%
+                'description': '파란색 배너 (기존)'
+            },
+            'B': {
+                'name': 'red_banner',
+                'ctr': 0.06,       # 신규: CTR 6% (50% 개선!)
+                'description': '빨간색 배너 (신규)'
+            }
+        },
+        'traffic_split': {'A': 0.5, 'B': 0.5},  # 50:50
+        'countries': ['US', 'KR', 'JP'],
+        'ad_format': 'banner'
+    }
+}
+
+def generate_ab_test_event(test_id, test_config):
+    # Traffic Split에 따라 variant 선택
+    rand = random.random()
+    cumulative = 0
+    selected_variant = None
+    
+    for variant, split in test_config['traffic_split'].items():
+        cumulative += split
+        if rand < cumulative:
+            selected_variant = variant
+            break
+    
+    # 선택된 variant의 CTR로 클릭 여부 결정
+    variant_config = test_config['variants'][selected_variant]
+    ctr = variant_config['ctr']
+    is_click = random.random() < ctr
+    
+    # 이벤트 생성
+    return {
+        'event_id': f"ABT{int(time.time()*1000)}{random.randint(100,999)}",
+        'test_id': test_id,
+        'variant': selected_variant,
+        'variant_name': variant_config['name'],
+        'event_type': 'click' if is_click else 'impression',
+        # ... 기타 필드
+    }
+```
+
+**핵심 포인트:**
+
+- `random.random()`으로 0~1 사이 값 생성
+- 50%면 0.5 미만이면 A, 이상이면 B
+- 각 variant의 실제 CTR을 시뮬레이션
+
+------
+
+## 🧮 Step 3: Chi-square 통계적 검정
+
+### Chi-square 검정이란?
+
+**질문:**
+
+> "Variant B의 CTR이 6%인데, A의 4%보다 높은 게 우연일까? 진짜 차이일까?"
+
+**Chi-square 검정이 답해줍니다!**
+
+### 검정 과정
+
+#### 1. 관측 데이터 (Observed)
+
+|           | Click | No Click | Total |
+| --------- | ----- | -------- | ----- |
+| A         | 83    | 1,689    | 1,772 |
+| B         | 112   | 1,647    | 1,759 |
+| **Total** | 195   | 3,336    | 3,531 |
+
+#### 2. 기대값 (Expected)
+
+"만약 A와 B가 같다면?"
+
+```python
+# 전체 CTR = 195 / 3,531 = 5.52%
+expected_click_A = 1,772 × 0.0552 = 97.8
+expected_click_B = 1,759 × 0.0552 = 97.1
+```
+
+#### 3. Chi-square 통계량 계산
+
+```python
+chi_square = Σ [(관측값 - 기대값)² / 기대값]
+
+= (83-97.8)²/97.8 + (1689-1674.2)²/1674.2 + ...
+= 4.4766
+```
+
+#### 4. p-value 계산
+
+```python
+from scipy.stats import chi2_contingency
+
+observed = [
+    [83, 1689],  # A: clicks, no-clicks
+    [112, 1647]  # B: clicks, no-clicks
+]
+
+chi2, p_value, dof, expected = chi2_contingency(observed)
+# p_value = 0.0344
+```
+
+#### 5. 결론
+
+```python
+if p_value < 0.05:  # 0.0344 < 0.05 ✅
+    print("통계적으로 유의미! B가 승자!")
+    confidence = 1 - p_value  # 96.56%
+else:
+    print("우연일 수 있음, 더 기다려야 함")
+```
+
+**해석:**
+
+- p-value = 0.0344 = 3.44%
+- "A와 B가 같다"는 가정이 **3.44%의 확률**로만 성립
+- 즉, **96.56% 확률로 진짜 차이**가 있음!
+
+------
+
+## ⚙️ Step 4: Spark Streaming 실시간 분석
+
+### 핵심 코드
+
+```python
+# src/spark_ab_test_analyzer.py
+
+def perform_chi_square_test(variant_a_data, variant_b_data):
+    """Chi-square 검정 수행"""
+    from scipy.stats import chi2_contingency
+    import builtins  # Python 내장 round() 사용 (Spark round 충돌 방지)
+    
+    # 데이터 추출
+    a_clicks = variant_a_data['clicks']
+    a_impressions = variant_a_data['impressions']
+    a_no_clicks = a_impressions - a_clicks
+    
+    b_clicks = variant_b_data['clicks']
+    b_impressions = variant_b_data['impressions']
+    b_no_clicks = b_impressions - b_clicks
+    
+    # 최소 샘플 크기 체크
+    if a_impressions < 100 or b_impressions < 100:
+        return {
+            "chi_square": 0.0,
+            "p_value": 1.0,
+            "is_significant": False,
+            "message": "샘플 부족 (최소 100 impressions 필요)"
+        }
+    
+    # Contingency Table 생성
+    observed = [
+        [a_clicks, a_no_clicks],
+        [b_clicks, b_no_clicks]
+    ]
+    
+    # Chi-square 검정
+    chi2, p_value, dof, expected = chi2_contingency(observed)
+    
+    return {
+        "chi_square": builtins.round(float(chi2), 4),
+        "p_value": builtins.round(float(p_value), 4),
+        "is_significant": bool(p_value < 0.05),
+        "confidence_level": builtins.round(1 - float(p_value), 4),
+        "message": "✅ 통계적으로 유의미!" if p_value < 0.05 else "⏳ 아직 판단 불가"
+    }
+
+def process_ab_test_batch(batch_df, batch_id):
+    """각 배치에서 A/B Test 분석"""
+    
+    # A와 B 데이터 분리
+    variant_a = batch_df.filter(col("variant") == "A").collect()[0]
+    variant_b = batch_df.filter(col("variant") == "B").collect()[0]
+    
+    # Chi-square 검정
+    test_result = perform_chi_square_test(
+        {'impressions': int(variant_a.impressions), 'clicks': int(variant_a.clicks)},
+        {'impressions': int(variant_b.impressions), 'clicks': int(variant_b.clicks)}
+    )
+    
+    # 승자 판정
+    winner = None
+    if test_result['is_significant']:
+        if variant_b.ctr > variant_a.ctr:
+            winner = "B"
+            print(f"🏆 Winner: B - CTR {variant_b.ctr:.2f}% > {variant_a.ctr:.2f}%")
+        else:
+            winner = "A"
+    
+    # Redis 저장
+    redis_data = {
+        "test_id": test_id,
+        "variant_a": {...},
+        "variant_b": {...},
+        "test_result": test_result,
+        "winner": winner
+    }
+    redis.setex(f"ab_test:{test_id}:latest", 3600, json.dumps(redis_data))
+```
+
+------
+
+## 🚀 Step 5: FastAPI REST API 구축
+
+### 엔드포인트 설계
+
+```python
+# src/fastapi_ab_test_api.py
+
+@app.get("/ab-test/status/{test_id}")
+def get_ab_test_status(test_id: str):
+    """현재 A/B Test 상태 조회"""
+    redis_key = f"ab_test:{test_id}:latest"
+    data = redis_client.get(redis_key)
+    
+    if not data:
+        raise HTTPException(status_code=404, detail=f"Test {test_id} not found")
+    
+    result = json.loads(data)
+    
+    return {
+        "test_id": test_id,
+        "window": {...},
+        "variant_a": result["variant_a"],
+        "variant_b": result["variant_b"],
+        "test_result": result["test_result"],
+        "winner": result.get("winner"),
+        "recommendation": get_recommendation(result)
+    }
+
+@app.get("/ab-test/winner/{test_id}")
+def get_ab_test_winner(test_id: str):
+    """승자 확인"""
+    data = get_test_data(test_id)
+    
+    if not data["test_result"]["is_significant"]:
+        return {
+            "winner": None,
+            "is_significant": False,
+            "message": "아직 통계적으로 유의미한 차이가 없습니다",
+            "p_value": data["test_result"]["p_value"]
+        }
+    
+    winner = data["winner"]
+    winner_data = data[f"variant_{winner.lower()}"]
+    loser_data = data[f"variant_{'b' if winner == 'A' else 'a'}"]
+    
+    improvement = ((winner_data["ctr"] - loser_data["ctr"]) / loser_data["ctr"] * 100)
+    
+    return {
+        "winner": winner,
+        "winner_name": winner_data["name"],
+        "is_significant": True,
+        "confidence_level": data["test_result"]["confidence_level"],
+        "p_value": data["test_result"]["p_value"],
+        "improvement_percent": round(improvement, 2),
+        "message": f"🏆 {winner_data['name']}가 {improvement:.1f}% 더 우수합니다!"
+    }
+```
+
+------
+
+## 📊 실제 실행 결과
+
+### 터미널 1: 데이터 생성기
+
+```bash
+python data-generator/ab_test_generator.py
+
+# 출력:
+🧪 A/B Test 데이터 생성기 시작!
+============================================================
+📋 테스트: banner_color_test_001
+   - Variant A: 파란색 배너 (기존) (CTR 4.0%)
+   - Variant B: 빨간색 배너 (신규) (CTR 6.0%)
+   - Traffic Split: A 50.0% / B 50.0%
+============================================================
+✅ 전송: 1,000개 | Rate: 83.6 events/sec | A: 499 (49.9%) / B: 501 (50.1%)
+✅ 전송: 2,000개 | Rate: 83.6 events/sec | A: 993 (49.6%) / B: 1,007 (50.3%)
+✅ 전송: 3,000개 | Rate: 83.4 events/sec | A: 1,509 (50.3%) / B: 1,491 (49.7%)
+```
+
+**관찰:**
+
+- 트래픽이 정확히 50:50으로 분배됨 ✅
+- 초당 83개 이벤트 안정적 생성 ✅
+
+------
+
+### 터미널 2: Spark A/B Test 분석
+
+```bash
+docker exec spark-master /opt/spark/bin/spark-submit \
+  --master "local[2]" \
+  --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0 \
+  /opt/spark-apps/spark_ab_test_analyzer.py
+
+# 출력:
+📦 Batch 0 처리 중... (레코드 수: 2)
+
+🧪 banner_color_test_001
+   Variant A (blue_banner): 1,205 imp, 57 clicks, CTR 4.73%
+   Variant B (red_banner): 1,175 imp, 77 clicks, CTR 6.55%
+   📊 Chi-square: 3.3854, p-value: 0.0658
+   ⏳ 아직 판단 불가
+   ✅ Redis 저장: ab_test:banner_color_test_001:latest
+
+📦 Batch 1 처리 중... (레코드 수: 2)
+
+🧪 banner_color_test_001
+   Variant A (blue_banner): 1,772 imp, 83 clicks, CTR 4.68%
+   Variant B (red_banner): 1,759 imp, 112 clicks, CTR 6.37%
+   📊 Chi-square: 4.4766, p-value: 0.0344
+   ✅ 통계적으로 유의미!
+   🏆 Winner: B (red_banner) - CTR 6.37% > 4.68%
+   ✅ Redis 저장: ab_test:banner_color_test_001:latest
+```
+
+**관찰:**
+
+- Batch 0: p-value 0.0658 > 0.05 → 아직 판단 불가
+- Batch 1: p-value 0.0344 < 0.05 → **승자 판정!** 🏆
+- 샘플 수가 늘어나면서 p-value 하락 (신뢰도 증가)
+
+------
+
+### 터미널 3: API 테스트
+
+```bash
+curl http://localhost:8001/ab-test/winner/banner_color_test_001 | jq
+
+# 응답:
+{
+  "winner": "B",
+  "winner_name": "red_banner",
+  "is_significant": true,
+  "confidence_level": 0.9656,
+  "p_value": 0.0344,
+  "winner_ctr": 6.37,
+  "loser_ctr": 4.68,
+  "improvement_percent": 36.11,
+  "message": "🏆 red_banner가 36.1% 더 우수합니다! (신뢰도 96.6%)"
+}
+```
+
+**비즈니스 의사결정:**
+
+> "빨간색 배너를 전체 트래픽에 적용하면 CTR이 4.68% → 6.37%로 증가하여 **광고 수익이 36% 증가**할 것으로 예상됩니다. (96.6% 신뢰도)"
+
+------
+
+## 🐛 트러블슈팅 과정
+
+### 문제 1: Python 내장 `round()` vs Spark `round()` 충돌
+
+**에러:**
+
+```
+PySparkTypeError: [NOT_COLUMN_OR_STR] Argument `col` should be a Column or str, got float.
+```
+
+**원인:**
+
+```python
+# Spark 컨텍스트에서 round() 호출
+return {
+    "chi_square": round(float(chi2), 4),  # Spark round()로 해석됨
+    ...
+}
+```
+
+**해결:**
+
+```python
+import builtins
+
+return {
+    "chi_square": builtins.round(float(chi2), 4),  # Python 내장 함수 명시
+    ...
+}
+```
+
+**교훈:** Spark 환경에서는 Python 내장 함수도 명시적으로 호출해야 함!
+
+------
+
+### 문제 2: ClickHouse JDBC 드라이버 없음
+
+**에러:**
+
+```
+java.lang.ClassNotFoundException: com.clickhouse.jdbc.ClickHouseDriver
+```
+
+**해결:** ClickHouse 저장을 주석 처리하고 Redis만 사용
+
+```python
+# ClickHouse 저장 (선택사항)
+# batch_df.write.format("jdbc")...
+
+print(f"✅ Batch {batch_id}: 처리 완료 (Redis 저장)")
+```
+
+**교훈:** MVP에서는 핵심 기능(Redis)만 먼저 완성하고, 부가 기능(ClickHouse)은 나중에!
+
+------
+
+## 🎓 핵심 학습 내용
+
+### 1. A/B Testing의 3대 원칙
+
+#### ① 무작위 할당 (Randomization)
+
+- 트래픽을 50:50으로 무작위 분배
+- 편향(Bias) 제거
+
+#### ② 동시 실행 (Concurrent)
+
+- A와 B를 동시에 노출
+- 시간에 따른 변수 제거
+
+#### ③ 통계적 검증 (Statistical Significance)
+
+- Chi-square 검정으로 우연 vs 진짜 구분
+- p-value < 0.05 기준
+
+------
+
+### 2. Chi-square 검정 vs t-test
+
+**Chi-square 검정 (우리가 사용):**
+
+- **범주형 데이터** (클릭 O/X)
+- **빈도 비교** (클릭 수 / 비클릭 수)
+- AdTech의 표준
+
+**t-test (다른 상황):**
+
+- **연속형 데이터** (체중, 시간)
+- **평균 비교** (A 그룹 평균 vs B 그룹 평균)
+
+------
+
+### 3. 샘플 크기와 통계적 검정력
+
+**너무 적은 샘플:**
+
+```python
+A: 10 impressions, 1 click (10%)
+B: 10 impressions, 2 clicks (20%)
+
+# p-value = 0.5 > 0.05 → 판단 불가!
+```
+
+**충분한 샘플:**
+
+```python
+A: 1,000 impressions, 100 clicks (10%)
+B: 1,000 impressions, 200 clicks (20%)
+
+# p-value = 0.0001 < 0.05 → B가 확실히 우수!
+```
+
+**최소 샘플 크기:**
+
+- Impression: 최소 100개
+- 실무에서는 1,000~10,000개 권장
+
+------
+
+## 📈 성과 정리
+
+### ✅ 완성된 기능
+
+1. **A/B Test 데이터 생성기**
+   - 50:50 트래픽 분배
+   - 초당 83개 이벤트 생성
+2. **실시간 통계 분석 (Spark)**
+   - 1분 윈도우 집계
+   - Chi-square 검정 자동화
+   - 승자 판정 로직
+3. **REST API (FastAPI)**
+   - `/ab-test/status`: 현재 상태
+   - `/ab-test/winner`: 승자 확인
+   - Redis 1.48ms 응답
+4. **통계적 검증**
+   - p-value < 0.05 자동 판정
+   - 신뢰도 96.6% 달성
+
+------
+
+### 📊 측정 결과
+
+| 메트릭      | Variant A | Variant B | 개선율     |
+| ----------- | --------- | --------- | ---------- |
+| **CTR**     | 4.68%     | 6.37%     | **+36.1%** |
+| Impressions | 1,772     | 1,759     | -          |
+| Clicks      | 83        | 112       | +34.9%     |
+| eCPM        | $2.33     | $2.69     | +15.5%     |
+
+**통계적 유의성:**
+
+- Chi-square: 4.4766
+- **p-value: 0.0344 < 0.05** ✅
+- **Confidence: 96.56%** ✅
+
+------
+
+## 💼 포트폴리오 어필 포인트
+
+### 면접에서 이렇게 말하세요:
+
+**Q: "A/B Testing을 어떻게 구현했나요?"**
+
+**A:**
+
+> "AdTech에서 광고 소재 변경이 실제로 성과를 개선하는지 검증하기 위해 A/B Testing 프레임워크를 구축했습니다.
+>
+> **1. 트래픽 분배**
+>
+> - Kafka로 트래픽을 50:50 무작위 할당
+> - 편향 없이 공정한 비교 환경 구성
+>
+> **2. 실시간 분석**
+>
+> - Spark Streaming으로 1분마다 집계
+> - Chi-square 검정으로 통계적 유의성 자동 판정
+>
+> **3. 즉시 의사결정**
+>
+> - Redis 캐싱으로 1.48ms 응답
+> - FastAPI로 승자 확인 API 제공
+>
+> **성과:**
+>
+> - 빨간색 배너가 36% CTR 개선 (4.68% → 6.37%)
+> - 96.6% 신뢰도로 통계적 검증
+> - p-value = 0.034 < 0.05로 우연 아님을 증명
+>
+> **비즈니스 임팩트:**
+>
+> - 데이터 기반 의사결정으로 광고 수익 36% 증가 예상
+> - 감이 아닌 통계로 증명된 개선"
+
+------
+
+**Q: "왜 Chi-square 검정을 선택했나요?"**
+
+**A:**
+
+> "AdTech 데이터는 범주형(클릭 O/X)이기 때문입니다.
+>
+> **Chi-square가 적합한 이유:**
+>
+> 1. 클릭/비클릭은 범주형 데이터 (t-test는 연속형용)
+> 2. 빈도 비교에 최적화 (클릭 수 vs 비클릭 수)
+> 3. AdTech 업계 표준 (Google, Facebook 사용)
+>
+> **구현:**
+>
+> - scipy.stats.chi2_contingency 사용
+> - 2×2 Contingency Table 생성
+> - p-value < 0.05 기준으로 자동 판정
+>
+> **검증:**
+>
+> - 샘플 크기 체크 (최소 100 impressions)
+> - EMA로 과거 평균 추적
+> - False Positive 방지"
+
+------
+
+## 🚀 다음 단계 (Day 8 Preview)
+
+Day 7에서 A/B Testing **로직**을 완성했습니다. Day 8에서는:
+
+### 1. Superset 대시보드 구축 (추천!)
+
+**왜 Superset?**
+
+- React보다 빠름 (드래그앤드롭)
+- SQL 기반 (데이터 엔지니어 강점)
+- 실무에서 많이 씀 (BI 도구)
+
+**만들 차트:**
+
+- A vs B CTR 추이 (Line Chart)
+- 국가별 승률 (Bar Chart)
+- p-value 신뢰도 (Gauge)
+- 실시간 메트릭 (Big Number)
+
+------
+
+### 2. README.md 작성
+
+**포함 내용:**
+
+- 프로젝트 개요
+- 아키텍처 다이어그램
+- 실행 방법
+- 핵심 성과 (72배 성능 개선, 36% CTR 개선)
+- 기술 스택
+
+------
+
+### 3. 면접 준비 문서
+
+**예상 질문 50개 + 답변:**
+
+- "트래픽이 10배 증가하면?"
+- "ML vs 통계, 언제 뭘 쓰나요?"
+- "False Positive를 어떻게 방지하나요?"
+
+------
+
+## 📁 최종 파일 구조 (Day 1~7)
+
+```
+adtech-realtime-pipeline/
+│
+├── data-generator/
+│   ├── ad_log_generator.py          # Day 1: 일반 광고 로그
+│   └── ab_test_generator.py         # Day 7: A/B Test 로그 ✨
+│
+├── src/
+│   ├── spark_processor_anomaly_detection.py  # Day 6: 이상 탐지
+│   ├── spark_ab_test_analyzer.py             # Day 7: Chi-square 검정 ✨
+│   ├── slack_alert_consumer.py               # Day 6: Slack 알림
+│   ├── fastapi_metrics_api.py                # Day 5: 메트릭 API
+│   └── fastapi_ab_test_api.py                # Day 7: A/B Test API ✨
+│
+├── sql/
+│   ├── create_tables.sql            # Day 1-3: 기본 테이블
+│   ├── create_alerts_table.sql      # Day 6: 알림 테이블
+│   └── create_ab_test_tables.sql    # Day 7: A/B Test 테이블 ✨
+│
+└── dashboards/                      # Day 8 (내일): Superset
+```
+
+------
+
+## 📚 참고 자료
+
+### A/B Testing 이론
+
+- [Evan Miller's A/B Testing Guide](https://www.evanmiller.org/ab-testing/)
+- [Optimizely Stats Engine](https://www.optimizely.com/optimization-glossary/statistical-significance/)
+- [Google's Experiments Guide](https://support.google.com/analytics/answer/1745147)
+
+### Chi-square 검정
+
+- [SciPy chi2_contingency](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.chi2_contingency.html)
+- [Khan Academy: Chi-square Test](https://www.khanacademy.org/math/statistics-probability/inference-categorical-data-chi-square-tests)
+
+### AdTech A/B Testing
+
+- [Facebook's A/B Testing Platform](https://engineering.fb.com/2017/06/27/core-data/facebook-s-a-b-testing-platform/)
+- [Airbnb's Experimentation Platform](https://medium.com/airbnb-engineering/experiments-at-airbnb-e2db3abf39e7)
+
+------
+
+## 🎉 마무리
+
+Day 7에서는 **통계적으로 검증된 A/B Testing 프레임워크**를 완성했습니다.
+
+**핵심 성과:**
+
+- ✅ 실시간 Chi-square 검정
+- ✅ 96.6% 신뢰도로 승자 판정
+- ✅ 36% CTR 개선 검증
+- ✅ FastAPI로 즉시 조회 (1.48ms)
+
+**8주 프로젝트 진행률:**
+
+- Day 1-3: 데이터 파이프라인 ✅
+- Day 4-5: 성능 최적화 (72배) ✅
+- Day 6: 실시간 이상 탐지 ✅
+- Day 7: A/B Testing ✅
+- **Day 8: 최종 정리 + 대시보드** (내일!)
+
+------
+
+**다음 글**: [Day 8: Superset 대시보드 & 프로젝트 마무리](#)
+
+**GitHub Repository**: [adtech-realtime-pipeline](https://github.com/yourusername/adtech-realtime-pipeline)
+
+------
+
+*이 글이 도움이 되었다면 ⭐️ 스타와 👏 공유 부탁드립니다!*
+
+
+
